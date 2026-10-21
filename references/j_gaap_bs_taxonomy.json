@@ -1,0 +1,451 @@
+{
+  "taxonomy_name": "J-GAAP EDINET Balance Sheet Taxonomy",
+  "version": "FSA-EDINET-2024",
+  "source": "Japan Financial Services Agency (FSA) / EDINET Standard Taxonomy",
+  "statement": "貸借対照表 (Balance Sheet)",
+  "sections": [
+    {
+      "section_jp": "資産の部",
+      "section_en": "Assets",
+      "xbrl_element": "Assets",
+      "total_element": {
+        "account_jp": "資産合計",
+        "account_en": "Total assets",
+        "xbrl_element": "Assets",
+        "role": "grand_total"
+      },
+      "groups": [
+        {
+          "group_jp": "流動資産",
+          "group_en": "Current assets",
+          "xbrl_element": "CurrentAssets",
+          "total_element": {
+            "account_jp": "流動資産合計",
+            "account_en": "Total current assets",
+            "xbrl_element": "CurrentAssets",
+            "role": "subtotal"
+          },
+          "standard_items": [
+            {
+              "account_jp": "現金及び預金",
+              "account_en": "Cash and deposits",
+              "xbrl_element": "CashAndDeposits",
+              "ma_bucket": "cash_and_equivalents",
+              "role": "item"
+            },
+            {
+              "account_jp": "受取手形",
+              "account_en": "Notes receivable - trade",
+              "xbrl_element": "NotesReceivableTrade",
+              "ma_bucket": "trade_receivables",
+              "role": "item"
+            },
+            {
+              "account_jp": "売掛金",
+              "account_en": "Accounts receivable - trade",
+              "xbrl_element": "AccountsReceivableTrade",
+              "ma_bucket": "trade_receivables",
+              "role": "item"
+            },
+            {
+              "account_jp": "電子記録債権",
+              "account_en": "Electronically recorded monetary claims - operating",
+              "xbrl_element": "ElectronicallyRecordedMonetaryClaimsOperating",
+              "ma_bucket": "trade_receivables",
+              "role": "item"
+            },
+            {
+              "account_jp": "有価証券",
+              "account_en": "Securities",
+              "xbrl_element": "SecuritiesCurrent",
+              "ma_bucket": "short_term_investments",
+              "role": "item"
+            },
+            {
+              "account_jp": "商品及び製品",
+              "account_en": "Merchandise and finished goods",
+              "xbrl_element": "MerchandiseAndFinishedGoods",
+              "ma_bucket": "inventory",
+              "role": "item"
+            },
+            {
+              "account_jp": "仕掛品",
+              "account_en": "Work in process",
+              "xbrl_element": "WorkInProcess",
+              "ma_bucket": "inventory",
+              "role": "item"
+            },
+            {
+              "account_jp": "原材料及び貯蔵品",
+              "account_en": "Raw materials and supplies",
+              "xbrl_element": "RawMaterialsAndSupplies",
+              "ma_bucket": "inventory",
+              "role": "item"
+            },
+            {
+              "account_jp": "棚卸資産",
+              "account_en": "Inventories (Aggregated)",
+              "xbrl_element": "Inventories",
+              "ma_bucket": "inventory",
+              "role": "item"
+            },
+            {
+              "account_jp": "短期貸付金",
+              "account_en": "Short-term loans receivable",
+              "xbrl_element": "ShortTermLoansReceivable",
+              "ma_bucket": "other_current_assets",
+              "role": "item"
+            },
+            {
+              "account_jp": "未収入金",
+              "account_en": "Accounts receivable - other",
+              "xbrl_element": "AccountsReceivableOther",
+              "ma_bucket": "other_current_assets",
+              "role": "item"
+            },
+            {
+              "account_jp": "前払費用",
+              "account_en": "Prepaid expenses",
+              "xbrl_element": "PrepaidExpenses",
+              "ma_bucket": "other_current_assets",
+              "role": "item"
+            },
+            {
+              "account_jp": "繰延税金資産",
+              "account_en": "Deferred tax assets - current",
+              "xbrl_element": "DeferredTaxAssetsCurrent",
+              "ma_bucket": "other_current_assets",
+              "role": "item"
+            },
+            {
+              "account_jp": "その他",
+              "account_en": "Other current assets",
+              "xbrl_element": "OtherCurrentAssets",
+              "ma_bucket": "other_current_assets",
+              "role": "item"
+            },
+            {
+              "account_jp": "貸倒引当金",
+              "account_en": "Allowance for doubtful accounts",
+              "xbrl_element": "AllowanceForDoubtfulAccountsCurrentAssets",
+              "ma_bucket": "contra_asset",
+              "role": "contra_item"
+            }
+          ]
+        },
+        {
+          "group_jp": "固定資産",
+          "group_en": "Non-current (fixed) assets",
+          "xbrl_element": "NoncurrentAssets",
+          "total_element": {
+            "account_jp": "固定資産合計",
+            "account_en": "Total non-current assets",
+            "xbrl_element": "NoncurrentAssets",
+            "role": "subtotal"
+          },
+          "categories": [
+            {
+              "category_jp": "有形固定資産",
+              "category_en": "Property, plant and equipment",
+              "xbrl_element": "PropertyPlantAndEquipment",
+              "total_element": {
+                "account_jp": "有形固定資産合計",
+                "account_en": "Total property, plant and equipment",
+                "xbrl_element": "PropertyPlantAndEquipment",
+                "role": "subtotal"
+              },
+              "standard_items": [
+                {
+                  "account_jp": "建物及び構築物",
+                  "account_en": "Buildings and structures",
+                  "xbrl_element": "BuildingsAndStructures",
+                  "ma_bucket": "ppe_tangible",
+                  "supports_contra_depreciation": true
+                },
+                {
+                  "account_jp": "機械装置及び運搬具",
+                  "account_en": "Machinery, equipment and vehicles",
+                  "xbrl_element": "MachineryEquipmentAndVehicles",
+                  "ma_bucket": "ppe_tangible",
+                  "supports_contra_depreciation": true
+                },
+                {
+                  "account_jp": "工具、器具及び備品",
+                  "account_en": "Tools, furniture and fixtures",
+                  "xbrl_element": "ToolsFurnitureAndFixtures",
+                  "ma_bucket": "ppe_tangible",
+                  "supports_contra_depreciation": true
+                },
+                {
+                  "account_jp": "土地",
+                  "account_en": "Land",
+                  "xbrl_element": "Land",
+                  "ma_bucket": "ppe_tangible",
+                  "supports_contra_depreciation": false
+                },
+                {
+                  "account_jp": "リース資産",
+                  "account_en": "Leased assets",
+                  "xbrl_element": "LeaseAssetsPPE",
+                  "ma_bucket": "ppe_tangible",
+                  "supports_contra_depreciation": true
+                },
+                {
+                  "account_jp": "建設仮勘定",
+                  "account_en": "Construction in progress",
+                  "xbrl_element": "ConstructionInProgress",
+                  "ma_bucket": "ppe_tangible",
+                  "supports_contra_depreciation": false
+                },
+                {
+                  "account_jp": "その他",
+                  "account_en": "Other property, plant and equipment",
+                  "xbrl_element": "OtherPPE",
+                  "ma_bucket": "ppe_tangible",
+                  "supports_contra_depreciation": true
+                },
+                {
+                  "account_jp": "減価償却累計額",
+                  "account_en": "Accumulated depreciation",
+                  "xbrl_element": "AccumulatedDepreciationPPE",
+                  "ma_bucket": "contra_asset",
+                  "role": "contra_item"
+                }
+              ]
+            },
+            {
+              "category_jp": "無形固定資産",
+              "category_en": "Intangible assets",
+              "xbrl_element": "IntangibleAssets",
+              "total_element": {
+                "account_jp": "無形固定資産合計",
+                "account_en": "Total intangible assets",
+                "xbrl_element": "IntangibleAssets",
+                "role": "subtotal"
+              },
+              "standard_items": [
+                {
+                  "account_jp": "のれん",
+                  "account_en": "Goodwill",
+                  "xbrl_element": "Goodwill",
+                  "ma_bucket": "intangibles",
+                  "role": "item"
+                },
+                {
+                  "account_jp": "ソフトウェア",
+                  "account_en": "Software",
+                  "xbrl_element": "Software",
+                  "ma_bucket": "intangibles",
+                  "role": "item"
+                },
+                {
+                  "account_jp": "特許権",
+                  "account_en": "Patent rights",
+                  "xbrl_element": "PatentRights",
+                  "ma_bucket": "intangibles",
+                  "role": "item"
+                },
+                {
+                  "account_jp": "リース資産",
+                  "account_en": "Leased assets (Intangible)",
+                  "xbrl_element": "LeaseAssetsIntangible",
+                  "ma_bucket": "intangibles",
+                  "role": "item"
+                },
+                {
+                  "account_jp": "その他",
+                  "account_en": "Other intangible assets",
+                  "xbrl_element": "OtherIntangibleAssets",
+                  "ma_bucket": "intangibles",
+                  "role": "item"
+                }
+              ]
+            },
+            {
+              "category_jp": "投資その他の資産",
+              "category_en": "Investments and other assets",
+              "xbrl_element": "InvestmentsAndOtherAssets",
+              "total_element": {
+                "account_jp": "投資その他の資産合計",
+                "account_en": "Total investments and other assets",
+                "xbrl_element": "InvestmentsAndOtherAssets",
+                "role": "subtotal"
+              },
+              "standard_items": [
+                {
+                  "account_jp": "投資有価証券",
+                  "account_en": "Investment securities",
+                  "xbrl_element": "InvestmentSecurities",
+                  "ma_bucket": "investments",
+                  "role": "item"
+                },
+                {
+                  "account_jp": "関係会社株式",
+                  "account_en": "Shares of subsidiaries and associates",
+                  "xbrl_element": "SharesOfSubsidiariesAndAssociates",
+                  "ma_bucket": "investments",
+                  "role": "item"
+                },
+                {
+                  "account_jp": "長期貸付金",
+                  "account_en": "Long-term loans receivable",
+                  "xbrl_element": "LongTermLoansReceivable",
+                  "ma_bucket": "other_noncurrent_assets",
+                  "role": "item"
+                },
+                {
+                  "account_jp": "破産更生債権等",
+                  "account_en": "Claims provable in bankruptcy, claims provable in rehabilitation",
+                  "xbrl_element": "ClaimsProvableInBankruptcy",
+                  "ma_bucket": "other_noncurrent_assets",
+                  "role": "item"
+                },
+                {
+                  "account_jp": "退職給付に係る資産",
+                  "account_en": "Net defined benefit asset",
+                  "xbrl_element": "NetDefinedBenefitAsset",
+                  "ma_bucket": "other_noncurrent_assets",
+                  "role": "item"
+                },
+                {
+                  "account_jp": "繰延税金資産",
+                  "account_en": "Deferred tax assets - non-current",
+                  "xbrl_element": "DeferredTaxAssetsNoncurrent",
+                  "ma_bucket": "other_noncurrent_assets",
+                  "role": "item"
+                },
+                {
+                  "account_jp": "その他",
+                  "account_en": "Other investments and assets",
+                  "xbrl_element": "OtherInvestmentsAndOtherAssets",
+                  "ma_bucket": "other_noncurrent_assets",
+                  "role": "item"
+                },
+                {
+                  "account_jp": "貸倒引当金",
+                  "account_en": "Allowance for doubtful accounts (Non-current)",
+                  "xbrl_element": "AllowanceForDoubtfulAccountsNoncurrent",
+                  "ma_bucket": "contra_asset",
+                  "role": "contra_item"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_jp": "負債の部",
+      "section_en": "Liabilities",
+      "xbrl_element": "Liabilities",
+      "total_element": {
+        "account_jp": "負債合計",
+        "account_en": "Total liabilities",
+        "xbrl_element": "Liabilities",
+        "role": "grand_total"
+      },
+      "groups": [
+        {
+          "group_jp": "流動負債",
+          "group_en": "Current liabilities",
+          "xbrl_element": "CurrentLiabilities",
+          "total_element": {
+            "account_jp": "流動負債合計",
+            "account_en": "Total current liabilities",
+            "xbrl_element": "CurrentLiabilities",
+            "role": "subtotal"
+          },
+          "standard_items": [
+            { "account_jp": "支払手形", "account_en": "Notes payable - trade", "xbrl_element": "NotesPayableTrade", "ma_bucket": "trade_payables", "role": "item" },
+            { "account_jp": "買掛金", "account_en": "Accounts payable - trade", "xbrl_element": "AccountsPayableTrade", "ma_bucket": "trade_payables", "role": "item" },
+            { "account_jp": "電子記録債務", "account_en": "Electronically recorded obligations - operating", "xbrl_element": "ElectronicallyRecordedObligationsOperating", "ma_bucket": "trade_payables", "role": "item" },
+            { "account_jp": "短期借入金", "account_en": "Short-term borrowings", "xbrl_element": "ShortTermBorrowings", "ma_bucket": "short_term_debt", "role": "item" },
+            { "account_jp": "1年内返済予定の長期借入金", "account_en": "Current portion of long-term borrowings", "xbrl_element": "CurrentPortionOfLongTermBorrowings", "ma_bucket": "short_term_debt", "role": "item" },
+            { "account_jp": "リース債務", "account_en": "Lease obligations - current", "xbrl_element": "LeaseObligationsCurrent", "ma_bucket": "short_term_debt", "role": "item" },
+            { "account_jp": "未払金", "account_en": "Accounts payable - other", "xbrl_element": "AccountsPayableOther", "ma_bucket": "other_current_liabilities", "role": "item" },
+            { "account_jp": "未払費用", "account_en": "Accrued expenses", "xbrl_element": "AccruedExpenses", "ma_bucket": "other_current_liabilities", "role": "item" },
+            { "account_jp": "未払法人税等", "account_en": "Income taxes payable", "xbrl_element": "IncomeTaxesPayable", "ma_bucket": "other_current_liabilities", "role": "item" },
+            { "account_jp": "賞与引当金", "account_en": "Provision for bonuses", "xbrl_element": "ProvisionForBonuses", "ma_bucket": "other_current_liabilities", "role": "item" },
+            { "account_jp": "契約負債", "account_en": "Contract liabilities", "xbrl_element": "ContractLiabilitiesCurrent", "ma_bucket": "deferred_revenue", "role": "item" },
+            { "account_jp": "その他", "account_en": "Other current liabilities", "xbrl_element": "OtherCurrentLiabilities", "ma_bucket": "other_current_liabilities", "role": "item" }
+          ]
+        },
+        {
+          "group_jp": "固定負債",
+          "group_en": "Non-current liabilities",
+          "xbrl_element": "NoncurrentLiabilities",
+          "total_element": {
+            "account_jp": "固定負債合計",
+            "account_en": "Total non-current liabilities",
+            "xbrl_element": "NoncurrentLiabilities",
+            "role": "subtotal"
+          },
+          "standard_items": [
+            { "account_jp": "社債", "account_en": "Bonds payable", "xbrl_element": "BondsPayable", "ma_bucket": "long_term_debt", "role": "item" },
+            { "account_jp": "長期借入金", "account_en": "Long-term borrowings", "xbrl_element": "LongTermBorrowings", "ma_bucket": "long_term_debt", "role": "item" },
+            { "account_jp": "リース債務", "account_en": "Lease obligations - non-current", "xbrl_element": "LeaseObligationsNoncurrent", "ma_bucket": "long_term_debt", "role": "item" },
+            { "account_jp": "繰延税金負債", "account_en": "Deferred tax liabilities - non-current", "xbrl_element": "DeferredTaxLiabilitiesNoncurrent", "ma_bucket": "other_noncurrent_liabilities", "role": "item" },
+            { "account_jp": "退職給付に係る負債", "account_en": "Net defined benefit liability", "xbrl_element": "NetDefinedBenefitLiability", "ma_bucket": "pension_liabilities", "role": "item" },
+            { "account_jp": "資産除去債務", "account_en": "Asset retirement obligations", "xbrl_element": "AssetRetirementObligations", "ma_bucket": "other_noncurrent_liabilities", "role": "item" },
+            { "account_jp": "その他", "account_en": "Other non-current liabilities", "xbrl_element": "OtherNoncurrentLiabilities", "ma_bucket": "other_noncurrent_liabilities", "role": "item" }
+          ]
+        }
+      ]
+    },
+    {
+      "section_jp": "純資産の部",
+      "section_en": "Net Assets",
+      "xbrl_element": "NetAssets",
+      "total_element": {
+        "account_jp": "純資産合計",
+        "account_en": "Total net assets",
+        "xbrl_element": "NetAssets",
+        "role": "grand_total"
+      },
+      "groups": [
+        {
+          "group_jp": "株主資本",
+          "group_en": "Shareholders' equity",
+          "xbrl_element": "ShareholdersEquity",
+          "total_element": {
+            "account_jp": "株主資本合計",
+            "account_en": "Total shareholders' equity",
+            "xbrl_element": "ShareholdersEquity",
+            "role": "subtotal"
+          },
+          "standard_items": [
+            { "account_jp": "資本金", "account_en": "Share capital", "xbrl_element": "CapitalStock", "ma_bucket": "equity", "role": "item" },
+            { "account_jp": "資本剰余金", "account_en": "Capital surplus", "xbrl_element": "CapitalSurplus", "ma_bucket": "equity", "role": "item" },
+            { "account_jp": "利益剰余金", "account_en": "Retained earnings", "xbrl_element": "RetainedEarnings", "ma_bucket": "equity", "role": "item" },
+            { "account_jp": "自己株式", "account_en": "Treasury shares", "xbrl_element": "TreasuryShares", "ma_bucket": "equity", "role": "contra_item" }
+          ]
+        },
+        {
+          "group_jp": "その他の包括利益累計額",
+          "group_en": "Accumulated other comprehensive income (AOCI)",
+          "xbrl_element": "ValuationAndTranslationAdjustments",
+          "total_element": {
+            "account_jp": "その他の包括利益累計額合計",
+            "account_en": "Total accumulated other comprehensive income",
+            "xbrl_element": "ValuationAndTranslationAdjustments",
+            "role": "subtotal"
+          },
+          "standard_items": [
+            { "account_jp": "その他有価証券評価差額金", "account_en": "Valuation difference on available-for-sale securities", "xbrl_element": "ValuationDifferenceOnAvailableForSaleSecurities", "ma_bucket": "equity", "role": "item" },
+            { "account_jp": "繰延ヘッジ損益", "account_en": "Deferred gains or losses on hedges", "xbrl_element": "DeferredGainsOrLossesOnHedges", "ma_bucket": "equity", "role": "item" },
+            { "account_jp": "為替換算調整勘定", "account_en": "Foreign currency translation adjustment", "xbrl_element": "ForeignCurrencyTranslationAdjustment", "ma_bucket": "equity", "role": "item" }
+          ]
+        },
+        {
+          "group_jp": "非支配株主持分",
+          "group_en": "Non-controlling interests",
+          "xbrl_element": "NonControllingInterests",
+          "total_element": null,
+          "standard_items": [
+            { "account_jp": "非支配株主持分", "account_en": "Non-controlling interests", "xbrl_element": "NonControllingInterests", "ma_bucket": "minority_interest", "role": "item" }
+          ]
+        }
+      ]
+    }
+  ]
+}

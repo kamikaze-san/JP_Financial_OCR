@@ -1,0 +1,193 @@
+output                                                 wrong   status        wrong  calls   secs   outcome
+baseline_p1@100__qwen3-vl_4b-instruct                      1   repaired          0      6      0   fixed
+      [failed] accepted
+         applied '無形固定資産合計' col 1: '35,866' -> '35,869' (3 reads)
+baseline_p1@150__qwen3-vl_2b-instruct                    128   needs_review    110      3      0   improved
+      [unparseable] accepted
+         applied '資産の部' col 0: '資産の部' -> '' (3 reads)
+         applied '資産の部' col 1: '前連結会計年度' -> '' (3 reads)
+         applied '資産の部' col 2: '当連結会計年度' -> '' (3 reads)
+         applied '流動資産' col 0: '流動資産' -> '' (3 reads)
+         applied '流動資産' col 1: '前連結会計年度' -> '' (3 reads)
+         applied '流動資産' col 2: '当連結会計年度' -> '' (3 reads)
+         applied '現金及び預金' col 0: '現金及び預金' -> '' (3 reads)
+         applied '受取手形' col 0: '受取手形' -> '' (3 reads)
+         applied '売掛金' col 0: '売掛金' -> '' (3 reads)
+         applied '電子記録債権' col 0: '電子記録債権' -> '' (3 reads)
+         applied '商品及び製品' col 0: '商品及び製品' -> '' (3 reads)
+         applied '仕掛品' col 0: '仕掛品' -> '' (3 reads)
+         applied '原材料及び貯蔵品' col 0: '原材料及び貯蔵品' -> '' (3 reads)
+         applied '短期貸付金' col 0: '短期貸付金' -> '' (3 reads)
+         applied 'その他' col 0: 'その他' -> '' (3 reads)
+         applied '貸倒引当金' col 0: '貸倒引当金' -> '' (3 reads)
+         applied '流動資産合計' col 0: '流動資産合計' -> '' (3 reads)
+         applied '固定資産' col 0: '固定資産' -> '' (3 reads)
+         applied '固定資産' col 1: '前連結会計年度' -> '' (3 reads)
+         applied '固定資産' col 2: '当連結会計年度' -> '' (3 reads)
+         applied '有形固定資産' col 0: '有形固定資産' -> '' (3 reads)
+         applied '有形固定資産' col 1: '前連結会計年度' -> '' (3 reads)
+         applied '有形固定資産' col 2: '当連結会計年度' -> '' (3 reads)
+         applied '建物及び構築物' col 0: '建物及び構築物' -> '' (3 reads)
+         applied '減価償却累計額' col 0: '減価償却累計額' -> '' (3 reads)
+         applied '建物及び構築物（純額）' col 0: '建物及び構築物（純額）' -> '' (3 reads)
+         applied '機械装置及び運搬具' col 0: '機械装置及び運搬具' -> '' (3 reads)
+         applied '減価償却累計額' col 0: '減価償却累計額' -> '' (3 reads)
+         applied '機械装置及び運搬具（純額）' col 0: '機械装置及び運搬具（純額）' -> '' (3 reads)
+         applied '土地' col 0: '土地' -> '' (3 reads)
+         applied 'リース資産' col 0: 'リース資産' -> '' (3 reads)
+         applied '減価償却累計額' col 0: '減価償却累計額' -> '' (3 reads)
+         applied 'リース資産（純額）' col 0: 'リース資産（純額）' -> '' (3 reads)
+         applied '建設仮勘定' col 0: '建設仮勘定' -> '' (3 reads)
+         applied 'その他' col 0: 'その他' -> '' (3 reads)
+         applied '減価償却累計額' col 0: '減価償却累計額' -> '' (3 reads)
+         applied 'その他（純額）' col 0: 'その他（純額）' -> '' (3 reads)
+         applied '有形固定資産合計' col 0: '有形固定資産合計' -> '' (3 reads)
+         applied '無形固定資産' col 0: '無形固定資産' -> '' (3 reads)
+         applied '無形固定資産' col 1: '前連結会計年度' -> '' (3 reads)
+         applied '無形固定資産' col 2: '当連結会計年度' -> '' (3 reads)
+         applied 'リース資産' col 0: 'リース資産' -> '' (3 reads)
+         applied 'その他' col 0: 'その他' -> '' (3 reads)
+         applied '無形固定資産合計' col 0: '無形固定資産合計' -> '' (3 reads)
+         applied '投資その他の資産' col 0: '投資その他の資産' -> '' (3 reads)
+         applied '投資その他の資産' col 1: '前連結会計年度' -> '' (3 reads)
+         applied '投資その他の資産' col 2: '当連結会計年度' -> '' (3 reads)
+         applied '投資有価証券' col 0: '投資有価証券' -> '' (3 reads)
+         applied '関係会社株式' col 0: '関係会社株式' -> '' (3 reads)
+         applied '長期貸付金' col 0: '長期貸付金' -> '' (3 reads)
+         applied '退職給付に係る資産' col 0: '退職給付に係る資産' -> '' (3 reads)
+         applied 'その他' col 0: 'その他' -> '' (3 reads)
+         applied '投資その他の資産合計' col 0: '投資その他の資産合計' -> '' (3 reads)
+         applied '固定資産合計' col 0: '固定資産合計' -> '' (3 reads)
+         applied '資産合計' col 0: '資産合計' -> '' (3 reads)
+baseline_p1@150__qwen3-vl_4b-instruct                     50   repaired          0      3      0   fixed
+      [failed] accepted
+         applied '資産の部' col 0: '資産の部' -> '' (3 reads)
+         applied '資産の部' col 1: '資産の部' -> '' (3 reads)
+         applied '流動資産' col 0: '流動資産' -> '' (3 reads)
+         applied '流動資産' col 1: '流動資産' -> '' (3 reads)
+         applied '現金及び預金' col 0: '現金及び預金' -> '2,002,429' (3 reads)
+         applied '受取手形' col 0: '受取手形' -> '20,659' (3 reads)
+         applied '売掛金' col 0: '売掛金' -> '2,019,476' (3 reads)
+         applied '電子記録債権' col 0: '電子記録債権' -> '564,667' (3 reads)
+         applied '商品及び製品' col 0: '商品及び製品' -> '589,488' (3 reads)
+         applied '仕掛品' col 0: '仕掛品' -> '186,748' (3 reads)
+         applied '原材料及び貯蔵品' col 0: '原材料及び貯蔵品' -> '370,403' (3 reads)
+         applied '短期貸付金' col 0: '短期貸付金' -> '7,530' (3 reads)
+         applied 'その他' col 0: 'その他' -> '105,260' (3 reads)
+         applied '貸倒引当金' col 0: '貸倒引当金' -> '△2,979' (3 reads)
+         applied '流動資産合計' col 0: '流動資産合計' -> '5,863,684' (3 reads)
+         applied '固定資産' col 0: '固定資産' -> '' (3 reads)
+         applied '固定資産' col 1: '固定資産' -> '' (3 reads)
+         applied '有形固定資産' col 0: '有形固定資産' -> '' (3 reads)
+         applied '有形固定資産' col 1: '有形固定資産' -> '' (3 reads)
+         applied '建物及び構築物' col 0: '建物及び構築物' -> '2,121,360' (3 reads)
+         applied '減価償却累計額' col 0: '減価償却累計額' -> '△1,923,585' (3 reads)
+         applied '建物及び構築物（純額）' col 0: '建物及び構築物（純額）' -> '197,775' (3 reads)
+         applied '機械装置及び運搬具' col 0: '機械装置及び運搬具' -> '4,024,922' (3 reads)
+         applied '減価償却累計額' col 0: '減価償却累計額' -> '△3,634,165' (3 reads)
+         applied '機械装置及び運搬具（純額）' col 0: '機械装置及び運搬具（純額）' -> '390,757' (3 reads)
+         applied '土地' col 0: '土地' -> '768,976' (3 reads)
+         applied 'リース資産' col 0: 'リース資産' -> '210,746' (3 reads)
+         applied '減価償却累計額' col 0: '減価償却累計額' -> '△147,599' (3 reads)
+         applied 'リース資産（純額）' col 0: 'リース資産（純額）' -> '63,146' (3 reads)
+         applied '建設仮勘定' col 0: '建設仮勘定' -> '－' (3 reads)
+         applied '建設仮勘定' col 1: '－' -> '4,553' (3 reads)
+         applied 'その他' col 0: 'その他' -> '848,814' (3 reads)
+         applied '減価償却累計額' col 0: '減価償却累計額' -> '△840,375' (3 reads)
+         applied 'その他（純額）' col 0: 'その他（純額）' -> '8,439' (3 reads)
+         applied '有形固定資産合計' col 0: '有形固定資産合計' -> '1,429,094' (3 reads)
+         applied '無形固定資産' col 0: '無形固定資産' -> '' (3 reads)
+         applied '無形固定資産' col 1: '無形固定資産' -> '' (3 reads)
+         applied 'リース資産' col 0: 'リース資産' -> '34,190' (3 reads)
+         applied 'その他' col 0: 'その他' -> '10,070' (3 reads)
+         applied '無形固定資産合計' col 0: '無形固定資産合計' -> '44,261' (3 reads)
+         applied '投資その他の資産' col 0: '投資その他の資産' -> '' (3 reads)
+         applied '投資その他の資産' col 1: '投資その他の資産' -> '' (3 reads)
+         applied '投資有価証券' col 0: '投資有価証券' -> '44,180' (3 reads)
+         applied '関係会社株式' col 0: '関係会社株式' -> '1,123' (3 reads)
+         applied '長期貸付金' col 0: '長期貸付金' -> '－' (3 reads)
+         applied '退職給付に係る資産' col 0: '退職給付に係る資産' -> '18,404' (3 reads)
+         applied 'その他' col 0: 'その他' -> '133,361' (3 reads)
+         applied '投資その他の資産合計' col 0: '投資その他の資産合計' -> '197,069' (3 reads)
+         applied '固定資産合計' col 0: '固定資産合計' -> '1,670,426' (3 reads)
+         applied '資産合計' col 0: '資産合計' -> '7,534,110' (3 reads)
+calbee_p1@100__qwen3-vl_2b-instruct                        6   repaired          3      9      0   fixed_label
+      [failed] accepted
+         applied '投資その他の資産' col 0: '15,727' -> '' (3 reads)
+         applied '投資その他の資産' col 1: '15,461' -> '' (3 reads)
+         applied insert row '投資その他の資産' ['15,727', '15,461'] (2 reads)
+calbee_p1@150__qwen3-vl_2b-instruct                       40   needs_review     40      0      0   unchanged
+calbee_p2@100__qwen3-vl_2b-instruct                        7   repaired          0      6      0   fixed
+      [failed] accepted
+         applied 'その他の包括利益益累計額' col 0: '653' -> '' (3 reads)
+         applied 'その他の包括利益益累計額' col 1: '522' -> '' (3 reads)
+         applied 'その他有価証券評価差額金' col 0: '13,601' -> '653' (3 reads)
+         applied 'その他有価証券評価差額金' col 1: '14,375' -> '522' (3 reads)
+         applied '為替換算調整勘定' col 0: '814' -> '13,601' (3 reads)
+         applied '為替換算調整勘定' col 1: '1,156' -> '14,375' (3 reads)
+         applied insert row '退職給付に係る調整累計額' ['814', '1,156'] (3 reads)
+calbee_p2@100__qwen3-vl_4b-instruct                       13   repaired          0     12      0   fixed
+      [failed] accepted
+         applied '負債の部' col 0: '負債の部' -> '' (3 reads)
+         applied '負債の部' col 1: '負債の部' -> '' (3 reads)
+         applied '流動負債' col 0: '流動負債' -> '' (3 reads)
+         applied '流動負債' col 1: '流動負債' -> '' (3 reads)
+         applied 'その他' col 1: '30,241' -> '30,341' (3 reads)
+         applied '固定負債' col 0: '固定負債' -> '' (3 reads)
+         applied '固定負債' col 1: '固定負債' -> '' (3 reads)
+      [unparseable] accepted
+         applied '株主資本' col 0: '株主資本' -> '' (3 reads)
+         applied '株主資本' col 1: '株主資本' -> '' (3 reads)
+      [unparseable] accepted
+         applied 'その他の包括利益累計額' col 0: 'その他の包括利益累計額' -> '' (3 reads)
+         applied 'その他の包括利益累計額' col 1: 'その他の包括利益累計額' -> '' (3 reads)
+      [unparseable] accepted
+         applied '純資産の部' col 0: '純資産の部' -> '' (3 reads)
+         applied '純資産の部' col 1: '純資産の部' -> '' (3 reads)
+calbee_p2@150__qwen3-vl_2b-instruct                        2   repaired          0      6      0   fixed
+      [failed] accepted
+         applied 'その他の包括利益累計額' col 0: '653' -> '' (3 reads)
+         applied 'その他の包括利益累計額' col 1: '522' -> '' (3 reads)
+calbee_p2@150__qwen3-vl_4b-instruct                       12   repaired          0     18      0   fixed
+      [unparseable] accepted
+         applied '流動負債' col 0: '流動負債' -> '' (3 reads)
+         applied '流動負債' col 1: '流動負債' -> '' (3 reads)
+      [unparseable] accepted
+         applied '固定負債' col 0: '固定負債' -> '' (3 reads)
+         applied '固定負債' col 1: '固定負債' -> '' (3 reads)
+      [unparseable] accepted
+         applied '株主資本' col 0: '株主資本' -> '' (3 reads)
+         applied '株主資本' col 1: '株主資本' -> '' (3 reads)
+      [unparseable] accepted
+         applied 'その他の包括利益累計額' col 0: 'その他の包括利益累計額' -> '' (3 reads)
+         applied 'その他の包括利益累計額' col 1: 'その他の包括利益累計額' -> '' (3 reads)
+      [unparseable] accepted
+         applied '負債の部' col 0: '負債の部' -> '' (3 reads)
+         applied '負債の部' col 1: '負債の部' -> '' (3 reads)
+      [unparseable] accepted
+         applied '純資産の部' col 0: '純資産の部' -> '' (3 reads)
+         applied '純資産の部' col 1: '純資産の部' -> '' (3 reads)
+calbee_p2__qwen3-vl_2b-instruct                            3   repaired          0      6      0   fixed
+      [failed] accepted
+         applied 'その他の包括利益累計額' col 0: '653' -> '' (3 reads)
+         applied 'その他の包括利益累計額' col 1: '522' -> '' (3 reads)
+         applied insert row 'その他有価証券評価差額金' ['653', '522'] (3 reads)
+yamato_p1@100__qwen3-vl_4b-instruct                       77   needs_review     77      0      0   unchanged
+      [failed] no_region: a two-column (T-account) page cannot be cropped by row
+yamato_p1@150__qwen3-vl_2b-instruct                      106   needs_review    106      0      0   unchanged
+      [failed] no_region: a two-column (T-account) page cannot be cropped by row
+yamato_p1@150__qwen3-vl_4b-instruct                      101   needs_review    101      0      0   unchanged
+      [failed] no_region: a two-column (T-account) page cannot be cropped by row
+yamato_p1__qwen3-vl_2b-instruct                          104   needs_review    104      0      0   unchanged
+      [failed] no_region: a two-column (T-account) page cannot be cropped by row
+yamato_p1__qwen3-vl_4b-instruct                          101   needs_review    101      0      0   unchanged
+      [failed] no_region: a two-column (T-account) page cannot be cropped by row
+benchmark_missed_4553                                      1   repaired          0      3      0   fixed
+      [failed] accepted
+         applied '建設仮勘定' col 1: '－' -> '4,553' (3 reads)
+benchmark_fabricated_44556                                 2   repaired          0      3      0   fixed
+      [failed] accepted
+         applied '建設仮勘定' col 0: '44,556' -> '－' (3 reads)
+         applied '建設仮勘定' col 1: '44,556' -> '4,553' (3 reads)
+
+fixed=9  fixed_label=1  improved=1  unchanged=6

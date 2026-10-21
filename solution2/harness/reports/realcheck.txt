@@ -1,0 +1,73 @@
+fixture                                              rows  wrong   v1              v2           
+baseline_p1@100__qwen3-vl_2b-instruct                  43      0   true_trust      true_trust   
+baseline_p1@100__qwen3-vl_4b-instruct                  43      1   SILENT_ERROR    true_flag    
+      - 無形固定資産合計 col 1: '35,866' != '35,869'
+baseline_p1@150__qwen3-vl_2b-instruct                  43    128   SILENT_ERROR    true_flag    
+      - 資産の部 col 0: '資産の部' != None
+      - 資産の部 col 1: '前連結会計年度' != None
+      - 資産の部 col 2: '当連結会計年度' != None
+baseline_p1@150__qwen3-vl_4b-instruct                  43     50   true_flag       true_flag    
+      - 資産の部 col 0: '資産の部' != None
+      - 資産の部 col 1: '資産の部' != None
+      - 流動資産 col 0: '流動資産' != None
+baseline_p1__qwen3-vl_2b-instruct                      43      0   true_trust      true_trust   
+baseline_p1__qwen3-vl_4b-instruct                      43      0   true_trust      true_trust   
+calbee_p1@100__qwen3-vl_2b-instruct                    24      6   true_flag       true_flag    
+      - 有形固定資産 col 0: '73,598' != ''
+      - 有形固定資産 col 1: '73,360' != ''
+      - 投資その他の資産 col 0: '15,727' != ''
+calbee_p1@100__qwen3-vl_4b-instruct                    27      3   true_flag       label_gap    
+      - 棚卸資産 col 0: None != '29,092'
+      - 棚卸資産 col 1: None != '30,298'
+      - unexpected row 'その他' ['29,092', '30,298']
+calbee_p1@150__qwen3-vl_2b-instruct                    28     40   SILENT_ERROR    true_flag    
+      - 現金及び預金 col 0: None != '51,548'
+      - 現金及び預金 col 1: None != '45,234'
+      - 受取手形及び売掛金 col 0: None != '43,832'
+calbee_p1@150__qwen3-vl_4b-instruct                    26      0   false_alarm     true_trust   
+calbee_p1__qwen3-vl_2b-instruct                        26      0   false_alarm     true_trust   
+calbee_p1__qwen3-vl_4b-instruct                        26      0   false_alarm     true_trust   
+calbee_p2@100__qwen3-vl_2b-instruct                    36      7   label_gap       true_flag    
+      - その他の包括利益益累計額 col 0: '653' != ''
+      - その他の包括利益益累計額 col 1: '522' != ''
+      - その他有価証券評価差額金 col 0: '13,601' != '653'
+calbee_p2@100__qwen3-vl_4b-instruct                    37     13   SILENT_ERROR    true_flag    
+      - 負債の部 col 0: '負債の部' != ''
+      - 負債の部 col 1: '負債の部' != ''
+      - 流動負債 col 0: '流動負債' != ''
+calbee_p2@150__qwen3-vl_2b-instruct                    37      2   SILENT_ERROR    true_flag    
+      - その他の包括利益累計額 col 0: '653' != ''
+      - その他の包括利益累計額 col 1: '522' != ''
+calbee_p2@150__qwen3-vl_4b-instruct                    37     12   label_gap       true_flag    
+      - 負債の部 col 0: '負債の部' != ''
+      - 負債の部 col 1: '負債の部' != ''
+      - 流動負債 col 0: '流動負債' != ''
+calbee_p2__qwen3-vl_2b-instruct                        36      3   label_gap       true_flag    
+      - その他の包括利益累計額 col 0: '653' != ''
+      - その他の包括利益累計額 col 1: '522' != ''
+      - missing row 'その他有価証券評価差額金'
+calbee_p2__qwen3-vl_4b-instruct                        37      0   true_trust      true_trust   
+yamato_p1@100__qwen3-vl_2b-instruct                   unparseable (Unterminated string starting at: line 11)
+yamato_p1@100__qwen3-vl_4b-instruct                    26     77   SILENT_ERROR    true_flag    
+      - （ 資 産 の 部 ） col 0: '金額' != ''
+      - （ 資 産 の 部 ） col 1: '（ 負 債 の 部 ）' != None
+      - （ 資 産 の 部 ） col 2: '金額' != None
+yamato_p1@150__qwen3-vl_2b-instruct                    54    106   SILENT_ERROR    true_flag    
+      - （資産の部） col 0: '（資産の部）' != ''
+      - （資産の部） col 1: '（資産の部）' != None
+      - 流動資産 col 0: '流動資産' != '6,727,851'
+yamato_p1@150__qwen3-vl_4b-instruct                    52    101   SILENT_ERROR    true_flag    
+      - （資産の部） col 0: '（資産の部）' != ''
+      - 流動資産 col 0: '流動資産' != '6,727,851'
+      - 流動資産 col 1: '6,727,851' != None
+yamato_p1__qwen3-vl_2b-instruct                        52    104   SILENT_ERROR    true_flag    
+      - （資産の部） col 0: '（資産の部）' != ''
+      - （資産の部） col 1: '金額' != None
+      - 流動資産 col 0: '流動資産' != '6,727,851'
+yamato_p1__qwen3-vl_4b-instruct                        52    101   SILENT_ERROR    true_flag    
+      - （資産の部） col 0: '（資産の部）' != ''
+      - 流 動 資 産 col 0: '流動資産' != '6,727,851'
+      - 流 動 資 産 col 1: '6,727,851' != None
+
+v1: true_trust=4, true_flag=3, SILENT_ERROR=10, label_gap=3, false_alarm=3, unparseable=1
+v2: true_trust=7, true_flag=15, SILENT_ERROR=0, label_gap=1, false_alarm=0, unparseable=1

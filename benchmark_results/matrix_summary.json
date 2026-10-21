@@ -1,0 +1,265 @@
+[
+  {
+    "model": "glm-ocr:latest",
+    "company": "Calbee, Inc. (2229)",
+    "total_time": 30.59,
+    "total_cells": 102,
+    "exact_matches": 100,
+    "em_rate": 98.0392156862745,
+    "mismatches": [
+      {
+        "account": "投資その他の資産",
+        "date": "2026-03-31",
+        "exp": "15,727",
+        "pred": ""
+      },
+      {
+        "account": "投資その他の資産",
+        "date": "2026-06-30",
+        "exp": "15,461",
+        "pred": ""
+      }
+    ]
+  },
+  {
+    "model": "qwen3-vl:2b-instruct",
+    "company": "Calbee, Inc. (2229)",
+    "total_time": 34.95675358772278,
+    "total_cells": 102,
+    "exact_matches": 102,
+    "em_rate": 100.0,
+    "mismatches": []
+  },
+  {
+    "model": "qwen3-vl:4b-instruct",
+    "company": "Calbee, Inc. (2229)",
+    "total_time": 62.618297815322876,
+    "total_cells": 102,
+    "exact_matches": 100,
+    "em_rate": 98.0392156862745,
+    "mismatches": [
+      {
+        "account": "投資その他の資産",
+        "date": "2026-03-31",
+        "exp": "15,727",
+        "pred": ""
+      },
+      {
+        "account": "投資その他の資産",
+        "date": "2026-06-30",
+        "exp": "15,461",
+        "pred": ""
+      }
+    ]
+  },
+  {
+    "model": "glm-ocr:latest",
+    "company": "Yamato Mobility & Mfg. (7886)",
+    "total_time": 13.8,
+    "total_cells": 49,
+    "exact_matches": 43,
+    "em_rate": 87.75510204081633,
+    "mismatches": [
+      {
+        "account": "電子記録債権",
+        "date": "2021-03-31",
+        "exp": "619,236",
+        "pred": "MISSING"
+      },
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "74,753",
+        "pred": "9,707"
+      },
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "368,405",
+        "pred": "138,073"
+      },
+      {
+        "account": "リース債務",
+        "date": "2021-03-31",
+        "exp": "56,504",
+        "pred": "29,069"
+      },
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "9,707",
+        "pred": "138,073"
+      },
+      {
+        "account": "その他の包括利益累計額",
+        "date": "2021-03-31",
+        "exp": "-56,345",
+        "pred": "MISSING"
+      }
+    ]
+  },
+  {
+    "model": "qwen3-vl:2b-instruct",
+    "company": "Yamato Mobility & Mfg. (7886)",
+    "total_time": 21.095484495162964,
+    "total_cells": 49,
+    "exact_matches": 33,
+    "em_rate": 67.3469387755102,
+    "mismatches": [
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "138,073",
+        "pred": "MISSING"
+      },
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "74,753",
+        "pred": "MISSING"
+      },
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "18,136",
+        "pred": "191,561"
+      },
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "160,344",
+        "pred": "△56,345"
+      },
+      {
+        "account": "支払手形及び買掛金",
+        "date": "2021-03-31",
+        "exp": "2,085,758",
+        "pred": "MISSING"
+      },
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "368,405",
+        "pred": "MISSING"
+      },
+      {
+        "account": "リース債務",
+        "date": "2021-03-31",
+        "exp": "56,504",
+        "pred": "29,069"
+      },
+      {
+        "account": "繰延税金負債",
+        "date": "2021-03-31",
+        "exp": "42,655",
+        "pred": "MISSING"
+      },
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "9,707",
+        "pred": "MISSING"
+      },
+      {
+        "account": "資本金",
+        "date": "2021-03-31",
+        "exp": "927,623",
+        "pred": "MISSING"
+      },
+      {
+        "account": "資本剰余金",
+        "date": "2021-03-31",
+        "exp": "763,504",
+        "pred": "927,623"
+      },
+      {
+        "account": "利益剰余金",
+        "date": "2021-03-31",
+        "exp": "-281,812",
+        "pred": "763,504"
+      },
+      {
+        "account": "その他有価証券評価差額金",
+        "date": "2021-03-31",
+        "exp": "1,354",
+        "pred": "MISSING"
+      },
+      {
+        "account": "繰延ヘッジ損益",
+        "date": "2021-03-31",
+        "exp": "542",
+        "pred": "MISSING"
+      },
+      {
+        "account": "為替換算調整勘定",
+        "date": "2021-03-31",
+        "exp": "-26,854",
+        "pred": "MISSING"
+      },
+      {
+        "account": "純資産合計",
+        "date": "2021-03-31",
+        "exp": "1,330,527",
+        "pred": "8,618,966"
+      }
+    ]
+  },
+  {
+    "model": "qwen3-vl:4b-instruct",
+    "company": "Yamato Mobility & Mfg. (7886)",
+    "total_time": 33.86060047149658,
+    "total_cells": 49,
+    "exact_matches": 41,
+    "em_rate": 83.6734693877551,
+    "mismatches": [
+      {
+        "account": "流動資産",
+        "date": "2021-03-31",
+        "exp": "6,727,851",
+        "pred": "流動負債"
+      },
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "74,753",
+        "pred": "9,707"
+      },
+      {
+        "account": "流動負債",
+        "date": "2021-03-31",
+        "exp": "4,518,204",
+        "pred": "MISSING"
+      },
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "368,405",
+        "pred": "1,354"
+      },
+      {
+        "account": "リース債務",
+        "date": "2021-03-31",
+        "exp": "56,504",
+        "pred": "29,069"
+      },
+      {
+        "account": "その他",
+        "date": "2021-03-31",
+        "exp": "9,707",
+        "pred": "MISSING"
+      },
+      {
+        "account": "株主資本",
+        "date": "2021-03-31",
+        "exp": "1,386,071",
+        "pred": "927,623"
+      },
+      {
+        "account": "資本金",
+        "date": "2021-03-31",
+        "exp": "927,623",
+        "pred": "MISSING"
+      }
+    ]
+  }
+]

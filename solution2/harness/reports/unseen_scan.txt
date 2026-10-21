@@ -1,0 +1,33 @@
+pdf                                page  set                   result
+balance_sheet                         1  Yamato (dev)          silver failed: 1 period headers but rows carry up to 3 numbers
+balance_sheet                         1  Calbee (dev)          26 rows x 2 cols -> TRUSTED
+balance_sheet                         2  Calbee (dev)          37 rows x 2 cols -> TRUSTED
+balance_sheet                         1  Fast Retailing (dev)  45 rows x 2 cols -> TRUSTED
+balance_sheet                         2  Fast Retailing (dev)  36 rows x 2 cols -> TRUSTED
+balance_sheet                         1  held-out              20 rows x 3 cols -> TRUSTED
+calbee_financial_2026                 7  Calbee (dev)          26 rows x 2 cols -> TRUSTED
+calbee_financial_2026                 8  Calbee (dev)          37 rows x 2 cols -> TRUSTED
+fastretailing_shihanki_2025           4  held-out              silver failed: 6 period headers but rows carry up to 3 numbers
+fastretailing_shihanki_2025          16  held-out              silver failed: 2 period headers but rows carry up to 3 numbers
+fastretailing_yuho_2025               5  held-out              silver failed: 1 period headers but rows carry up to 0 numbers
+fastretailing_yuho_2025              12  held-out              silver failed: no column header with dates found on the page
+fastretailing_yuho_2025              86  held-out              silver failed: 2 period headers but rows carry up to 3 numbers
+fastretailing_yuho_2025             105  held-out              silver failed: 8 period headers but rows carry up to 2 numbers
+fastretailing_yuho_2025             109  held-out              silver failed: 6 period headers but rows carry up to 0 numbers
+fastretailing_yuho_2025             110  held-out              silver failed: 6 period headers but rows carry up to 0 numbers
+fastretailing_yuho_2025             114  held-out              silver failed: 4 period headers but rows carry up to 2 numbers
+fastretailing_yuho_2025             156  held-out              45 rows x 2 cols -> TRUSTED
+fastretailing_yuho_2025             157  held-out              36 rows x 2 cols -> TRUSTED
+fastretailing_yuho_2025             159  held-out              silver failed: 2 period headers but rows carry up to 8 numbers
+fastretailing_yuho_2025             160  held-out              silver failed: 2 period headers but rows carry up to 8 numbers
+fastretailing_yuho_2025             164  held-out              silver failed: 6 period headers but rows carry up to 0 numbers
+fastretailing_yuho_2025             170  held-out              silver failed: no column header with dates found on the page
+nikon_tanshin                         1  held-out              silver failed: 5 period headers but rows carry up to 7 numbers
+nikon_tanshin                         5  held-out              20 rows x 3 cols -> TRUSTED
+yamato_fs66                           1  Yamato (dev)          silver failed: 1 period headers but rows carry up to 3 numbers
+yamato_fs66                           3  Yamato (dev)          silver failed: 6 period headers but rows carry up to 0 numbers
+yamato_fs66                          11  Yamato (dev)          silver failed: 1 period headers but rows carry up to 3 numbers
+yamato_fs66                          14  Yamato (dev)          silver failed: 2 period headers but rows carry up to 0 numbers
+yamato_fs66                          18  Yamato (dev)          silver failed: no column header with dates found on the page
+
+held-out candidates: 18   silver built and verifier trusts it: 4   verifier flags: 0   silver could not be built: 14

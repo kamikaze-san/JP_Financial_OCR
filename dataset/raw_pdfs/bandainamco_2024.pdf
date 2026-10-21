@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<base href="/err/" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>アクセス拒否 | 株式会社バンダイナムコホールディングス</title>
+<meta name="description" content="Access Denied" />
+<meta name="keywords" content="バンダイナムコホールディングス,バンダイナムコ,bandainamco,プレスリリース,IR,CSR,グループ,サステナビリティ,グループ採用情報,バンダイ,ナムコ,Bandai Namco Holdings,press releases,corporate profile,investor relations,IR,corporate social responsibility,CSR,sustainability" />
+<meta property="og:title" content="アクセス拒否 | 株式会社バンダイナムコホールディングス" />
+
+
+<meta property="og:type" content="article" />
+
+<meta property="og:image" content="https://www.bandainamco.co.jp/assets/img/snsThumbnail.png" />
+<meta property="og:url" content="https://www.bandainamco.co.jp/err/403forbid.html" />
+<meta property="og:site_name" content="株式会社バンダイナムコホールディングス" />
+<meta property="og:description" content="Access Denied" />
+<link rel="stylesheet" href="../assets/groupHeader/css/groupHeader.css" />
+<link rel="stylesheet" href="../assets/css/core.css" />
+
+<link rel="stylesheet" href="../assets/css/print.css" media="print" />
+<link rel="shortcut icon" href="https://www.bandainamco.co.jp/favicon.ico" />
+<link rel="apple-touch-icon" href="https://www.bandainamco.co.jp/webclip.png">
+<!--[if lt IE 9]>
+<script src="/assets/js/html5shiv-printshiv.js"></script>
+<script src="/assets/js/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<div class="l-wrap">
+<!-- groupHeader category-01-white start -->
+<div class="p-groupHeader-01">
+  <div class="p-groupHeader__groupLogo">
+    <a href="../index.html">
+      <img src="../assets/groupHeader/logo/groupLogo-01.svg" alt="Bandai Namco Fun for All into the Future" width="176" class="p-groupHeader__groupLogo--pc">
+      <img src="../assets/groupHeader/logo/groupLogo-01-sp.svg" alt="Bandai Namco" width="60" class="p-groupHeader__groupLogo--sp">
+    </a>
+  </div>
+  <div class="p-groupHeader__inner">
+    <div class="p-groupHeader__lineElement"></div>
+    <div class="p-groupHeader__companyLogo">
+      <a href="../index.html"><img src="../assets/groupHeader/logo/companyLogo.svg" width="252" height="18" alt="バンダイナムコ ホールディングス"></a>
+    </div>
+    <div id="js-gHeaderSpMenuBtn" class="p-groupHeader__spMenuBtn" aria-label="メニューの開閉ボタン">
+      <span></span>
+    </div>
+  </div>
+</div>
+<!-- groupHeader category-01-white end -->
+<div class="l-gHead">
+  <header class="l-gHead__inner">
+    <div class="l-gHead__home">
+      <a href="../index.html" class="gNav-icon" title="サイトトップ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21.875" viewBox="0 0 20 21.875">
+          <path d="M119.762,100.165l-9-6.97a1.006,1.006,0,0,0-1.228,0l-9,6.97a1,1,0,0,0-.386.785V111.9a3,3,0,0,0,3,2.987h14a3,3,0,0,0,3-2.987V100.95A1,1,0,0,0,119.762,100.165ZM112.148,112.9h-4v-7.965h4V112.9Zm6-1a1,1,0,0,1-1,1h-3v-8.961a1,1,0,0,0-1-1h-6a1,1,0,0,0-1,1V112.9h-3a1,1,0,0,1-1-1V101.438l8-6.2,8,6.2V111.9Z" transform="translate(-100.156 -93)"/>
+        </svg>
+      </a>
+    </div>
+    <nav class="l-gHead__main l-gNav gNav">
+      <div class="gNav__item js-gNav">
+        <a href="../group/index.php">バンダイナムコ<span class="u-break">グループ</span></a>
+        <span class="btn-spNav js-spNav icn-square-plus"></span>
+        <div class="l-gNav__inner">
+          <div class="l-childNav childNav">
+            <div class="childNav-title"><a href="../group/index.php">バンダイナムコグループトップ</a></div>
+            <ul class="l-childNav__inner wrap">
+              <li class="l-childNav__block childNav__item"><a href="../group/grouplink.php" class="u-arrow-link">主要グループ会社</a></li>
+              <li class="l-childNav__block childNav__item"><a href="../group/toyandhobby.php" class="u-arrow-link">トイホビーユニット</a></li>
+              <li class="l-childNav__block childNav__item"><a href="../group/digitalunit.php" class="u-arrow-link">デジタルユニット</a></li>
+              <li class="l-childNav__block childNav__item"><a href="../group/visualandmusic.php" class="u-arrow-link">映像音楽ユニット</a></li>
+              <li class="l-childNav__block childNav__item"><a href="../group/amusement.php" class="u-arrow-link">アミューズメントユニット</a></li>
+              <li class="l-childNav__block childNav__item"><a href="../group/affiliated.php" class="u-arrow-link">関連事業</a></li>
+              <li class="l-childNav__block childNav__item"><a href="../group/ip.php" class="u-arrow-link">主要IPのご紹介</a></li>
+              <li class="l-childNav__block childNav__item"><a href="../group/anniversary.php" class="u-arrow-link">アニバーサリー</a></li>
+              <li class="l-childNav__block childNav__item"><a href="../group/movie.php" class="u-arrow-link">バンダイナムコグループムービー</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="gNav__item js-gNav">
+        <a href="../about/index.html">会社<span class="u-break">情報</span></a>
+        <span class="btn-spNav js-spNav icn-square-plus"></span>
+        <div class="l-gNav__inner">
+          <div class="l-childNav childNav">
+            <div class="childNav-title"><a href="../about/index.html">会社情報トップ</a></div>
+            <ul class="l-childNav__inner wrap">
+              <li class="l-childNav__block childNav__item"><a href="../about/profile.html" class="u-arrow-link">会社概要</a></li>
+              <li class="l-childNav__block childNav__item"><a href="../about/purpose.html" class="u-arrow-link">Bandai Namco's Purpose</a></li>
+              <li class="l-childNav__block childNav__item"><a href="../about/history/index.html" class="u-arrow-link">歴史</a></li>
+              <li class="l-childNav__block childNav__item"><a href="../about/organization.html" class="u-arrow-link">組織体制</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="gNav__item js-gNav">
+        <a href="../ir/index.html">IR・<span class="u-break">投資家情報</span></a>
+        <span class="btn-spNav js-spNav icn-square-plus"></span>
+        <div class="l-gNav__inner">
+          <div class="l-childNav childNav">
+            <div class="childNav-title"><a href="../ir/index.html">IR・投資家情報トップ</a></div>
+            <div class="l-childNav__inner">
+              <ul class="l-childNav__block glow1">
+                <li class="childNav__item">
+                  <a href="../ir/message/index.html" class="u-arrow-link">トップメッセージ</a>
+                  <ul class="grand-childNav">
+                    <li><a href="../ir/message/midtermplan.html">中期計画</a></li>
+                    <li><a href="../ir/message/businessrisk.html">事業等のリスク</a></li>
+                  </ul>
+                </li>
+                <li class="childNav__item"><a href="../ir/library/index.html" class="u-arrow-link">IRライブラリ</a>
+                  <ul class="grand-childNav">
+                    <li><a href="../ir/library/highlight/index.html">決算ハイライト</a></li>
+                    <li><a href="../ir/library/financialstatements.html">決算短信・説明会資料</a></li>
+                    <li><a href="../ir/library/securities.html">有価証券報告書</a></li>
+                    <li><a href="../ir/library/integratedreports2026.html">統合レポート2026</a></li>
+                    <li><a href="../ir/library/integratedreports.html">統合レポート</a></li>
+                    <li><a href="../ir/library/newsletter82.html">ニュースレターNo.82</a></li>
+                    <li><a href="../ir/library/newsletter.html">ニュースレター</a></li>
+                  </ul>
+                </li>
+                <li class="childNav__item"><a href="../ir/calendar/index.html" class="u-arrow-link">IRカレンダー</a></li>
+              </ul>
+              <ul class="l-childNav__block glow1">
+                <li class="childNav__item"><a href="../ir/financial/index.html" class="u-arrow-link">業績・財務情報</a>
+                  <ul class="grand-childNav">
+                    <li><a href="../ir/financial/segment.html">セグメント別業績</a></li>
+                    <li><a href="../ir/financial/area.html">ご参考：地域別業績</a></li>
+                    <li><a href="../ir/financial/market.html">ご参考：関連市場データ</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="l-childNav__block glow1">
+                <li class="childNav__item"><a href="../ir/stock/index.html" class="u-arrow-link">株式・債券情報</a>
+                  <ul class="grand-childNav">
+                    <li><a href="../ir/stock/shareholder.html">株主の状況</a></li>
+                    <li><a href="../ir/stock/chart.html">株価情報</a></li>
+                    <li><a href="../ir/stock/meeting.html">株主総会</a></li>
+                    <li><a href="../ir/stock/dividend.html">配当の状況</a></li>
+                    <li><a href="../ir/stock/procedure.html">株式諸手続のご案内</a></li>
+                    <li><a href="../ir/stock/treatment.html">株主さまご優待</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="l-childNav__block glow2">
+                <li class="childNav__item"><a href="../ir/legal.html" class="u-arrow-link">法定公告</a></li>
+                <li class="childNav__item"><a href="../ir/individual/index.html" class="u-arrow-link">個人投資家のみなさまへ</a></li>
+                <li class="childNav__item"><a href="../ir/interview/index.html" class="u-arrow-link">キーパーソンインタビュー</a></li>
+                <li class="childNav__item"><a href="../ir/faq.html" class="u-arrow-link">よくいただくご質問</a></li>
+                <li class="childNav__item"><a href="../ir/ir_policy.html" class="u-arrow-link">IRポリシー</a></li>
+                <li class="childNav__item"><a href="../ir/disclaimer.html" class="u-arrow-link">免責事項</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gNav__item js-gNav">
+        <a href="../releases/index.html">プレス<span class="u-break">リリース</span></a>
+        <span class="btn-spNav js-spNav icn-square-plus"></span>
+        <div class="l-gNav__inner">
+          <div class="l-childNav childNav">
+            <div class="childNav-title"><a href="../releases/index.html">プレスリリーストップ</a></div>
+            <ul class="l-childNav__inner wrap js-releases-year-list">
+            </ul>
+            <ul class="l-childNav__inner wrap">
+              <li class="l-childNav__block childNav__item"><a href="../group/release.php" class="u-arrow-link">商品・サービスのニュースリリース一覧はこちら</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="gNav__item "><a href="https://www.bandainamco.co.jp/sustainability/" target="_blank">サステナビリティ<i class="u-outerlink"></i></a></div>
+      <div class="gNav__item "><a href="https://www.bandainamco.co.jp/recruit/" target="_blank">グループ<span class="u-break">採用情報</span><i class="u-outerlink"></i></a></div>
+    </nav>
+    <div class="l-gHead__sns">
+      <a href="https://x.com/bnhd_official?t=sMy5xeboPQKPSFNT7GvDJw&s=06" target="_blank"><img src="../assets/img/logo-x.svg" alt="Bandai Namco Holdings X" width="32" height="32"></a>
+    </div>
+    <nav class="l-gHead__lang langNav">
+      <div class="langNav__item current">JP</div>
+      <div class="langNav__item"><a href="../en/err/403forbid.html">EN</a></div>
+    </nav>
+    <div tabindex="0" class="l-gHead__search js-searchOpenTrigger">
+      <span class="gNav-icon" title="サイト内検索">
+        <svg class="magnify" xmlns="http://www.w3.org/2000/svg" width="19.94" height="19.906" viewBox="0 0 19.94 19.906">
+          <path d="M1265.41,113.3l-3.66-3.663a8.987,8.987,0,1,0-1.41,1.408l3.67,3.663A0.993,0.993,0,1,0,1265.41,113.3Zm-15.58-4.324a6.964,6.964,0,1,1,9.88-.029c-0.01.009-.03,0.012-0.04,0.022a0.059,0.059,0,0,1-.02.033A6.958,6.958,0,0,1,1249.83,108.974Z" transform="translate(-1245.78 -95.094)"/>
+        </svg>
+      </span>
+    </div>
+    <div class="l-gHead__search-inner js-searchOpenForm">
+      <div class="search-block">
+        <form action="/cgi-bin/search/index.cgi/search/index" method="post">
+          <div role="group" aria-labelledby="searchFormLabel">
+            <span id="searchFormLabel" class="visually-hidden">サイト内検索フォーム</span>
+            <input type="text" name="kw" class="search-block__field" placeholder="キーワードを入力してください" aria-label="検索キーワード入力"><input type="hidden" name="search_other" value="1" /><input type="hidden" name="search_press_release" value="1" />
+            <span class="icn-search"></span><input type="submit" value="検索" class="search-block__button" aria-label="検索実行">
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="l-bNav">
+  <nav class="l-bNav__inner bNav">
+    <span class="bNav__item"><a href="../index.html">TOP</a></span>
+    <span class="bNav__item current">アクセス拒否</span>
+  </nav>
+</div>
+
+<main>
+  <div class="l-main-title red">
+    <div class="l-main-title__banner">
+      <h1 class="main-title">
+        <span class="fukidashi"><img src="../assets/img/ti-403.svg" alt="403 Error"></span>
+      </h1>
+    </div>
+  </div>
+
+  <div class="l-main">
+
+    <div class="l-content">
+      <h1 class="page-title">アクセス拒否</h1>
+      <div class="l-content__inner entry">
+        <h2>Access Denied</h2>
+        <p>お客様のアクセスは制限されています。<br>
+          アクセス権限がない可能性があります。<br>
+          お手数ですが、トップページに戻るか、管理者にご連絡ください。</p>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+</main>
+<footer>
+  <div class="l-gFoot">
+    <ul class="l-gFoot__inner gFoot">
+      <li class="gFoot__item"><a href="../contact/index.html">お問い合わせ</a></li>
+      <li class="gFoot__item"><a href="../privacy/index.html">プライバシーポリシー</a></li>
+      <li class="gFoot__item"><a href="../accessibility/index.html">ウェブアクセシビリティ方針</a></li>
+      <li class="gFoot__item"><a tabindex="0" class="ot-sdk-show-settings">クッキー設定</a></li>
+      <li class="gFoot__item"><a href="../terms/index.html">サイトご利用にあたって</a></li>
+      <li class="gFoot__item"><a href="../sitemap/index.html">サイトマップ</a></li>
+    </ul>
+    <div class="l-gFoot__inner footer-logo">
+      <div class="logo"><img src="../assets/img/logo.svg" alt="Bandai Namco"/></div>
+      <p class="copyright">Copyright &copy; Bandai Namco Holdings Inc. <span class="u-break">All rights reserved.</span></p>
+    </div>
+  </div>
+</footer>
+</div><!-- // l-wrap -->
+
+<div class="l-scrolltop">
+  <a href="#" class="btn-scrolltop"></a>
+</div>
+<script src="../assets/js/jquery-3.6.0.min.js"></script>
+<script src="../assets/js/smooth-scroll.min.js"></script>
+<script src="../assets/js/common.js"></script>
+<script src="../assets/groupHeader/js/groupHeader.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer',__GTMID);</script>
+<!-- End Google Tag Manager -->
+</body>
+</html>

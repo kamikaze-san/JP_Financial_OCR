@@ -1,0 +1,246 @@
+{
+ "metadata": {
+  "title": "",
+  "is_amended": false,
+  "unit_raw": "(単位：千円)",
+  "periods": [
+   {
+    "col_index": 1,
+    "raw_label": "column 1",
+    "raw_date": "2026年２月28日"
+   },
+   {
+    "col_index": 2,
+    "raw_label": "column 2",
+    "raw_date": "2026年８月31日"
+   }
+  ]
+ },
+ "rows": [
+  {
+   "row_index": 1,
+   "indent_level": 0,
+   "account_raw": "負債及び資本",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 2,
+   "indent_level": 1,
+   "account_raw": "負債",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 3,
+   "indent_level": 1,
+   "account_raw": "流動負債",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 4,
+   "indent_level": 2,
+   "account_raw": "営業債務及びその他の債務",
+   "role": "item",
+   "values": [
+    "200,150",
+    "258,748"
+   ]
+  },
+  {
+   "row_index": 5,
+   "indent_level": 2,
+   "account_raw": "借入金",
+   "role": "item",
+   "values": [
+    "532,000",
+    "532,000"
+   ]
+  },
+  {
+   "row_index": 6,
+   "indent_level": 2,
+   "account_raw": "リース負債",
+   "role": "item",
+   "values": [
+    "48,545",
+    "96,809"
+   ]
+  },
+  {
+   "row_index": 7,
+   "indent_level": 2,
+   "account_raw": "未払法人所得税",
+   "role": "item",
+   "values": [
+    "235,253",
+    "40,355"
+   ]
+  },
+  {
+   "row_index": 8,
+   "indent_level": 2,
+   "account_raw": "引当金",
+   "role": "item",
+   "values": [
+    "11,705",
+    "-"
+   ]
+  },
+  {
+   "row_index": 9,
+   "indent_level": 2,
+   "account_raw": "その他の流動負債",
+   "role": "item",
+   "values": [
+    "497,656",
+    "419,319"
+   ]
+  },
+  {
+   "row_index": 10,
+   "indent_level": 2,
+   "account_raw": "流動負債合計",
+   "role": "subtotal",
+   "values": [
+    "1,525,309",
+    "1,347,231"
+   ]
+  },
+  {
+   "row_index": 11,
+   "indent_level": 1,
+   "account_raw": "非流動負債",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 12,
+   "indent_level": 2,
+   "account_raw": "借入金",
+   "role": "item",
+   "values": [
+    "531,790",
+    "265,790"
+   ]
+  },
+  {
+   "row_index": 13,
+   "indent_level": 2,
+   "account_raw": "リース負債",
+   "role": "item",
+   "values": [
+    "222,712",
+    "387,179"
+   ]
+  },
+  {
+   "row_index": 14,
+   "indent_level": 2,
+   "account_raw": "引当金",
+   "role": "item",
+   "values": [
+    "23,000",
+    "59,646"
+   ]
+  },
+  {
+   "row_index": 15,
+   "indent_level": 2,
+   "account_raw": "非流動負債合計",
+   "role": "subtotal",
+   "values": [
+    "777,502",
+    "712,615"
+   ]
+  },
+  {
+   "row_index": 16,
+   "indent_level": 1,
+   "account_raw": "負債合計",
+   "role": "subtotal",
+   "values": [
+    "2,302,811",
+    "2,059,846"
+   ]
+  },
+  {
+   "row_index": 17,
+   "indent_level": 1,
+   "account_raw": "資本",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 18,
+   "indent_level": 2,
+   "account_raw": "資本金",
+   "role": "item",
+   "values": [
+    "185,385",
+    "194,141"
+   ]
+  },
+  {
+   "row_index": 19,
+   "indent_level": 2,
+   "account_raw": "資本剰余金",
+   "role": "item",
+   "values": [
+    "2,230,702",
+    "2,198,579"
+   ]
+  },
+  {
+   "row_index": 20,
+   "indent_level": 2,
+   "account_raw": "利益剰余金",
+   "role": "item",
+   "values": [
+    "5,244,936",
+    "5,070,023"
+   ]
+  },
+  {
+   "row_index": 21,
+   "indent_level": 2,
+   "account_raw": "自己株式",
+   "role": "item",
+   "values": [
+    "△468,770",
+    "△477,469"
+   ]
+  },
+  {
+   "row_index": 22,
+   "indent_level": 2,
+   "account_raw": "親会社の所有者に帰属する持分合計",
+   "role": "subtotal",
+   "values": [
+    "7,192,253",
+    "6,985,275"
+   ]
+  },
+  {
+   "row_index": 23,
+   "indent_level": 1,
+   "account_raw": "資本合計",
+   "role": "subtotal",
+   "values": [
+    "7,192,253",
+    "6,985,275"
+   ]
+  },
+  {
+   "row_index": 24,
+   "indent_level": 1,
+   "account_raw": "負債及び資本合計",
+   "role": "subtotal",
+   "values": [
+    "9,495,065",
+    "9,045,120"
+   ]
+  }
+ ]
+}

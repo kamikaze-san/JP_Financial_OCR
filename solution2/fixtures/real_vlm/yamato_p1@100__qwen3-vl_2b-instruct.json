@@ -1,0 +1,1127 @@
+{
+  "metadata": {
+    "title": "連結貸借対照表",
+    "is_amended": false,
+    "unit_raw": "単位：千円",
+    "periods": [
+      {
+        "col_index": 1,
+        "raw_label": "金額",
+        "raw_date": "2021年3月31日現在"
+      },
+      {
+        "col_index": 2,
+        "raw_label": "金額",
+        "raw_date": "2021年3月31日現在"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "row_index": 0,
+      "indent_level": 0,
+      "account_raw": "連結貸借対照表",
+      "role": "section_header",
+      "values": [
+        "（2021年3月31日現在）",
+        "（単位：千円）"
+      ]
+    },
+    {
+      "row_index": 1,
+      "indent_level": 0,
+      "account_raw": "資産の部",
+      "role": "group_header",
+      "values": [
+        "資産",
+        "資産"
+      ]
+    },
+    {
+      "row_index": 2,
+      "indent_level": 1,
+      "account_raw": "流動資産",
+      "role": "category_header",
+      "values": [
+        "流動資産",
+        "4,518,204"
+      ]
+    },
+    {
+      "row_index": 3,
+      "indent_level": 2,
+      "account_raw": "現金及び預金",
+      "role": "item",
+      "values": [
+        "6,727,851",
+        "2,431,543"
+      ]
+    },
+    {
+      "row_index": 4,
+      "indent_level": 2,
+      "account_raw": "受取手形及び売掛金",
+      "role": "item",
+      "values": [
+        "2,597,733",
+        "2,597,733"
+      ]
+    },
+    {
+      "row_index": 5,
+      "indent_level": 2,
+      "account_raw": "電子記録債権",
+      "role": "item",
+      "values": [
+        "619,236",
+        "619,236"
+      ]
+    },
+    {
+      "row_index": 6,
+      "indent_level": 2,
+      "account_raw": "たな卸資産",
+      "role": "item",
+      "values": [
+        "941,263",
+        "941,263"
+      ]
+    },
+    {
+      "row_index": 7,
+      "indent_level": 2,
+      "account_raw": "その他",
+      "role": "item",
+      "values": [
+        "138,073",
+        "138,073"
+      ]
+    },
+    {
+      "row_index": 8,
+      "indent_level": 1,
+      "account_raw": "固定資産",
+      "role": "category_header",
+      "values": [
+        "固定資産",
+        "2,770,234"
+      ]
+    },
+    {
+      "row_index": 9,
+      "indent_level": 2,
+      "account_raw": "有形固定資産",
+      "role": "item",
+      "values": [
+        "1,669,735",
+        "1,669,735"
+      ]
+    },
+    {
+      "row_index": 10,
+      "indent_level": 2,
+      "account_raw": "建物及び構築物",
+      "role": "item",
+      "values": [
+        "280,299",
+        "280,299"
+      ]
+    },
+    {
+      "row_index": 11,
+      "indent_level": 2,
+      "account_raw": "機械装置及び運搬具",
+      "role": "item",
+      "values": [
+        "482,581",
+        "482,581"
+      ]
+    },
+    {
+      "row_index": 12,
+      "indent_level": 2,
+      "account_raw": "土地",
+      "role": "item",
+      "values": [
+        "768,976",
+        "768,976"
+      ]
+    },
+    {
+      "row_index": 13,
+      "indent_level": 2,
+      "account_raw": "リース資産",
+      "role": "item",
+      "values": [
+        "63,003",
+        "63,003"
+      ]
+    },
+    {
+      "row_index": 14,
+      "indent_level": 2,
+      "account_raw": "建設仮勘定",
+      "role": "item",
+      "values": [
+        "120",
+        "120"
+      ]
+    },
+    {
+      "row_index": 15,
+      "indent_level": 2,
+      "account_raw": "その他",
+      "role": "item",
+      "values": [
+        "74,753",
+        "74,753"
+      ]
+    },
+    {
+      "row_index": 16,
+      "indent_level": 1,
+      "account_raw": "無形固定資産",
+      "role": "category_header",
+      "values": [
+        "無形固定資産",
+        "29,819"
+      ]
+    },
+    {
+      "row_index": 17,
+      "indent_level": 2,
+      "account_raw": "リース資産",
+      "role": "item",
+      "values": [
+        "11,682",
+        "11,682"
+      ]
+    },
+    {
+      "row_index": 18,
+      "indent_level": 2,
+      "account_raw": "その他",
+      "role": "item",
+      "values": [
+        "18,136",
+        "18,136"
+      ]
+    },
+    {
+      "row_index": 19,
+      "indent_level": 1,
+      "account_raw": "投資その他の資産",
+      "role": "category_header",
+      "values": [
+        "投資その他の資産",
+        "191,561"
+      ]
+    },
+    {
+      "row_index": 20,
+      "indent_level": 2,
+      "account_raw": "投資有価証券",
+      "role": "item",
+      "values": [
+        "34,046",
+        "34,046"
+      ]
+    },
+    {
+      "row_index": 21,
+      "indent_level": 2,
+      "account_raw": "その他",
+      "role": "item",
+      "values": [
+        "160,344",
+        "160,344"
+      ]
+    },
+    {
+      "row_index": 22,
+      "indent_level": 2,
+      "account_raw": "貸倒引当金",
+      "role": "item",
+      "values": [
+        "△2,830",
+        "△2,830"
+      ]
+    },
+    {
+      "row_index": 23,
+      "indent_level": 1,
+      "account_raw": "負債合計",
+      "role": "netted_item",
+      "values": [
+        "7,288,439",
+        "7,288,439"
+      ]
+    },
+    {
+      "row_index": 24,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 25,
+      "indent_level": 1,
+      "account_raw": "資産合計",
+      "role": "grand_total",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 26,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "grand_total",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 27,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 28,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 29,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 30,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 31,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 32,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 33,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 34,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 35,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 36,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 37,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 38,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 39,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 40,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 41,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 42,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 43,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 44,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 45,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 46,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 47,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 48,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 49,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 50,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 51,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 52,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 53,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 54,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 55,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 56,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 57,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 58,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 59,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 60,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 61,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 62,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 63,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 64,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 65,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 66,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 67,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 68,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 69,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 70,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 71,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 72,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 73,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 74,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 75,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 76,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 77,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 78,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 79,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 80,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 81,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 82,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 83,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 84,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 85,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 86,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 87,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 88,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 89,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 90,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 91,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 92,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 93,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 94,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 95,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 96,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 97,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 98,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 99,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 100,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 101,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 102,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 103,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 104,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 105,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 106,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 107,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 108,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 109,
+      "indent_level": 1,
+      "account_raw": "純資産合計",
+      "role": "netted_item",
+      "values": [
+        "1,330,527",
+        "1,330,527"
+      ]
+    },
+    {
+      "row_index": 110,
+      "indent_level": 1,
+      "account_raw": "負債・純資産合計",
+      "role": "netted_item",
+      "values": [
+        "8,618,966",
+        "8,618,966

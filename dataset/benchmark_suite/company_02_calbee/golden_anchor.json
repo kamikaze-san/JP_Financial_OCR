@@ -1,0 +1,1412 @@
+{
+  "document_title": "四半期連結貸借対照表",
+  "is_amended": false,
+  "currency": "JPY",
+  "unit_multiplier": 1000000,
+  "unit_raw": "(単位：百万円)",
+  "periods": [
+    {
+      "col_index": 1,
+      "raw_label": "前連結会計年度",
+      "date": "2026-03-31",
+      "fiscal_year": 2026,
+      "is_consolidated": true
+    },
+    {
+      "col_index": 2,
+      "raw_label": "当第1四半期連結会計期間",
+      "date": "2026-06-30",
+      "fiscal_year": 2026,
+      "is_consolidated": true
+    }
+  ],
+  "items": [
+    {
+      "row_index": 1,
+      "indent_level": 0,
+      "account_jp": "資産の部",
+      "account_en": "資産の部",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "section_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 2,
+      "indent_level": 1,
+      "account_jp": "流動資産",
+      "account_en": "流動資産",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "group_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 3,
+      "indent_level": 2,
+      "account_jp": "現金及び預金",
+      "account_en": "Cash and deposits",
+      "xbrl_element": "CashAndDeposits",
+      "ma_bucket": "cash_and_equivalents",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "51,548",
+        "2026-06-30": "45,234"
+      },
+      "reported_values": {
+        "2026-03-31": 51548.0,
+        "2026-06-30": 45234.0
+      },
+      "normalized_values": {
+        "2026-03-31": 51548000000.0,
+        "2026-06-30": 45234000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 4,
+      "indent_level": 2,
+      "account_jp": "受取手形及び売掛金",
+      "account_en": "受取手形及び売掛金",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "43,832",
+        "2026-06-30": "44,253"
+      },
+      "reported_values": {
+        "2026-03-31": 43832.0,
+        "2026-06-30": 44253.0
+      },
+      "normalized_values": {
+        "2026-03-31": 43832000000.0,
+        "2026-06-30": 44253000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 5,
+      "indent_level": 2,
+      "account_jp": "棚卸資産",
+      "account_en": "Inventories (Aggregated)",
+      "xbrl_element": "Inventories",
+      "ma_bucket": "inventory",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "29,092",
+        "2026-06-30": "30,298"
+      },
+      "reported_values": {
+        "2026-03-31": 29092.0,
+        "2026-06-30": 30298.0
+      },
+      "normalized_values": {
+        "2026-03-31": 29092000000.0,
+        "2026-06-30": 30298000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 6,
+      "indent_level": 2,
+      "account_jp": "その他",
+      "account_en": "Other current assets",
+      "xbrl_element": "OtherCurrentAssets",
+      "ma_bucket": "other_current_assets",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "7,386",
+        "2026-06-30": "6,940"
+      },
+      "reported_values": {
+        "2026-03-31": 7386.0,
+        "2026-06-30": 6940.0
+      },
+      "normalized_values": {
+        "2026-03-31": 7386000000.0,
+        "2026-06-30": 6940000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 7,
+      "indent_level": 2,
+      "account_jp": "貸倒引当金",
+      "account_en": "Allowance for doubtful accounts",
+      "xbrl_element": "AllowanceForDoubtfulAccountsCurrentAssets",
+      "ma_bucket": "contra_asset",
+      "role": "contra_item",
+      "raw_values": {
+        "2026-03-31": "△174",
+        "2026-06-30": "△192"
+      },
+      "reported_values": {
+        "2026-03-31": -174.0,
+        "2026-06-30": -192.0
+      },
+      "normalized_values": {
+        "2026-03-31": -174000000.0,
+        "2026-06-30": -192000000.0
+      },
+      "parent_account": "その他"
+    },
+    {
+      "row_index": 8,
+      "indent_level": 1,
+      "account_jp": "流動資産合計",
+      "account_en": "Total current assets",
+      "xbrl_element": "CurrentAssets",
+      "ma_bucket": "subtotal",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "131,684",
+        "2026-06-30": "126,534"
+      },
+      "reported_values": {
+        "2026-03-31": 131684.0,
+        "2026-06-30": 126534.0
+      },
+      "normalized_values": {
+        "2026-03-31": 131684000000.0,
+        "2026-06-30": 126534000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 9,
+      "indent_level": 1,
+      "account_jp": "固定資産",
+      "account_en": "固定資産",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "group_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 10,
+      "indent_level": 2,
+      "account_jp": "有形固定資産",
+      "account_en": "有形固定資産",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "category_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 11,
+      "indent_level": 3,
+      "account_jp": "建物及び構築物(純額)",
+      "account_en": "Buildings and structures (Net)",
+      "xbrl_element": "BuildingsAndStructures",
+      "ma_bucket": "ppe_tangible",
+      "role": "netted_item",
+      "raw_values": {
+        "2026-03-31": "73,598",
+        "2026-06-30": "73,360"
+      },
+      "reported_values": {
+        "2026-03-31": 73598.0,
+        "2026-06-30": 73360.0
+      },
+      "normalized_values": {
+        "2026-03-31": 73598000000.0,
+        "2026-06-30": 73360000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 12,
+      "indent_level": 3,
+      "account_jp": "機械装置及び運搬具(純額)",
+      "account_en": "Machinery, equipment and vehicles (Net)",
+      "xbrl_element": "MachineryEquipmentAndVehicles",
+      "ma_bucket": "ppe_tangible",
+      "role": "netted_item",
+      "raw_values": {
+        "2026-03-31": "52,827",
+        "2026-06-30": "52,213"
+      },
+      "reported_values": {
+        "2026-03-31": 52827.0,
+        "2026-06-30": 52213.0
+      },
+      "normalized_values": {
+        "2026-03-31": 52827000000.0,
+        "2026-06-30": 52213000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 13,
+      "indent_level": 3,
+      "account_jp": "土地",
+      "account_en": "Land",
+      "xbrl_element": "Land",
+      "ma_bucket": "ppe_tangible",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "21,331",
+        "2026-06-30": "21,324"
+      },
+      "reported_values": {
+        "2026-03-31": 21331.0,
+        "2026-06-30": 21324.0
+      },
+      "normalized_values": {
+        "2026-03-31": 21331000000.0,
+        "2026-06-30": 21324000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 14,
+      "indent_level": 3,
+      "account_jp": "建設仮勘定",
+      "account_en": "Construction in progress",
+      "xbrl_element": "ConstructionInProgress",
+      "ma_bucket": "ppe_tangible",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "4,048",
+        "2026-06-30": "5,079"
+      },
+      "reported_values": {
+        "2026-03-31": 4048.0,
+        "2026-06-30": 5079.0
+      },
+      "normalized_values": {
+        "2026-03-31": 4048000000.0,
+        "2026-06-30": 5079000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 15,
+      "indent_level": 3,
+      "account_jp": "その他(純額)",
+      "account_en": "Other property, plant and equipment (Net)",
+      "xbrl_element": "OtherPPE",
+      "ma_bucket": "ppe_tangible",
+      "role": "netted_item",
+      "raw_values": {
+        "2026-03-31": "3,656",
+        "2026-06-30": "5,487"
+      },
+      "reported_values": {
+        "2026-03-31": 3656.0,
+        "2026-06-30": 5487.0
+      },
+      "normalized_values": {
+        "2026-03-31": 3656000000.0,
+        "2026-06-30": 5487000000.0
+      },
+      "parent_account": "建設仮勘定"
+    },
+    {
+      "row_index": 16,
+      "indent_level": 2,
+      "account_jp": "有形固定資産合計",
+      "account_en": "Total property, plant and equipment",
+      "xbrl_element": "PropertyPlantAndEquipment",
+      "ma_bucket": "subtotal",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "155,463",
+        "2026-06-30": "157,466"
+      },
+      "reported_values": {
+        "2026-03-31": 155463.0,
+        "2026-06-30": 157466.0
+      },
+      "normalized_values": {
+        "2026-03-31": 155463000000.0,
+        "2026-06-30": 157466000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 17,
+      "indent_level": 2,
+      "account_jp": "無形固定資産",
+      "account_en": "無形固定資産",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "category_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 18,
+      "indent_level": 3,
+      "account_jp": "のれん",
+      "account_en": "Goodwill",
+      "xbrl_element": "Goodwill",
+      "ma_bucket": "intangibles",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "20,987",
+        "2026-06-30": "20,575"
+      },
+      "reported_values": {
+        "2026-03-31": 20987.0,
+        "2026-06-30": 20575.0
+      },
+      "normalized_values": {
+        "2026-03-31": 20987000000.0,
+        "2026-06-30": 20575000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 19,
+      "indent_level": 3,
+      "account_jp": "その他",
+      "account_en": "Other intangible assets",
+      "xbrl_element": "OtherIntangibleAssets",
+      "ma_bucket": "intangibles",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "3,757",
+        "2026-06-30": "3,733"
+      },
+      "reported_values": {
+        "2026-03-31": 3757.0,
+        "2026-06-30": 3733.0
+      },
+      "normalized_values": {
+        "2026-03-31": 3757000000.0,
+        "2026-06-30": 3733000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 20,
+      "indent_level": 2,
+      "account_jp": "無形固定資産合計",
+      "account_en": "Total intangible assets",
+      "xbrl_element": "IntangibleAssets",
+      "ma_bucket": "subtotal",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "24,745",
+        "2026-06-30": "24,309"
+      },
+      "reported_values": {
+        "2026-03-31": 24745.0,
+        "2026-06-30": 24309.0
+      },
+      "normalized_values": {
+        "2026-03-31": 24745000000.0,
+        "2026-06-30": 24309000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 21,
+      "indent_level": 2,
+      "account_jp": "投資その他の資産",
+      "account_en": "投資その他の資産",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "category_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 22,
+      "indent_level": 3,
+      "account_jp": "投資その他の資産",
+      "account_en": "投資その他の資産",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "15,727",
+        "2026-06-30": "15,461"
+      },
+      "reported_values": {
+        "2026-03-31": 15727.0,
+        "2026-06-30": 15461.0
+      },
+      "normalized_values": {
+        "2026-03-31": 15727000000.0,
+        "2026-06-30": 15461000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 23,
+      "indent_level": 3,
+      "account_jp": "貸倒引当金",
+      "account_en": "Allowance for doubtful accounts (Non-current)",
+      "xbrl_element": "AllowanceForDoubtfulAccountsNoncurrent",
+      "ma_bucket": "contra_asset",
+      "role": "contra_item",
+      "raw_values": {
+        "2026-03-31": "△12",
+        "2026-06-30": "△12"
+      },
+      "reported_values": {
+        "2026-03-31": -12.0,
+        "2026-06-30": -12.0
+      },
+      "normalized_values": {
+        "2026-03-31": -12000000.0,
+        "2026-06-30": -12000000.0
+      },
+      "parent_account": "投資その他の資産"
+    },
+    {
+      "row_index": 24,
+      "indent_level": 2,
+      "account_jp": "投資その他の資産合計",
+      "account_en": "Total investments and other assets",
+      "xbrl_element": "InvestmentsAndOtherAssets",
+      "ma_bucket": "subtotal",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "15,715",
+        "2026-06-30": "15,449"
+      },
+      "reported_values": {
+        "2026-03-31": 15715.0,
+        "2026-06-30": 15449.0
+      },
+      "normalized_values": {
+        "2026-03-31": 15715000000.0,
+        "2026-06-30": 15449000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 25,
+      "indent_level": 1,
+      "account_jp": "固定資産合計",
+      "account_en": "Total non-current assets",
+      "xbrl_element": "NoncurrentAssets",
+      "ma_bucket": "subtotal",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "195,924",
+        "2026-06-30": "197,225"
+      },
+      "reported_values": {
+        "2026-03-31": 195924.0,
+        "2026-06-30": 197225.0
+      },
+      "normalized_values": {
+        "2026-03-31": 195924000000.0,
+        "2026-06-30": 197225000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 26,
+      "indent_level": 0,
+      "account_jp": "資産合計",
+      "account_en": "Total assets",
+      "xbrl_element": "Assets",
+      "ma_bucket": "grand_total",
+      "role": "grand_total",
+      "raw_values": {
+        "2026-03-31": "327,609",
+        "2026-06-30": "323,759"
+      },
+      "reported_values": {
+        "2026-03-31": 327609.0,
+        "2026-06-30": 323759.0
+      },
+      "normalized_values": {
+        "2026-03-31": 327609000000.0,
+        "2026-06-30": 323759000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 27,
+      "indent_level": 0,
+      "account_jp": "負債の部",
+      "account_en": "負債の部",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "section_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 28,
+      "indent_level": 1,
+      "account_jp": "流動負債",
+      "account_en": "流動負債",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "group_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 29,
+      "indent_level": 2,
+      "account_jp": "支払手形及び買掛金",
+      "account_en": "支払手形及び買掛金",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "14,739",
+        "2026-06-30": "15,900"
+      },
+      "reported_values": {
+        "2026-03-31": 14739.0,
+        "2026-06-30": 15900.0
+      },
+      "normalized_values": {
+        "2026-03-31": 14739000000.0,
+        "2026-06-30": 15900000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 30,
+      "indent_level": 2,
+      "account_jp": "短期借入金",
+      "account_en": "Short-term borrowings",
+      "xbrl_element": "ShortTermBorrowings",
+      "ma_bucket": "short_term_debt",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "1,766",
+        "2026-06-30": "1,714"
+      },
+      "reported_values": {
+        "2026-03-31": 1766.0,
+        "2026-06-30": 1714.0
+      },
+      "normalized_values": {
+        "2026-03-31": 1766000000.0,
+        "2026-06-30": 1714000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 31,
+      "indent_level": 2,
+      "account_jp": "1年内返済予定の長期借入金",
+      "account_en": "Current portion of long-term borrowings",
+      "xbrl_element": "CurrentPortionOfLongTermBorrowings",
+      "ma_bucket": "short_term_debt",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "10,000",
+        "2026-06-30": "10,000"
+      },
+      "reported_values": {
+        "2026-03-31": 10000.0,
+        "2026-06-30": 10000.0
+      },
+      "normalized_values": {
+        "2026-03-31": 10000000000.0,
+        "2026-06-30": 10000000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 32,
+      "indent_level": 2,
+      "account_jp": "未払法人税等",
+      "account_en": "Income taxes payable",
+      "xbrl_element": "IncomeTaxesPayable",
+      "ma_bucket": "other_current_liabilities",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "4,154",
+        "2026-06-30": "1,784"
+      },
+      "reported_values": {
+        "2026-03-31": 4154.0,
+        "2026-06-30": 1784.0
+      },
+      "normalized_values": {
+        "2026-03-31": 4154000000.0,
+        "2026-06-30": 1784000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 33,
+      "indent_level": 2,
+      "account_jp": "賞与引当金",
+      "account_en": "Provision for bonuses",
+      "xbrl_element": "ProvisionForBonuses",
+      "ma_bucket": "other_current_liabilities",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "5,860",
+        "2026-06-30": "2,238"
+      },
+      "reported_values": {
+        "2026-03-31": 5860.0,
+        "2026-06-30": 2238.0
+      },
+      "normalized_values": {
+        "2026-03-31": 5860000000.0,
+        "2026-06-30": 2238000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 34,
+      "indent_level": 2,
+      "account_jp": "役員賞与引当金",
+      "account_en": "役員賞与引当金",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "159",
+        "2026-06-30": "86"
+      },
+      "reported_values": {
+        "2026-03-31": 159.0,
+        "2026-06-30": 86.0
+      },
+      "normalized_values": {
+        "2026-03-31": 159000000.0,
+        "2026-06-30": 86000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 35,
+      "indent_level": 2,
+      "account_jp": "株式給付引当金",
+      "account_en": "株式給付引当金",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "43",
+        "2026-06-30": "66"
+      },
+      "reported_values": {
+        "2026-03-31": 43.0,
+        "2026-06-30": 66.0
+      },
+      "normalized_values": {
+        "2026-03-31": 43000000.0,
+        "2026-06-30": 66000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 36,
+      "indent_level": 2,
+      "account_jp": "株主優待引当金",
+      "account_en": "株主優待引当金",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "82",
+        "2026-06-30": "82"
+      },
+      "reported_values": {
+        "2026-03-31": 82.0,
+        "2026-06-30": 82.0
+      },
+      "normalized_values": {
+        "2026-03-31": 82000000.0,
+        "2026-06-30": 82000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 37,
+      "indent_level": 2,
+      "account_jp": "資産除去債務",
+      "account_en": "Asset retirement obligations",
+      "xbrl_element": "AssetRetirementObligations",
+      "ma_bucket": "other_noncurrent_liabilities",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "24",
+        "2026-06-30": "-"
+      },
+      "reported_values": {
+        "2026-03-31": 24.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 24000000.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 38,
+      "indent_level": 2,
+      "account_jp": "その他",
+      "account_en": "Other current liabilities",
+      "xbrl_element": "OtherCurrentLiabilities",
+      "ma_bucket": "other_current_liabilities",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "28,109",
+        "2026-06-30": "30,341"
+      },
+      "reported_values": {
+        "2026-03-31": 28109.0,
+        "2026-06-30": 30341.0
+      },
+      "normalized_values": {
+        "2026-03-31": 28109000000.0,
+        "2026-06-30": 30341000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 39,
+      "indent_level": 1,
+      "account_jp": "流動負債合計",
+      "account_en": "Total current liabilities",
+      "xbrl_element": "CurrentLiabilities",
+      "ma_bucket": "subtotal",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "64,941",
+        "2026-06-30": "62,214"
+      },
+      "reported_values": {
+        "2026-03-31": 64941.0,
+        "2026-06-30": 62214.0
+      },
+      "normalized_values": {
+        "2026-03-31": 64941000000.0,
+        "2026-06-30": 62214000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 40,
+      "indent_level": 1,
+      "account_jp": "固定負債",
+      "account_en": "固定負債",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "group_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 41,
+      "indent_level": 2,
+      "account_jp": "長期借入金",
+      "account_en": "Long-term borrowings",
+      "xbrl_element": "LongTermBorrowings",
+      "ma_bucket": "long_term_debt",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "25,000",
+        "2026-06-30": "25,000"
+      },
+      "reported_values": {
+        "2026-03-31": 25000.0,
+        "2026-06-30": 25000.0
+      },
+      "normalized_values": {
+        "2026-03-31": 25000000000.0,
+        "2026-06-30": 25000000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 42,
+      "indent_level": 2,
+      "account_jp": "役員退職慰労引当金",
+      "account_en": "役員退職慰労引当金",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "125",
+        "2026-06-30": "22"
+      },
+      "reported_values": {
+        "2026-03-31": 125.0,
+        "2026-06-30": 22.0
+      },
+      "normalized_values": {
+        "2026-03-31": 125000000.0,
+        "2026-06-30": 22000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 43,
+      "indent_level": 2,
+      "account_jp": "役員株式給付引当金",
+      "account_en": "役員株式給付引当金",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "294",
+        "2026-06-30": "326"
+      },
+      "reported_values": {
+        "2026-03-31": 294.0,
+        "2026-06-30": 326.0
+      },
+      "normalized_values": {
+        "2026-03-31": 294000000.0,
+        "2026-06-30": 326000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 44,
+      "indent_level": 2,
+      "account_jp": "退職給付に係る負債",
+      "account_en": "Net defined benefit liability",
+      "xbrl_element": "NetDefinedBenefitLiability",
+      "ma_bucket": "pension_liabilities",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "8,687",
+        "2026-06-30": "8,151"
+      },
+      "reported_values": {
+        "2026-03-31": 8687.0,
+        "2026-06-30": 8151.0
+      },
+      "normalized_values": {
+        "2026-03-31": 8687000000.0,
+        "2026-06-30": 8151000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 45,
+      "indent_level": 2,
+      "account_jp": "資産除去債務",
+      "account_en": "Asset retirement obligations",
+      "xbrl_element": "AssetRetirementObligations",
+      "ma_bucket": "other_noncurrent_liabilities",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "3,272",
+        "2026-06-30": "3,290"
+      },
+      "reported_values": {
+        "2026-03-31": 3272.0,
+        "2026-06-30": 3290.0
+      },
+      "normalized_values": {
+        "2026-03-31": 3272000000.0,
+        "2026-06-30": 3290000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 46,
+      "indent_level": 2,
+      "account_jp": "その他",
+      "account_en": "Other non-current liabilities",
+      "xbrl_element": "OtherNoncurrentLiabilities",
+      "ma_bucket": "other_noncurrent_liabilities",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "3,514",
+        "2026-06-30": "5,882"
+      },
+      "reported_values": {
+        "2026-03-31": 3514.0,
+        "2026-06-30": 5882.0
+      },
+      "normalized_values": {
+        "2026-03-31": 3514000000.0,
+        "2026-06-30": 5882000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 47,
+      "indent_level": 1,
+      "account_jp": "固定負債合計",
+      "account_en": "Total non-current liabilities",
+      "xbrl_element": "NoncurrentLiabilities",
+      "ma_bucket": "subtotal",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "40,894",
+        "2026-06-30": "42,674"
+      },
+      "reported_values": {
+        "2026-03-31": 40894.0,
+        "2026-06-30": 42674.0
+      },
+      "normalized_values": {
+        "2026-03-31": 40894000000.0,
+        "2026-06-30": 42674000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 48,
+      "indent_level": 0,
+      "account_jp": "負債合計",
+      "account_en": "Total liabilities",
+      "xbrl_element": "Liabilities",
+      "ma_bucket": "grand_total",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "105,835",
+        "2026-06-30": "104,889"
+      },
+      "reported_values": {
+        "2026-03-31": 105835.0,
+        "2026-06-30": 104889.0
+      },
+      "normalized_values": {
+        "2026-03-31": 105835000000.0,
+        "2026-06-30": 104889000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 49,
+      "indent_level": 0,
+      "account_jp": "純資産の部",
+      "account_en": "純資産の部",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "section_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 50,
+      "indent_level": 1,
+      "account_jp": "株主資本",
+      "account_en": "株主資本",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "group_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 51,
+      "indent_level": 2,
+      "account_jp": "資本金",
+      "account_en": "Share capital",
+      "xbrl_element": "CapitalStock",
+      "ma_bucket": "equity",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "12,046",
+        "2026-06-30": "12,046"
+      },
+      "reported_values": {
+        "2026-03-31": 12046.0,
+        "2026-06-30": 12046.0
+      },
+      "normalized_values": {
+        "2026-03-31": 12046000000.0,
+        "2026-06-30": 12046000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 52,
+      "indent_level": 2,
+      "account_jp": "資本剰余金",
+      "account_en": "Capital surplus",
+      "xbrl_element": "CapitalSurplus",
+      "ma_bucket": "equity",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "2,514",
+        "2026-06-30": "2,513"
+      },
+      "reported_values": {
+        "2026-03-31": 2514.0,
+        "2026-06-30": 2513.0
+      },
+      "normalized_values": {
+        "2026-03-31": 2514000000.0,
+        "2026-06-30": 2513000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 53,
+      "indent_level": 2,
+      "account_jp": "利益剰余金",
+      "account_en": "Retained earnings",
+      "xbrl_element": "RetainedEarnings",
+      "ma_bucket": "equity",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "215,641",
+        "2026-06-30": "211,510"
+      },
+      "reported_values": {
+        "2026-03-31": 215641.0,
+        "2026-06-30": 211510.0
+      },
+      "normalized_values": {
+        "2026-03-31": 215641000000.0,
+        "2026-06-30": 211510000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 54,
+      "indent_level": 2,
+      "account_jp": "自己株式",
+      "account_en": "Treasury shares",
+      "xbrl_element": "TreasuryShares",
+      "ma_bucket": "equity",
+      "role": "contra_item",
+      "raw_values": {
+        "2026-03-31": "△34,668",
+        "2026-06-30": "△34,489"
+      },
+      "reported_values": {
+        "2026-03-31": -34668.0,
+        "2026-06-30": -34489.0
+      },
+      "normalized_values": {
+        "2026-03-31": -34668000000.0,
+        "2026-06-30": -34489000000.0
+      },
+      "parent_account": "利益剰余金"
+    },
+    {
+      "row_index": 55,
+      "indent_level": 1,
+      "account_jp": "株主資本合計",
+      "account_en": "Total shareholders' equity",
+      "xbrl_element": "ShareholdersEquity",
+      "ma_bucket": "subtotal",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "195,533",
+        "2026-06-30": "191,580"
+      },
+      "reported_values": {
+        "2026-03-31": 195533.0,
+        "2026-06-30": 191580.0
+      },
+      "normalized_values": {
+        "2026-03-31": 195533000000.0,
+        "2026-06-30": 191580000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 56,
+      "indent_level": 1,
+      "account_jp": "その他の包括利益累計額",
+      "account_en": "その他の包括利益累計額",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "category_header",
+      "raw_values": {
+        "2026-03-31": "",
+        "2026-06-30": ""
+      },
+      "reported_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "normalized_values": {
+        "2026-03-31": 0.0,
+        "2026-06-30": 0.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 57,
+      "indent_level": 2,
+      "account_jp": "その他有価証券評価差額金",
+      "account_en": "Valuation difference on available-for-sale securities",
+      "xbrl_element": "ValuationDifferenceOnAvailableForSaleSecurities",
+      "ma_bucket": "equity",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "653",
+        "2026-06-30": "522"
+      },
+      "reported_values": {
+        "2026-03-31": 653.0,
+        "2026-06-30": 522.0
+      },
+      "normalized_values": {
+        "2026-03-31": 653000000.0,
+        "2026-06-30": 522000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 58,
+      "indent_level": 2,
+      "account_jp": "為替換算調整勘定",
+      "account_en": "Foreign currency translation adjustment",
+      "xbrl_element": "ForeignCurrencyTranslationAdjustment",
+      "ma_bucket": "equity",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "13,601",
+        "2026-06-30": "14,375"
+      },
+      "reported_values": {
+        "2026-03-31": 13601.0,
+        "2026-06-30": 14375.0
+      },
+      "normalized_values": {
+        "2026-03-31": 13601000000.0,
+        "2026-06-30": 14375000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 59,
+      "indent_level": 2,
+      "account_jp": "退職給付に係る調整累計額",
+      "account_en": "退職給付に係る調整累計額",
+      "xbrl_element": null,
+      "ma_bucket": "other_unclassified",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "814",
+        "2026-06-30": "1,156"
+      },
+      "reported_values": {
+        "2026-03-31": 814.0,
+        "2026-06-30": 1156.0
+      },
+      "normalized_values": {
+        "2026-03-31": 814000000.0,
+        "2026-06-30": 1156000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 60,
+      "indent_level": 1,
+      "account_jp": "その他の包括利益累計額合計",
+      "account_en": "Total accumulated other comprehensive income",
+      "xbrl_element": "ValuationAndTranslationAdjustments",
+      "ma_bucket": "subtotal",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "15,069",
+        "2026-06-30": "16,055"
+      },
+      "reported_values": {
+        "2026-03-31": 15069.0,
+        "2026-06-30": 16055.0
+      },
+      "normalized_values": {
+        "2026-03-31": 15069000000.0,
+        "2026-06-30": 16055000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 61,
+      "indent_level": 1,
+      "account_jp": "非支配株主持分",
+      "account_en": "Non-controlling interests",
+      "xbrl_element": "NonControllingInterests",
+      "ma_bucket": "minority_interest",
+      "role": "item",
+      "raw_values": {
+        "2026-03-31": "11,171",
+        "2026-06-30": "11,234"
+      },
+      "reported_values": {
+        "2026-03-31": 11171.0,
+        "2026-06-30": 11234.0
+      },
+      "normalized_values": {
+        "2026-03-31": 11171000000.0,
+        "2026-06-30": 11234000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 62,
+      "indent_level": 0,
+      "account_jp": "純資産合計",
+      "account_en": "Total net assets",
+      "xbrl_element": "NetAssets",
+      "ma_bucket": "grand_total",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "221,774",
+        "2026-06-30": "218,870"
+      },
+      "reported_values": {
+        "2026-03-31": 221774.0,
+        "2026-06-30": 218870.0
+      },
+      "normalized_values": {
+        "2026-03-31": 221774000000.0,
+        "2026-06-30": 218870000000.0
+      },
+      "parent_account": null
+    },
+    {
+      "row_index": 63,
+      "indent_level": 0,
+      "account_jp": "負債純資産合計",
+      "account_en": "負債純資産合計",
+      "xbrl_element": null,
+      "ma_bucket": "subtotal",
+      "role": "subtotal",
+      "raw_values": {
+        "2026-03-31": "327,609",
+        "2026-06-30": "323,759"
+      },
+      "reported_values": {
+        "2026-03-31": 327609.0,
+        "2026-06-30": 323759.0
+      },
+      "normalized_values": {
+        "2026-03-31": 327609000000.0,
+        "2026-06-30": 323759000000.0
+      },
+      "parent_account": null
+    }
+  ],
+  "validation_report": null
+}

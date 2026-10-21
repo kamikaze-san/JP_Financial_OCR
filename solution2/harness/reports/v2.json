@@ -1,0 +1,1154 @@
+{
+  "verifier": "v2",
+  "mutations": 28280,
+  "seconds": 44.5,
+  "clean": {
+    "baseline": {
+      "flagged": false,
+      "evaluated_equations": 20,
+      "coverage": 1.0
+    },
+    "calbee": {
+      "flagged": false,
+      "evaluated_equations": 28,
+      "coverage": 1.0
+    },
+    "yamato": {
+      "flagged": false,
+      "evaluated_equations": 14,
+      "coverage": 1.0
+    },
+    "silver_fastretailing_p1": {
+      "flagged": false,
+      "evaluated_equations": 20,
+      "coverage": 1.0
+    },
+    "silver_fastretailing_p2": {
+      "flagged": false,
+      "evaluated_equations": 16,
+      "coverage": 1.0
+    },
+    "silver_nikon_p1": {
+      "flagged": false,
+      "evaluated_equations": 9,
+      "coverage": 1.0
+    },
+    "silver_nikon_p2": {
+      "flagged": false,
+      "evaluated_equations": 18,
+      "coverage": 1.0
+    }
+  },
+  "classes": {
+    "digit_sub": {
+      "n": 20499,
+      "by_kind": {
+        "detect": {
+          "n": 11992,
+          "outcomes": {
+            "caught": 11992
+          },
+          "bad": 0,
+          "rate": 1.0
+        },
+        "detect_small": {
+          "n": 8507,
+          "outcomes": {
+            "caught": 7022,
+            "weak": 1288,
+            "silent": 197
+          },
+          "bad": 0,
+          "rate": 0.8254378746914306
+        }
+      }
+    },
+    "digit_drop": {
+      "n": 2325,
+      "by_kind": {
+        "detect": {
+          "n": 2293,
+          "outcomes": {
+            "caught": 2293
+          },
+          "bad": 0,
+          "rate": 1.0
+        },
+        "detect_small": {
+          "n": 32,
+          "outcomes": {
+            "caught": 32
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "digit_transpose": {
+      "n": 1591,
+      "by_kind": {
+        "detect": {
+          "n": 1106,
+          "outcomes": {
+            "caught": 1106
+          },
+          "bad": 0,
+          "rate": 1.0
+        },
+        "detect_small": {
+          "n": 485,
+          "outcomes": {
+            "caught": 485
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "comma_decimal": {
+      "n": 463,
+      "by_kind": {
+        "detect": {
+          "n": 463,
+          "outcomes": {
+            "caught": 463
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "sign_drop": {
+      "n": 47,
+      "by_kind": {
+        "detect": {
+          "n": 43,
+          "outcomes": {
+            "caught": 43
+          },
+          "bad": 0,
+          "rate": 1.0
+        },
+        "detect_small": {
+          "n": 4,
+          "outcomes": {
+            "caught": 4
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "sign_add": {
+      "n": 426,
+      "by_kind": {
+        "detect": {
+          "n": 416,
+          "outcomes": {
+            "caught": 416
+          },
+          "bad": 0,
+          "rate": 1.0
+        },
+        "detect_small": {
+          "n": 10,
+          "outcomes": {
+            "caught": 10
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "nil_to_number": {
+      "n": 18,
+      "by_kind": {
+        "detect": {
+          "n": 12,
+          "outcomes": {
+            "caught": 12
+          },
+          "bad": 0,
+          "rate": 1.0
+        },
+        "detect_small": {
+          "n": 6,
+          "outcomes": {
+            "caught": 6
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "number_to_nil": {
+      "n": 473,
+      "by_kind": {
+        "detect": {
+          "n": 455,
+          "outcomes": {
+            "caught": 455
+          },
+          "bad": 0,
+          "rate": 1.0
+        },
+        "detect_small": {
+          "n": 18,
+          "outcomes": {
+            "caught": 18
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "value_unparseable": {
+      "n": 648,
+      "by_kind": {
+        "detect": {
+          "n": 648,
+          "outcomes": {
+            "caught": 648
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "row_omit": {
+      "n": 189,
+      "by_kind": {
+        "detect": {
+          "n": 182,
+          "outcomes": {
+            "caught": 182
+          },
+          "bad": 0,
+          "rate": 1.0
+        },
+        "detect_small": {
+          "n": 7,
+          "outcomes": {
+            "caught": 7
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "row_dup": {
+      "n": 189,
+      "by_kind": {
+        "detect": {
+          "n": 182,
+          "outcomes": {
+            "caught": 182
+          },
+          "bad": 0,
+          "rate": 1.0
+        },
+        "detect_small": {
+          "n": 7,
+          "outcomes": {
+            "caught": 6,
+            "weak": 1
+          },
+          "bad": 0,
+          "rate": 0.8571428571428571
+        }
+      }
+    },
+    "subtotal_omit": {
+      "n": 55,
+      "by_kind": {
+        "no_degrade": {
+          "n": 55,
+          "outcomes": {
+            "surfaced": 6,
+            "caught": 36,
+            "benign": 13
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "heading_value_shift": {
+      "n": 26,
+      "by_kind": {
+        "detect": {
+          "n": 26,
+          "outcomes": {
+            "caught": 26
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "row_swap_values": {
+      "n": 150,
+      "by_kind": {
+        "gap": {
+          "n": 150,
+          "outcomes": {
+            "weak": 117,
+            "caught": 19,
+            "silent": 14
+          },
+          "bad": 0,
+          "rate": 0.12666666666666668
+        }
+      }
+    },
+    "column_swap": {
+      "n": 6,
+      "by_kind": {
+        "gap": {
+          "n": 6,
+          "outcomes": {
+            "weak": 6
+          },
+          "bad": 0,
+          "rate": 0.0
+        }
+      }
+    },
+    "period_header_swap": {
+      "n": 6,
+      "by_kind": {
+        "gap": {
+          "n": 6,
+          "outcomes": {
+            "silent": 6
+          },
+          "bad": 0,
+          "rate": 0.0
+        }
+      }
+    },
+    "unit_change": {
+      "n": 28,
+      "by_kind": {
+        "gap": {
+          "n": 28,
+          "outcomes": {
+            "caught": 7,
+            "silent": 21
+          },
+          "bad": 0,
+          "rate": 0.25
+        }
+      }
+    },
+    "label_confusable_flip": {
+      "n": 91,
+      "by_kind": {
+        "gap": {
+          "n": 91,
+          "outcomes": {
+            "silent": 21,
+            "weak": 70
+          },
+          "bad": 0,
+          "rate": 0.0
+        }
+      }
+    },
+    "plug_subtotals": {
+      "n": 208,
+      "by_kind": {
+        "gap": {
+          "n": 208,
+          "outcomes": {
+            "weak": 38,
+            "silent": 7,
+            "caught": 163
+          },
+          "bad": 0,
+          "rate": 0.7836538461538461
+        }
+      }
+    },
+    "label_script_drift": {
+      "n": 190,
+      "by_kind": {
+        "no_degrade": {
+          "n": 190,
+          "outcomes": {
+            "benign": 190
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "label_total_noise": {
+      "n": 145,
+      "by_kind": {
+        "no_degrade": {
+          "n": 145,
+          "outcomes": {
+            "benign": 145
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "label_item_noise": {
+      "n": 190,
+      "by_kind": {
+        "no_degrade": {
+          "n": 190,
+          "outcomes": {
+            "benign": 190
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "degenerate": {
+      "n": 28,
+      "by_kind": {
+        "flag": {
+          "n": 28,
+          "outcomes": {
+            "caught": 28
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "invariant_forms": {
+      "n": 93,
+      "by_kind": {
+        "invariant": {
+          "n": 93,
+          "outcomes": {
+            "ok": 93
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "structure_noise": {
+      "n": 36,
+      "by_kind": {
+        "invariant": {
+          "n": 36,
+          "outcomes": {
+            "ok": 36
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "heading_echo": {
+      "n": 160,
+      "by_kind": {
+        "invariant": {
+          "n": 160,
+          "outcomes": {
+            "ok": 160
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    }
+  },
+  "gate_violations": [],
+  "bad_examples": {
+    "digit_sub": [
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,423'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,424'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,425'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,426'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,427'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,428'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,280'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,282'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,283'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,284'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,653'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,654'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,655'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,656'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,657'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,658'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "受取手形 [col 1]: '26,333' -> '26,330'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "受取手形 [col 1]: '26,333' -> '26,331'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "受取手形 [col 1]: '26,333' -> '26,332'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "受取手形 [col 1]: '26,333' -> '26,334'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "受取手形 [col 1]: '26,333' -> '26,335'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "受取手形 [col 1]: '26,333' -> '26,336'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "売掛金 [col 0]: '2,019,476' -> '2,019,470'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "売掛金 [col 0]: '2,019,476' -> '2,019,471'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "売掛金 [col 0]: '2,019,476' -> '2,019,472'"
+      }
+    ],
+    "row_swap_values": [
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '現金及び預金' and '受取手形'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '受取手形' and '売掛金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '売掛金' and '電子記録債権'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '電子記録債権' and '商品及び製品'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '商品及び製品' and '仕掛品'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '仕掛品' and '原材料及び貯蔵品'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '原材料及び貯蔵品' and '短期貸付金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '短期貸付金' and 'その他'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of 'その他' and '貸倒引当金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '建物及び構築物' and '減価償却累計額'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '機械装置及び運搬具' and '減価償却累計額'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of 'リース資産' and '減価償却累計額'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of 'その他' and '減価償却累計額'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of 'リース資産' and 'その他'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '投資有価証券' and '関係会社株式'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '関係会社株式' and '長期貸付金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '長期貸付金' and '退職給付に係る資産'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "swap values of '退職給付に係る資産' and 'その他'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "swap values of '現金及び預金' and '受取手形及び売掛金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "swap values of '受取手形及び売掛金' and '棚卸資産'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "swap values of '棚卸資産' and 'その他'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "swap values of 'その他' and '貸倒引当金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "swap values of '建物及び構築物（純額）' and '機械装置及び運搬具（純額）'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "swap values of '機械装置及び運搬具（純額）' and '土地'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "swap values of '土地' and '建設仮勘定'"
+      }
+    ],
+    "column_swap": [
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "reverse the value order of every row"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "reverse the value order of every row"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "weak",
+        "desc": "reverse the value order of every row"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "weak",
+        "desc": "reverse the value order of every row"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "weak",
+        "desc": "reverse the value order of every row"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "weak",
+        "desc": "reverse the value order of every row"
+      }
+    ],
+    "period_header_swap": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap the two period dates"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap the two period dates"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "swap the two period dates"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "swap the two period dates"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "swap the two period dates"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "swap the two period dates"
+      }
+    ],
+    "unit_change": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '百万円'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '万円'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '億円'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '千円'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '万円'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '億円'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '百万円'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '万円'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '億円'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '千円'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '万円'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '億円'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '千円'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '万円'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '億円'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '千円'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '万円'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '億円'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '千円'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '万円'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '億円'"
+      }
+    ],
+    "label_confusable_flip": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'流動資産' -> '流動負債'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'売掛金' -> '買掛金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'電子記録債権' -> '電子記録債務'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'短期貸付金' -> '短期借入金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'流動資産合計' -> '流動負債合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'固定資産' -> '固定負債'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'有形固定資産' -> '有形固定負債'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'有形固定資産合計' -> '有形固定負債合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'無形固定資産' -> '無形固定負債'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'無形固定資産合計' -> '無形固定負債合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'長期貸付金' -> '長期借入金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'固定資産合計' -> '固定負債合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'流動資産' -> '流動負債'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "'受取手形及び売掛金' -> '受取手形及び買掛金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "'流動資産合計' -> '流動負債合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'固定資産' -> '固定負債'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'有形固定資産' -> '有形固定負債'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "'有形固定資産合計' -> '有形固定負債合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'無形固定資産' -> '無形固定負債'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "'無形固定資産合計' -> '無形固定負債合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "'固定資産合計' -> '固定負債合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'流動負債' -> '流動資産'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "'支払手形及び買掛金' -> '支払手形及び売掛金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "'短期借入金' -> '短期貸付金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "weak",
+        "desc": "'1年内返済予定の長期借入金' -> '1年内返済予定の長期貸付金'"
+      }
+    ],
+    "plug_subtotals": [
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'現金及び預金' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'現金及び預金' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'受取手形' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'受取手形' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'売掛金' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'売掛金' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'電子記録債権' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'電子記録債権' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'商品及び製品' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'商品及び製品' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'仕掛品' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'仕掛品' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'原材料及び貯蔵品' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'原材料及び貯蔵品' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'短期貸付金' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'短期貸付金' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'貸倒引当金' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'減価償却累計額' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'減価償却累計額' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'減価償却累計額' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'減価償却累計額' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'土地' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'土地' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'減価償却累計額' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "weak",
+        "desc": "'減価償却累計額' [col 1] +123 and totals up to '資産合計'"
+      }
+    ],
+    "row_dup": [
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "weak",
+        "desc": "duplicate row '貸倒引当金'"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# secrets (EDINET key etc.): never commit
+.env
+*.key
+*key*.txt
+edinet_key*
+
+# generated renders and pipeline outputs (re-created by the pipelines)
+solution1/rendered_images*/
+solution1/output/
+solution2/output/
+solution2/fixtures/_rendered/
+solution2/harness/.cache/
+
+# solution2/data/ (downloaded filings, prepared gold, eval runs) is ignored by its own .gitignore
+
+# editor / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

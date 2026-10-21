@@ -1,0 +1,2996 @@
+{
+  "verifier": "v1",
+  "mutations": 28280,
+  "seconds": 16.9,
+  "clean": {
+    "baseline": {
+      "flagged": false,
+      "evaluated_equations": 20,
+      "coverage": null
+    },
+    "calbee": {
+      "flagged": true,
+      "evaluated_equations": 12,
+      "coverage": null
+    },
+    "yamato": {
+      "flagged": false,
+      "evaluated_equations": 0,
+      "coverage": null
+    },
+    "silver_fastretailing_p1": {
+      "flagged": false,
+      "evaluated_equations": 20,
+      "coverage": null
+    },
+    "silver_fastretailing_p2": {
+      "flagged": false,
+      "evaluated_equations": 0,
+      "coverage": null
+    },
+    "silver_nikon_p1": {
+      "flagged": false,
+      "evaluated_equations": 3,
+      "coverage": null
+    },
+    "silver_nikon_p2": {
+      "flagged": false,
+      "evaluated_equations": 0,
+      "coverage": null
+    }
+  },
+  "classes": {
+    "digit_sub": {
+      "n": 20499,
+      "by_kind": {
+        "detect": {
+          "n": 11992,
+          "outcomes": {
+            "caught": 5277,
+            "silent": 6715
+          },
+          "bad": 6715,
+          "rate": 0.4400433622414943
+        },
+        "detect_small": {
+          "n": 8507,
+          "outcomes": {
+            "caught": 2540,
+            "silent": 5967
+          },
+          "bad": 0,
+          "rate": 0.29857764194193015
+        }
+      }
+    },
+    "digit_drop": {
+      "n": 2325,
+      "by_kind": {
+        "detect": {
+          "n": 2293,
+          "outcomes": {
+            "caught": 998,
+            "silent": 1295
+          },
+          "bad": 1295,
+          "rate": 0.43523767989533363
+        },
+        "detect_small": {
+          "n": 32,
+          "outcomes": {
+            "caught": 6,
+            "silent": 26
+          },
+          "bad": 0,
+          "rate": 0.1875
+        }
+      }
+    },
+    "digit_transpose": {
+      "n": 1591,
+      "by_kind": {
+        "detect": {
+          "n": 1106,
+          "outcomes": {
+            "caught": 492,
+            "silent": 614
+          },
+          "bad": 614,
+          "rate": 0.4448462929475588
+        },
+        "detect_small": {
+          "n": 485,
+          "outcomes": {
+            "caught": 199,
+            "silent": 286
+          },
+          "bad": 0,
+          "rate": 0.41030927835051545
+        }
+      }
+    },
+    "comma_decimal": {
+      "n": 463,
+      "by_kind": {
+        "detect": {
+          "n": 463,
+          "outcomes": {
+            "caught": 200,
+            "silent": 263
+          },
+          "bad": 263,
+          "rate": 0.4319654427645788
+        }
+      }
+    },
+    "sign_drop": {
+      "n": 47,
+      "by_kind": {
+        "detect": {
+          "n": 43,
+          "outcomes": {
+            "caught": 7,
+            "silent": 36
+          },
+          "bad": 36,
+          "rate": 0.16279069767441862
+        },
+        "detect_small": {
+          "n": 4,
+          "outcomes": {
+            "caught": 3,
+            "silent": 1
+          },
+          "bad": 0,
+          "rate": 0.75
+        }
+      }
+    },
+    "sign_add": {
+      "n": 426,
+      "by_kind": {
+        "detect": {
+          "n": 416,
+          "outcomes": {
+            "caught": 172,
+            "silent": 244
+          },
+          "bad": 244,
+          "rate": 0.41346153846153844
+        },
+        "detect_small": {
+          "n": 10,
+          "outcomes": {
+            "silent": 8,
+            "caught": 2
+          },
+          "bad": 0,
+          "rate": 0.2
+        }
+      }
+    },
+    "nil_to_number": {
+      "n": 18,
+      "by_kind": {
+        "detect": {
+          "n": 12,
+          "outcomes": {
+            "caught": 6,
+            "silent": 6
+          },
+          "bad": 6,
+          "rate": 0.5
+        },
+        "detect_small": {
+          "n": 6,
+          "outcomes": {
+            "silent": 5,
+            "caught": 1
+          },
+          "bad": 0,
+          "rate": 0.16666666666666666
+        }
+      }
+    },
+    "number_to_nil": {
+      "n": 473,
+      "by_kind": {
+        "detect": {
+          "n": 455,
+          "outcomes": {
+            "caught": 195,
+            "silent": 260
+          },
+          "bad": 260,
+          "rate": 0.42857142857142855
+        },
+        "detect_small": {
+          "n": 18,
+          "outcomes": {
+            "caught": 4,
+            "silent": 14
+          },
+          "bad": 0,
+          "rate": 0.2222222222222222
+        }
+      }
+    },
+    "value_unparseable": {
+      "n": 648,
+      "by_kind": {
+        "detect": {
+          "n": 648,
+          "outcomes": {
+            "caught": 271,
+            "silent": 377
+          },
+          "bad": 377,
+          "rate": 0.4182098765432099
+        }
+      }
+    },
+    "row_omit": {
+      "n": 189,
+      "by_kind": {
+        "detect": {
+          "n": 182,
+          "outcomes": {
+            "caught": 70,
+            "silent": 112
+          },
+          "bad": 112,
+          "rate": 0.38461538461538464
+        },
+        "detect_small": {
+          "n": 7,
+          "outcomes": {
+            "caught": 2,
+            "silent": 5
+          },
+          "bad": 0,
+          "rate": 0.2857142857142857
+        }
+      }
+    },
+    "row_dup": {
+      "n": 189,
+      "by_kind": {
+        "detect": {
+          "n": 182,
+          "outcomes": {
+            "caught": 61,
+            "silent": 121
+          },
+          "bad": 121,
+          "rate": 0.33516483516483514
+        },
+        "detect_small": {
+          "n": 7,
+          "outcomes": {
+            "caught": 2,
+            "silent": 5
+          },
+          "bad": 0,
+          "rate": 0.2857142857142857
+        }
+      }
+    },
+    "subtotal_omit": {
+      "n": 55,
+      "by_kind": {
+        "no_degrade": {
+          "n": 55,
+          "outcomes": {
+            "silent_degraded": 16,
+            "caught": 3,
+            "benign": 36
+          },
+          "bad": 16,
+          "rate": 0.7090909090909091
+        }
+      }
+    },
+    "heading_value_shift": {
+      "n": 26,
+      "by_kind": {
+        "detect": {
+          "n": 26,
+          "outcomes": {
+            "caught": 9,
+            "silent": 17
+          },
+          "bad": 17,
+          "rate": 0.34615384615384615
+        }
+      }
+    },
+    "row_swap_values": {
+      "n": 150,
+      "by_kind": {
+        "gap": {
+          "n": 150,
+          "outcomes": {
+            "silent": 121,
+            "caught": 29
+          },
+          "bad": 0,
+          "rate": 0.19333333333333333
+        }
+      }
+    },
+    "column_swap": {
+      "n": 6,
+      "by_kind": {
+        "gap": {
+          "n": 6,
+          "outcomes": {
+            "silent": 5,
+            "caught": 1
+          },
+          "bad": 0,
+          "rate": 0.16666666666666666
+        }
+      }
+    },
+    "period_header_swap": {
+      "n": 6,
+      "by_kind": {
+        "gap": {
+          "n": 6,
+          "outcomes": {
+            "silent": 5,
+            "caught": 1
+          },
+          "bad": 0,
+          "rate": 0.16666666666666666
+        }
+      }
+    },
+    "unit_change": {
+      "n": 28,
+      "by_kind": {
+        "gap": {
+          "n": 28,
+          "outcomes": {
+            "silent": 24,
+            "caught": 4
+          },
+          "bad": 0,
+          "rate": 0.14285714285714285
+        }
+      }
+    },
+    "label_confusable_flip": {
+      "n": 91,
+      "by_kind": {
+        "gap": {
+          "n": 91,
+          "outcomes": {
+            "silent": 87,
+            "caught": 4
+          },
+          "bad": 0,
+          "rate": 0.04395604395604396
+        }
+      }
+    },
+    "plug_subtotals": {
+      "n": 208,
+      "by_kind": {
+        "gap": {
+          "n": 208,
+          "outcomes": {
+            "silent": 149,
+            "caught": 59
+          },
+          "bad": 0,
+          "rate": 0.28365384615384615
+        }
+      }
+    },
+    "label_script_drift": {
+      "n": 190,
+      "by_kind": {
+        "no_degrade": {
+          "n": 190,
+          "outcomes": {
+            "benign": 157,
+            "silent_degraded": 25,
+            "caught": 8
+          },
+          "bad": 25,
+          "rate": 0.868421052631579
+        }
+      }
+    },
+    "label_total_noise": {
+      "n": 145,
+      "by_kind": {
+        "no_degrade": {
+          "n": 145,
+          "outcomes": {
+            "silent_degraded": 51,
+            "caught": 6,
+            "benign": 88
+          },
+          "bad": 51,
+          "rate": 0.6482758620689655
+        }
+      }
+    },
+    "label_item_noise": {
+      "n": 190,
+      "by_kind": {
+        "no_degrade": {
+          "n": 190,
+          "outcomes": {
+            "benign": 185,
+            "caught": 5
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    },
+    "degenerate": {
+      "n": 28,
+      "by_kind": {
+        "flag": {
+          "n": 28,
+          "outcomes": {
+            "silent": 28
+          },
+          "bad": 28,
+          "rate": 0.0
+        }
+      }
+    },
+    "invariant_forms": {
+      "n": 93,
+      "by_kind": {
+        "invariant": {
+          "n": 93,
+          "outcomes": {
+            "ok": 89,
+            "false_alarm": 4
+          },
+          "bad": 4,
+          "rate": 0.956989247311828
+        }
+      }
+    },
+    "structure_noise": {
+      "n": 36,
+      "by_kind": {
+        "invariant": {
+          "n": 36,
+          "outcomes": {
+            "ok": 31,
+            "false_alarm": 5
+          },
+          "bad": 5,
+          "rate": 0.8611111111111112
+        }
+      }
+    },
+    "heading_echo": {
+      "n": 160,
+      "by_kind": {
+        "invariant": {
+          "n": 160,
+          "outcomes": {
+            "ok": 160
+          },
+          "bad": 0,
+          "rate": 1.0
+        }
+      }
+    }
+  },
+  "gate_violations": [
+    "FALSE ALARM on clean document 'calbee' (4 finding(s))",
+    "digit_sub [detect]: 6715/11992 bad {'silent': 6715}",
+    "digit_drop [detect]: 1295/2293 bad {'silent': 1295}",
+    "digit_transpose [detect]: 614/1106 bad {'silent': 614}",
+    "comma_decimal [detect]: 263/463 bad {'silent': 263}",
+    "sign_drop [detect]: 36/43 bad {'silent': 36}",
+    "sign_add [detect]: 244/416 bad {'silent': 244}",
+    "nil_to_number [detect]: 6/12 bad {'silent': 6}",
+    "number_to_nil [detect]: 260/455 bad {'silent': 260}",
+    "value_unparseable [detect]: 377/648 bad {'silent': 377}",
+    "row_omit [detect]: 112/182 bad {'silent': 112}",
+    "row_dup [detect]: 121/182 bad {'silent': 121}",
+    "subtotal_omit [no_degrade]: 16/55 bad {'silent_degraded': 16}",
+    "heading_value_shift [detect]: 17/26 bad {'silent': 17}",
+    "label_script_drift [no_degrade]: 25/190 bad {'silent_degraded': 25}",
+    "label_total_noise [no_degrade]: 51/145 bad {'silent_degraded': 51}",
+    "degenerate [flag]: 28/28 bad {'silent': 28}",
+    "invariant_forms [invariant]: 4/93 bad {'false_alarm': 4}",
+    "structure_noise [invariant]: 5/36 bad {'false_alarm': 5}"
+  ],
+  "bad_examples": {
+    "digit_sub": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,439'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,422'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,423'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,424'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,425'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,426'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,427'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 0]: '2,002,429' -> '2,002,428'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,291'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,280'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,282'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,283'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,284'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,285'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,286'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,287'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,288'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "現金及び預金 [col 1]: '608,281' -> '608,289'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,669'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,652'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,653'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,654'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,655'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,656'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "受取手形 [col 0]: '20,659' -> '20,657'"
+      }
+    ],
+    "digit_transpose": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "電子記録債権 [col 0]: '564,667' -> '564,676'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '4,048' -> '4,408'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '4,048' -> '4,084'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 1]: '5,079' -> '5,709'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 1]: '5,079' -> '5,097'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '51,727'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '17,527'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '15,277'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '15,772'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '51,461'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '14,561'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '15,641'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '15,416'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '41,739'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '17,439'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '14,379'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '14,793'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 1]: '15,900' -> '51,900'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 1]: '15,900' -> '19,500'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 1]: '15,900' -> '15,090'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 0]: '1,766' -> '7,166'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 0]: '1,766' -> '1,676'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 1]: '1,714' -> '7,114'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 1]: '1,714' -> '1,174'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 1]: '1,714' -> '1,741'"
+      }
+    ],
+    "sign_drop": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "減価償却累計額 [col 0]: '△1,923,585' -> '1,923,585'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "減価償却累計額 [col 1]: '△1,640,253' -> '1,640,253'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "減価償却累計額 [col 0]: '△3,634,165' -> '3,634,165'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "減価償却累計額 [col 1]: '△1,914,091' -> '1,914,091'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "減価償却累計額 [col 0]: '△147,599' -> '147,599'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "減価償却累計額 [col 1]: '△172,066' -> '172,066'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "減価償却累計額 [col 0]: '△840,375' -> '840,375'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "減価償却累計額 [col 1]: '△421,883' -> '421,883'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "自己株式 [col 0]: '△34,668' -> '34,668'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "自己株式 [col 1]: '△34,489' -> '34,489'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "貸倒引当金 [col 0]: '△2,830' -> '2,830'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "利益剰余金 [col 0]: '△281,812' -> '281,812'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "自己株式 [col 0]: '△23,244' -> '23,244'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "その他の包括利益累計額 [col 0]: '△56,345' -> '56,345'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "為替換算調整勘定 [col 0]: '△26,854' -> '26,854'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "退職給付に係る調整累計額 [col 0]: '△31,387' -> '31,387'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "減価償却累計額※３ [col 0]: '△17,221' -> '17,221'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "減価償却累計額※３ [col 1]: '△20,040' -> '20,040'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "減価償却累計額※３ [col 0]: '△350' -> '350'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "減価償却累計額※３ [col 1]: '△401' -> '401'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "減価償却累計額※３ [col 0]: '△3,646' -> '3,646'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "減価償却累計額※３ [col 1]: '△4,246' -> '4,246'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "減価償却累計額※３ [col 0]: '△146' -> '146'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "減価償却累計額※３ [col 1]: '△130' -> '130'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "自己株式 [col 0]: '△14,628' -> '14,628'"
+      }
+    ],
+    "nil_to_number": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '－' -> '7'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "資産除去債務 [col 1]: '-' -> '7'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "資産除去債務 [col 1]: '-' -> '1,234'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "資産除去債務 [col 1]: '-' -> '123,456'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "貸倒引当金 [col 0]: '-' -> '7'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "資本金 [col 2]: '－' -> '7'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "資本金 [col 2]: '－' -> '1,234'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "資本金 [col 2]: '－' -> '123,456'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "資本剰余金 [col 0]: '－' -> '7'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "資本剰余金 [col 0]: '－' -> '1,234'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "資本剰余金 [col 0]: '－' -> '123,456'"
+      }
+    ],
+    "row_omit": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "drop row '減価償却累計額' ['△1,923,585', '△1,640,253']"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "drop row '減価償却累計額' ['△3,634,165', '△1,914,091']"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "drop row '減価償却累計額' ['△147,599', '△172,066']"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "drop row '減価償却累計額' ['△840,375', '△421,883']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '投資その他の資産' ['15,727', '15,461']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '支払手形及び買掛金' ['14,739', '15,900']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '短期借入金' ['1,766', '1,714']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '1年内返済予定の長期借入金' ['10,000', '10,000']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '未払法人税等' ['4,154', '1,784']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '賞与引当金' ['5,860', '2,238']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '役員賞与引当金' ['159', '86']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '株式給付引当金' ['43', '66']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '株主優待引当金' ['82', '82']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '資産除去債務' ['24', '-']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row 'その他' ['28,109', '30,341']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '長期借入金' ['25,000', '25,000']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '役員退職慰労引当金' ['125', '22']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '役員株式給付引当金' ['294', '326']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '退職給付に係る負債' ['8,687', '8,151']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '資産除去債務' ['3,272', '3,290']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row 'その他' ['3,514', '5,882']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '資本金' ['12,046', '12,046']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '資本剰余金' ['2,514', '2,513']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '利益剰余金' ['215,641', '211,510']"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "drop row '自己株式' ['△34,668', '△34,489']"
+      }
+    ],
+    "row_dup": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "duplicate row '建物及び構築物'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "duplicate row '減価償却累計額'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "duplicate row '機械装置及び運搬具'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "duplicate row '減価償却累計額'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "duplicate row 'リース資産'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "duplicate row '減価償却累計額'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "duplicate row 'その他'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "duplicate row '減価償却累計額'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '建設仮勘定'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '投資その他の資産'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '支払手形及び買掛金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '短期借入金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '1年内返済予定の長期借入金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '未払法人税等'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '賞与引当金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '役員賞与引当金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '株式給付引当金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '株主優待引当金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '資産除去債務'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row 'その他'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '長期借入金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '役員退職慰労引当金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '役員株式給付引当金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '退職給付に係る負債'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "duplicate row '資産除去債務'"
+      }
+    ],
+    "subtotal_omit": [
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '流動資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '有形固定資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '無形固定資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '投資その他の資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '固定資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '資産合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '無形固定資産合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '固定資産合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '資産合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '流動資産合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '有形固定資産合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '無形固定資産合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '投資その他の資産合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '固定資産合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '資産合計'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent_degraded",
+        "desc": "drop total row '流動資産合計'"
+      }
+    ],
+    "heading_value_shift": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'建物及び構築物''s numbers moved onto the heading '有形固定資産'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'投資その他の資産''s numbers moved onto the heading '投資その他の資産'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'支払手形及び買掛金''s numbers moved onto the heading '流動負債'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'長期借入金''s numbers moved onto the heading '固定負債'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'資本金''s numbers moved onto the heading '株主資本'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'その他有価証券評価差額金''s numbers moved onto the heading 'その他の包括利益累計額'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "'建物''s numbers moved onto the heading '有形固定資産'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "'１年内償還予定の社債''s numbers moved onto the heading '流動負債'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "'社債''s numbers moved onto the heading '固定負債'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "'資本金''s numbers moved onto the heading '株主資本'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "'資本準備金''s numbers moved onto the heading '資本剰余金'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "'利益準備金''s numbers moved onto the heading '利益剰余金'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "'別途積立金''s numbers moved onto the heading 'その他利益剰余金'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "'有形固定資産''s numbers moved onto the heading '非流動資産'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "'仕入債務及びその他の債務''s numbers moved onto the heading '流動負債'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "'社債及び借入金''s numbers moved onto the heading '非流動負債'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "'資本金''s numbers moved onto the heading '資本'"
+      }
+    ],
+    "row_swap_values": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '現金及び預金' and '受取手形'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '受取手形' and '売掛金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '売掛金' and '電子記録債権'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '電子記録債権' and '商品及び製品'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '商品及び製品' and '仕掛品'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '仕掛品' and '原材料及び貯蔵品'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '原材料及び貯蔵品' and '短期貸付金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '短期貸付金' and 'その他'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of 'その他' and '貸倒引当金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of 'リース資産' and 'その他'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '投資有価証券' and '関係会社株式'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '関係会社株式' and '長期貸付金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '長期貸付金' and '退職給付に係る資産'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap values of '退職給付に係る資産' and 'その他'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap values of '現金及び預金' and '受取手形及び売掛金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap values of '受取手形及び売掛金' and '棚卸資産'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap values of '棚卸資産' and 'その他'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap values of 'その他' and '貸倒引当金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap values of '建物及び構築物（純額）' and '機械装置及び運搬具（純額）'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap values of '機械装置及び運搬具（純額）' and '土地'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap values of 'のれん' and 'その他'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap values of '支払手形及び買掛金' and '短期借入金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap values of '短期借入金' and '1年内返済予定の長期借入金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap values of '1年内返済予定の長期借入金' and '未払法人税等'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "swap values of '未払法人税等' and '賞与引当金'"
+      }
+    ],
+    "column_swap": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "reverse the value order of every row"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "reverse the value order of every row"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "reverse the value order of every row"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "reverse the value order of every row"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "reverse the value order of every row"
+      }
+    ],
+    "period_header_swap": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "swap the two period dates"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "swap the two period dates"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "swap the two period dates"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "swap the two period dates"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "swap the two period dates"
+      }
+    ],
+    "unit_change": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '円'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '百万円'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '万円'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '億円'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '円'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '百万円'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '万円'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "unit '千円' -> '億円'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '円'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '千円'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '万円'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '億円'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '円'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '千円'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '万円'"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '億円'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '円'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '千円'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '万円'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '億円'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '円'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '千円'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '万円'"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "unit '百万円' -> '億円'"
+      }
+    ],
+    "label_confusable_flip": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'流動資産' -> '流動負債'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'売掛金' -> '買掛金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'電子記録債権' -> '電子記録債務'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'短期貸付金' -> '短期借入金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'流動資産合計' -> '流動負債合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'固定資産' -> '固定負債'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'有形固定資産' -> '有形固定負債'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'有形固定資産合計' -> '有形固定負債合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'無形固定資産合計' -> '無形固定負債合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'長期貸付金' -> '長期借入金'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'固定資産合計' -> '固定負債合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'流動資産' -> '流動負債'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'受取手形及び売掛金' -> '受取手形及び買掛金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'流動資産合計' -> '流動負債合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'固定資産' -> '固定負債'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'有形固定資産' -> '有形固定負債'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'無形固定資産合計' -> '無形固定負債合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'固定資産合計' -> '固定負債合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'流動負債' -> '流動資産'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'支払手形及び買掛金' -> '支払手形及び売掛金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'短期借入金' -> '短期貸付金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'1年内返済予定の長期借入金' -> '1年内返済予定の長期貸付金'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'未払法人税等' -> '未収法人税等'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'資産除去債務' -> '資産除去債権'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "'流動負債合計' -> '流動資産合計'"
+      }
+    ],
+    "plug_subtotals": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'現金及び預金' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'現金及び預金' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'受取手形' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'受取手形' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'売掛金' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'売掛金' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'電子記録債権' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'電子記録債権' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'商品及び製品' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'商品及び製品' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'仕掛品' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'仕掛品' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'原材料及び貯蔵品' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'原材料及び貯蔵品' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'短期貸付金' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'短期貸付金' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'貸倒引当金' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'減価償却累計額' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'減価償却累計額' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'減価償却累計額' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'減価償却累計額' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'土地' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'土地' [col 1] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'減価償却累計額' [col 0] +123 and totals up to '資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "'減価償却累計額' [col 1] +123 and totals up to '資産合計'"
+      }
+    ],
+    "label_script_drift": [
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産' -> '流动資産'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流动資産合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流動资产合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'有形固定資産合計' -> '有形固定资产合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'無形固定資産合計' -> '無形固定资产合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'投資その他の資産合計' -> '投資その他の资产合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'固定資産合計' -> '固定资产合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'資産合計' -> '资产合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産' -> '流动資産'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流动資産合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流動资产合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'無形固定資産合計' -> '無形固定资产合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'固定資産合計' -> '固定资产合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'資産合計' -> '资产合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産' -> '流动資産'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流动資産合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流動资产合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "'有形固定資産合計' -> '有形固定资产合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "'無形固定資産合計' -> '無形固定资产合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "'投資その他の資産合計' -> '投資その他の资产合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "'固定資産合計' -> '固定资产合計'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent_degraded",
+        "desc": "'資産合計' -> '资产合計'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産' -> '流动資産'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流动資産合計'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流動资产合計'"
+      }
+    ],
+    "label_total_noise": [
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流動資産合計※1'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流動資産 合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流動資産計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'有形固定資産合計' -> '有形固定資産合計※1'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'有形固定資産合計' -> '有形固定資産 合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'有形固定資産合計' -> '有形固定資産計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'無形固定資産合計' -> '無形固定資産合計※1'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'無形固定資産合計' -> '無形固定資産 合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'無形固定資産合計' -> '無形固定資産計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'投資その他の資産合計' -> '投資その他の資産合計※1'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'投資その他の資産合計' -> '投資その他の資産 合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'投資その他の資産合計' -> '投資その他の資産計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'固定資産合計' -> '固定資産合計※1'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'固定資産合計' -> '固定資産 合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'固定資産合計' -> '固定資産計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'資産合計' -> '資産合計※1'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'資産合計' -> '資産 合計'"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent_degraded",
+        "desc": "'資産合計' -> '資産計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流動資産合計※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流動資産 合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'流動資産合計' -> '流動資産計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'無形固定資産合計' -> '無形固定資産合計※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'無形固定資産合計' -> '無形固定資産 合計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'無形固定資産合計' -> '無形固定資産計'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent_degraded",
+        "desc": "'固定資産合計' -> '固定資産合計※1'"
+      }
+    ],
+    "degenerate": [
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "zero rows"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "every value blank"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "every value unparseable"
+      },
+      {
+        "doc": "baseline",
+        "outcome": "silent",
+        "desc": "single row only"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "zero rows"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "every value blank"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "every value unparseable"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "single row only"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "zero rows"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "every value blank"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "every value unparseable"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "silent",
+        "desc": "single row only"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "zero rows"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "every value blank"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "every value unparseable"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "silent",
+        "desc": "single row only"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "zero rows"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "every value blank"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "every value unparseable"
+      },
+      {
+        "doc": "silver_fastretailing_p2",
+        "outcome": "silent",
+        "desc": "single row only"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "zero rows"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "every value blank"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "every value unparseable"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "silent",
+        "desc": "single row only"
+      },
+      {
+        "doc": "silver_nikon_p2",
+        "outcome": "silent",
+        "desc": "zero rows"
+      }
+    ],
+    "invariant_forms": [
+      {
+        "doc": "baseline",
+        "outcome": "false_alarm",
+        "desc": "negatives written with U+2212 minus"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "false_alarm",
+        "desc": "negatives written with U+2212 minus"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "false_alarm",
+        "desc": "negatives written with U+2212 minus"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "false_alarm",
+        "desc": "negatives written with U+2212 minus"
+      }
+    ],
+    "structure_noise": [
+      {
+        "doc": "baseline",
+        "outcome": "false_alarm",
+        "desc": "every plain item labelled 'subtotal'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "false_alarm",
+        "desc": "every plain item labelled 'subtotal'"
+      },
+      {
+        "doc": "yamato",
+        "outcome": "false_alarm",
+        "desc": "every total row labelled 'netted_item'"
+      },
+      {
+        "doc": "silver_fastretailing_p1",
+        "outcome": "false_alarm",
+        "desc": "every plain item labelled 'subtotal'"
+      },
+      {
+        "doc": "silver_nikon_p1",
+        "outcome": "false_alarm",
+        "desc": "every plain item labelled 'subtotal'"
+      }
+    ],
+    "digit_drop": [
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '4,048' -> '48'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '4,048' -> '448'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '4,048' -> '408'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '4,048' -> '404'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 1]: '5,079' -> '79'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 1]: '5,079' -> '579'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 1]: '5,079' -> '509'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 1]: '5,079' -> '507'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '5,727'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '1,727'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '1,527'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '1,577'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '1,572'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '5,461'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '1,461'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '1,561'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '1,541'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '1,546'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '4,739'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '1,739'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '1,439'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '1,479'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '1,473'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 1]: '15,900' -> '5,900'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 1]: '15,900' -> '1,900'"
+      }
+    ],
+    "comma_decimal": [
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '4,048' -> '4.048'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 1]: '5,079' -> '5.079'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '15.727'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '15.461'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '14.739'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 1]: '15,900' -> '15.900'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 0]: '1,766' -> '1.766'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 1]: '1,714' -> '1.714'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "1年内返済予定の長期借入金 [col 0]: '10,000' -> '10.000'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "1年内返済予定の長期借入金 [col 1]: '10,000' -> '10.000'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "未払法人税等 [col 0]: '4,154' -> '4.154'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "未払法人税等 [col 1]: '1,784' -> '1.784'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "賞与引当金 [col 0]: '5,860' -> '5.860'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "賞与引当金 [col 1]: '2,238' -> '2.238'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "その他 [col 0]: '28,109' -> '28.109'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "その他 [col 1]: '30,341' -> '30.341'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "流動負債合計 [col 0]: '64,941' -> '64.941'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "流動負債合計 [col 1]: '62,214' -> '62.214'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "長期借入金 [col 0]: '25,000' -> '25.000'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "長期借入金 [col 1]: '25,000' -> '25.000'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "退職給付に係る負債 [col 0]: '8,687' -> '8.687'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "退職給付に係る負債 [col 1]: '8,151' -> '8.151'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "資産除去債務 [col 0]: '3,272' -> '3.272'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "資産除去債務 [col 1]: '3,290' -> '3.290'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "その他 [col 0]: '3,514' -> '3.514'"
+      }
+    ],
+    "sign_add": [
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '4,048' -> '△4,048'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 1]: '5,079' -> '△5,079'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '△15,727'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '△15,461'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '△14,739'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 1]: '15,900' -> '△15,900'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 0]: '1,766' -> '△1,766'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 1]: '1,714' -> '△1,714'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "1年内返済予定の長期借入金 [col 0]: '10,000' -> '△10,000'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "1年内返済予定の長期借入金 [col 1]: '10,000' -> '△10,000'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "未払法人税等 [col 0]: '4,154' -> '△4,154'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "未払法人税等 [col 1]: '1,784' -> '△1,784'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "賞与引当金 [col 0]: '5,860' -> '△5,860'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "賞与引当金 [col 1]: '2,238' -> '△2,238'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "役員賞与引当金 [col 0]: '159' -> '△159'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "役員賞与引当金 [col 1]: '86' -> '△86'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "株式給付引当金 [col 0]: '43' -> '△43'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "株式給付引当金 [col 1]: '66' -> '△66'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "株主優待引当金 [col 0]: '82' -> '△82'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "株主優待引当金 [col 1]: '82' -> '△82'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "資産除去債務 [col 0]: '24' -> '△24'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "その他 [col 0]: '28,109' -> '△28,109'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "その他 [col 1]: '30,341' -> '△30,341'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "流動負債合計 [col 0]: '64,941' -> '△64,941'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "流動負債合計 [col 1]: '62,214' -> '△62,214'"
+      }
+    ],
+    "number_to_nil": [
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '4,048' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 1]: '5,079' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 1]: '15,900' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 0]: '1,766' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 1]: '1,714' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "1年内返済予定の長期借入金 [col 0]: '10,000' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "1年内返済予定の長期借入金 [col 1]: '10,000' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "未払法人税等 [col 0]: '4,154' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "未払法人税等 [col 1]: '1,784' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "賞与引当金 [col 0]: '5,860' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "賞与引当金 [col 1]: '2,238' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "役員賞与引当金 [col 0]: '159' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "役員賞与引当金 [col 1]: '86' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "株式給付引当金 [col 0]: '43' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "株式給付引当金 [col 1]: '66' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "株主優待引当金 [col 0]: '82' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "株主優待引当金 [col 1]: '82' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "資産除去債務 [col 0]: '24' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "その他 [col 0]: '28,109' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "その他 [col 1]: '30,341' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "流動負債合計 [col 0]: '64,941' -> '－'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "流動負債合計 [col 1]: '62,214' -> '－'"
+      }
+    ],
+    "value_unparseable": [
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '4,048' -> '4,O48'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 0]: '4,048' -> '4,048※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 1]: '5,079' -> '5,O79'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "建設仮勘定 [col 1]: '5,079' -> '5,079※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 0]: '15,727' -> '15,727※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "投資その他の資産 [col 1]: '15,461' -> '15,461※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 0]: '14,739' -> '14,739※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 1]: '15,900' -> '15,9O0'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "支払手形及び買掛金 [col 1]: '15,900' -> '15,900※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 0]: '1,766' -> '1,766※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "短期借入金 [col 1]: '1,714' -> '1,714※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "1年内返済予定の長期借入金 [col 0]: '10,000' -> '1O,000'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "1年内返済予定の長期借入金 [col 0]: '10,000' -> '10,000※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "1年内返済予定の長期借入金 [col 1]: '10,000' -> '1O,000'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "1年内返済予定の長期借入金 [col 1]: '10,000' -> '10,000※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "未払法人税等 [col 0]: '4,154' -> '4,154※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "未払法人税等 [col 1]: '1,784' -> '1,784※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "賞与引当金 [col 0]: '5,860' -> '5,86O'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "賞与引当金 [col 0]: '5,860' -> '5,860※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "賞与引当金 [col 1]: '2,238' -> '2,238※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "役員賞与引当金 [col 0]: '159' -> '159※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "役員賞与引当金 [col 1]: '86' -> '86※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "株式給付引当金 [col 0]: '43' -> '43※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "株式給付引当金 [col 1]: '66' -> '66※1'"
+      },
+      {
+        "doc": "calbee",
+        "outcome": "silent",
+        "desc": "株主優待引当金 [col 0]: '82' -> '82※1'"
+      }
+    ]
+  }
+}

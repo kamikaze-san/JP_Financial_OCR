@@ -1,0 +1,46 @@
+[
+  {
+    "model": "openbmb/minicpm-v4.7:1b",
+    "pass1_latency_sec": 22.14,
+    "pass1_equations_passed": 0,
+    "pass1_cell_accuracy": 0.0,
+    "pass2_latency_sec": 0.0,
+    "pass2_equations_passed": 0,
+    "pass2_cell_accuracy": 0.0,
+    "final_valid": false,
+    "notes": "JSON parsing failed: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "model": "qwen3-vl:2b",
+    "pass1_latency_sec": 42.18,
+    "pass1_equations_passed": 0,
+    "pass1_cell_accuracy": 0.0,
+    "pass2_latency_sec": 0.0,
+    "pass2_equations_passed": 0,
+    "pass2_cell_accuracy": 0.0,
+    "final_valid": false,
+    "notes": "JSON parsing failed: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "model": "qwen3-vl:4b-instruct",
+    "pass1_latency_sec": 50.61,
+    "pass1_equations_passed": 19,
+    "pass1_cell_accuracy": 98.33,
+    "pass2_latency_sec": 47.58,
+    "pass2_equations_passed": 19,
+    "pass2_cell_accuracy": 98.33,
+    "final_valid": false,
+    "notes": ""
+  },
+  {
+    "model": "qwen3-vl:8b",
+    "pass1_latency_sec": 447.19,
+    "pass1_equations_passed": 0,
+    "pass1_cell_accuracy": 0.0,
+    "pass2_latency_sec": 0.0,
+    "pass2_equations_passed": 0,
+    "pass2_cell_accuracy": 0.0,
+    "final_valid": false,
+    "notes": "JSON parsing failed: Expecting value: line 1 column 1 (char 0)"
+  }
+]

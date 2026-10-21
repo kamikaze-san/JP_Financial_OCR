@@ -1,0 +1,307 @@
+{
+  "metadata": {
+    "title": "連結貸借対照表",
+    "is_amended": false,
+    "unit_raw": "単位：千円",
+    "periods": [
+      {
+        "col_index": 1,
+        "raw_label": "科 目",
+        "raw_date": "（2021年3月31日現在）"
+      },
+      {
+        "col_index": 2,
+        "raw_label": "科 目",
+        "raw_date": "（2021年3月31日現在）"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "row_index": 0,
+      "indent_level": 0,
+      "account_raw": "（ 資 産 の 部 ）",
+      "role": "section_header",
+      "values": [
+        "金額",
+        "（ 負 債 の 部 ）",
+        "金額"
+      ]
+    },
+    {
+      "row_index": 1,
+      "indent_level": 1,
+      "account_raw": "流 動 資 産",
+      "role": "group_header",
+      "values": [
+        "6,727,851",
+        "流 動 負 債",
+        "4,518,204"
+      ]
+    },
+    {
+      "row_index": 2,
+      "indent_level": 2,
+      "account_raw": "現 金 及 び 預 金",
+      "role": "item",
+      "values": [
+        "2,431,543",
+        "支 払 手 形 及 び 買 搭 金",
+        "2,085,758"
+      ]
+    },
+    {
+      "row_index": 3,
+      "indent_level": 2,
+      "account_raw": "受 取 手 形 及 び 売 搭 金",
+      "role": "item",
+      "values": [
+        "2,597,733",
+        "電 子 記 録 債 務",
+        "282,577"
+      ]
+    },
+    {
+      "row_index": 4,
+      "indent_level": 2,
+      "account_raw": "電 子 記 録 債 権",
+      "role": "item",
+      "values": [
+        "619,236",
+        "短 期 借 入 金",
+        "1,736,184"
+      ]
+    },
+    {
+      "row_index": 5,
+      "indent_level": 2,
+      "account_raw": "た な 卸 資 産",
+      "role": "item",
+      "values": [
+        "941,263",
+        "リ ー ス 債 務",
+        "29,069"
+      ]
+    },
+    {
+      "row_index": 6,
+      "indent_level": 2,
+      "account_raw": "そ の 他",
+      "role": "item",
+      "values": [
+        "138,073",
+        "未 払 法 人 税 等",
+        "16,209"
+      ]
+    },
+    {
+      "row_index": 7,
+      "indent_level": 1,
+      "account_raw": "固 定 資 産",
+      "role": "group_header",
+      "values": [
+        "1,891,115",
+        "そ の 他",
+        "368,405"
+      ]
+    },
+    {
+      "row_index": 8,
+      "indent_level": 2,
+      "account_raw": "有 形 固 定 資 産",
+      "role": "category_header",
+      "values": [
+        "1,669,735",
+        "固 定 負 債",
+        "2,770,234"
+      ]
+    },
+    {
+      "row_index": 9,
+      "indent_level": 3,
+      "account_raw": "建 物 及 び 構 築 物",
+      "role": "item",
+      "values": [
+        "280,299",
+        "長 期 借 入 金",
+        "2,511,795"
+      ]
+    },
+    {
+      "row_index": 10,
+      "indent_level": 3,
+      "account_raw": "機 械 装 置 及 び 運 輸 具",
+      "role": "item",
+      "values": [
+        "482,581",
+        "リ ー ス 債 務",
+        "56,504"
+      ]
+    },
+    {
+      "row_index": 11,
+      "indent_level": 3,
+      "account_raw": "土 地",
+      "role": "item",
+      "values": [
+        "768,976",
+        "退 職 給 付 に 係 る 負 債",
+        "149,572"
+      ]
+    },
+    {
+      "row_index": 12,
+      "indent_level": 3,
+      "account_raw": "リ ー ス 資 産",
+      "role": "item",
+      "values": [
+        "63,003",
+        "繰 延 税 金 負 債",
+        "42,655"
+      ]
+    },
+    {
+      "row_index": 13,
+      "indent_level": 3,
+      "account_raw": "建 設 仮 勘 定",
+      "role": "item",
+      "values": [
+        "120",
+        "そ の 他",
+        "9,707"
+      ]
+    },
+    {
+      "row_index": 14,
+      "indent_level": 3,
+      "account_raw": "そ の 他",
+      "role": "item",
+      "values": [
+        "74,753",
+        "負 債 合 計",
+        "7,288,439"
+      ]
+    },
+    {
+      "row_index": 15,
+      "indent_level": 1,
+      "account_raw": "無 形 固 定 資 産",
+      "role": "group_header",
+      "values": [
+        "29,819",
+        "（ 純 資 産 の 部 ）",
+        "1,386,071"
+      ]
+    },
+    {
+      "row_index": 16,
+      "indent_level": 2,
+      "account_raw": "リ ー ス 資 産",
+      "role": "item",
+      "values": [
+        "11,682",
+        "株 主 資 本",
+        "927,623"
+      ]
+    },
+    {
+      "row_index": 17,
+      "indent_level": 2,
+      "account_raw": "そ の 他",
+      "role": "item",
+      "values": [
+        "18,136",
+        "資 本 剰 余 金",
+        "763,504"
+      ]
+    },
+    {
+      "row_index": 18,
+      "indent_level": 1,
+      "account_raw": "投 資 そ の 他 の 資 産",
+      "role": "group_header",
+      "values": [
+        "191,561",
+        "利 益 剰 余 金",
+        "△281,812"
+      ]
+    },
+    {
+      "row_index": 19,
+      "indent_level": 2,
+      "account_raw": "投 資 有 価 証 券",
+      "role": "item",
+      "values": [
+        "34,046",
+        "自 己 株 式",
+        "△23,244"
+      ]
+    },
+    {
+      "row_index": 20,
+      "indent_level": 2,
+      "account_raw": "そ の 他",
+      "role": "item",
+      "values": [
+        "160,344",
+        "そ の 他 包 括 利 益 累 計 額",
+        "△56,345"
+      ]
+    },
+    {
+      "row_index": 21,
+      "indent_level": 2,
+      "account_raw": "貸 倒 引 当 金",
+      "role": "item",
+      "values": [
+        "△2,830",
+        "そ の 他 有 価 証 券 評 価 差 額 金",
+        "1,354"
+      ]
+    },
+    {
+      "row_index": 22,
+      "indent_level": 2,
+      "account_raw": "繰 延 ヘ ッ ジ 損 益",
+      "role": "item",
+      "values": [
+        "542",
+        "為 替 換 算 調 整 勘 定",
+        "△26,854"
+      ]
+    },
+    {
+      "row_index": 23,
+      "indent_level": 2,
+      "account_raw": "退 職 給 付 に 係 る 調 整 累 計 額",
+      "role": "item",
+      "values": [
+        "△31,387",
+        "非 支 配 株 主 持 分",
+        "801"
+      ]
+    },
+    {
+      "row_index": 24,
+      "indent_level": 2,
+      "account_raw": "純 資 産 合 計",
+      "role": "subtotal",
+      "values": [
+        "1,330,527",
+        "負 債 ・ 純 資 産 合 計",
+        "8,618,966"
+      ]
+    },
+    {
+      "row_index": 25,
+      "indent_level": 0,
+      "account_raw": "資 産 合 計",
+      "role": "grand_total",
+      "values": [
+        "8,618,966",
+        "負 債 ・ 純 資 産 合 計",
+        "8,618,966"
+      ]
+    }
+  ]
+}

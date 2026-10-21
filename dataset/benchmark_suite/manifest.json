@@ -1,0 +1,53 @@
+[
+  {
+    "id": "company_01_yamato",
+    "name": "Yamato Mobility & Mfg. (7886)",
+    "accounting_standard": "J-GAAP",
+    "unit": "千円",
+    "layout": "single_page_t_account",
+    "pdf_path": "dataset/benchmark_suite\\company_01_yamato\\balance_sheet.pdf",
+    "image_paths": [
+      "dataset/benchmark_suite\\company_01_yamato\\page_1.png"
+    ],
+    "num_pages": 1
+  },
+  {
+    "id": "company_02_calbee",
+    "name": "Calbee, Inc. (2229)",
+    "accounting_standard": "J-GAAP",
+    "unit": "百万円",
+    "layout": "two_page_comparative",
+    "pdf_path": "dataset/benchmark_suite\\company_02_calbee\\balance_sheet.pdf",
+    "image_paths": [
+      "dataset/benchmark_suite\\company_02_calbee\\page_1.png",
+      "dataset/benchmark_suite\\company_02_calbee\\page_2.png"
+    ],
+    "num_pages": 2
+  },
+  {
+    "id": "company_03_fastretailing",
+    "name": "Fast Retailing Co., Ltd. (9983)",
+    "accounting_standard": "J-GAAP (Individual)",
+    "unit": "百万円",
+    "layout": "two_page_comparative",
+    "pdf_path": "dataset/benchmark_suite\\company_03_fastretailing\\balance_sheet.pdf",
+    "image_paths": [
+      "dataset/benchmark_suite\\company_03_fastretailing\\page_1.png",
+      "dataset/benchmark_suite\\company_03_fastretailing\\page_2.png"
+    ],
+    "num_pages": 2
+  },
+  {
+    "id": "company_04_nikon",
+    "name": "Nikon Corporation (7731)",
+    "accounting_standard": "IFRS (財政状態計算書)",
+    "unit": "百万円",
+    "layout": "two_page_comparative",
+    "pdf_path": "dataset/benchmark_suite\\company_04_nikon\\balance_sheet.pdf",
+    "image_paths": [
+      "dataset/benchmark_suite\\company_04_nikon\\page_1.png",
+      "dataset/benchmark_suite\\company_04_nikon\\page_2.png"
+    ],
+    "num_pages": 2
+  }
+]
