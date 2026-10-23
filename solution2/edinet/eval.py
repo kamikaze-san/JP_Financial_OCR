@@ -25,6 +25,7 @@ from typing import Any, Dict, List, Optional, Sequence
 
 from solution1.models import RawDocumentTree
 from solution2.extract import ollama_extractor
+from solution2.formats import compare_numeric_rows, format_extractor
 from solution2.harness.adapters import V1Verifier
 from solution2.harness.realcheck import numbers_match, wrong_cells
 from solution2.pipeline import OK_STATUSES, process_pages
@@ -100,9 +101,10 @@ def _timed_ms(fn) -> float:
 
 
 def evaluate_group(group: List[Dict[str, Any]], out_dir: Path, model: str, do_repair: bool = True,
-                   join: bool = True, dpi: int = 200) -> List[Dict[str, Any]]:
+                   join: bool = True, dpi: int = 200, fmt: str = "json") -> List[Dict[str, Any]]:
     folder = out_dir / f"{group[0]['docID'] if 'docID' in group[0] else group[0]['id']}_p{group[0]['page_index'] + 1}"
-    outcomes = process_pages(group[0]["pdf"], [e["page_index"] for e in group], folder, ollama_extractor(model),
+    extractor = ollama_extractor(model) if fmt == "json" else format_extractor(model, fmt)
+    outcomes = process_pages(group[0]["pdf"], [e["page_index"] for e in group], folder, extractor,
                              lambda page: OllamaReader(model), dpi=dpi, do_repair=do_repair, join=join)
     rows = []
     for entry, o in zip(group, outcomes):
@@ -125,7 +127,7 @@ def evaluate_group(group: List[Dict[str, Any]], out_dir: Path, model: str, do_re
         v2 = verify_document(raw)
         flagged_pipeline = o.status in ("needs_review", "repaired") or o.vlm_calls > 0   # not trusted at first sight (repair ran)
         row.update({
-            "wrong_before": len(before), "wrong_after": len(after),
+            "wrong_before": len(before), "wrong_after": len(after), "rowcmp": compare_numeric_rows(raw, gold),
             "v1": classify_detection(bool(before), v1.verify(raw).flagged, ok_before),
             "v2_alone": classify_detection(bool(before), not v2.trusted, ok_before),
             "v2": classify_detection(bool(before), flagged_pipeline, ok_before),
@@ -137,21 +139,21 @@ def evaluate_group(group: List[Dict[str, Any]], out_dir: Path, model: str, do_re
 
 
 def run_eval(manifest: List[Dict[str, Any]], split: str, model: str, out_dir: Path, only: str = "",
-             do_repair: bool = True, join: bool = True, dpi: int = 200, progress=print) -> Dict[str, Any]:
+             do_repair: bool = True, join: bool = True, dpi: int = 200, fmt: str = "json", progress=print) -> Dict[str, Any]:
     chosen = [e for e in manifest if (split == "all" or e["split"] == split) and only in e["id"]]
     load_s = warm_up(model)
     progress(f"model {model} loaded in {load_s}s (cold start); scoring {len(chosen)} pages")
     rows: List[Dict[str, Any]] = []
     wall0 = time.perf_counter()
     for group in contiguous_groups(chosen):
-        for r in evaluate_group(group, out_dir, model, do_repair, join, dpi):
+        for r in evaluate_group(group, out_dir, model, do_repair, join, dpi, fmt):
             rows.append(r)
             t = r["timing"]
             progress(f"[{len(rows)}/{len(chosen)}] {r['id']:<24} {r['company'][:14]:<14} {r['standard']:<7} {r['status']:<15} "
                      f"v1={r.get('v1', '-'):<12} v2alone={r.get('v2_alone', '-'):<12} v2={r.get('v2', '-'):<12} "
                      f"repair={r.get('repair', '-'):<10} total={t.get('total_s', 0):.1f}s extract={t.get('extract_s', 0):.1f}s")
     wall = time.perf_counter() - wall0
-    return {"split": split, "model": model, "dpi": dpi, "code": code_fingerprint(),
+    return {"split": split, "model": model, "dpi": dpi, "format": fmt, "code": code_fingerprint(),
             "when": datetime.datetime.now().isoformat(timespec="seconds"), "wall_s": round(wall, 1), "model_load_s": load_s,
             **aggregate(rows)}
 
