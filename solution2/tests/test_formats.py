@@ -47,3 +47,12 @@ def test_row_comparison_ignores_structure_and_sees_a_shift():
     shifted.rows[2].account_raw, shifted.rows[3].account_raw = shifted.rows[3].account_raw, shifted.rows[2].account_raw
     res = compare_numeric_rows(shifted, gold)
     assert res["exact"] == 1 and res["misplaced"] == 2
+
+
+def test_indentation_spelled_as_markup_is_not_part_of_the_label():
+    text = ("(単位：千円)\n\n|  | 前期 (2025年3月31日) | 当期 (2026年3月31日) |\n|---|---|---|\n| **負債の部** |  |  |\n"
+            "| \quad\quad借入金 | 100 | 110 |\n| &nbsp;&nbsp;&nbsp;&nbsp;社債 | 50 | 60 |\n| 負債合計 | 150 | 170 |\n")
+    tree = parse_table_text(text)
+    labels = [r.account_raw for r in tree.rows]
+    assert "借入金" in labels and "社債" in labels
+    assert [r.indent_level for r in tree.rows if r.account_raw == "借入金"] == [2]

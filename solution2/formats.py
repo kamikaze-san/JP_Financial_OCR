@@ -67,6 +67,15 @@ class _Rows(HTMLParser):
             self.outside.append(data.strip())
 
 
+def _indent_markup(cell: str) -> str:
+    r"""Indentation the model spelled as markup (\quad, \qquad, \hspace{Nem}, &nbsp;) becomes ideographic spaces."""
+    cell = re.sub(r"\\qquad", "\u3000\u3000", cell)
+    cell = re.sub(r"\\quad", "\u3000", cell)
+    cell = re.sub(r"\\hspace\*?\{(\d+(?:\.\d+)?)\s*em\}", lambda m: "\u3000" * int(float(m.group(1))), cell)
+    cell = re.sub(r"(?:&nbsp;){2,4}", "　", cell)
+    return cell.replace("&nbsp;", " ")
+
+
 def _markdown_rows(text: str) -> Tuple[List[List[str]], List[str]]:
     rows, outside = [], []
     for line in text.splitlines():
@@ -75,9 +84,35 @@ def _markdown_rows(text: str) -> Tuple[List[List[str]], List[str]]:
             cells = [c.strip() for c in s.strip("|").split("|")]
             if all(re.fullmatch(r":?-{2,}:?", c) for c in cells if c):
                 continue
-            rows.append([re.sub(r"\s+", " ", c.replace("**", "")).strip() for c in cells])
+            rows.append([re.sub(r"[ \t]+", " ", _indent_markup(c).replace("**", "")).strip(" \t") for c in cells])
         elif s and not s.startswith("```"):
             outside.append(s)
+    return rows, outside
+
+
+def _latex_rows(text: str) -> Tuple[List[List[str]], List[str]]:
+    r"""Qwen's Markdown mode writes tables as LaTeX tabular; \hspace{Nem} in the label cell is the indent."""
+    head, _, rest = text.partition("\\begin{tabular}")
+    body = rest.split("\\end{tabular}")[0]
+    body = re.sub(r"^\{[^{}]*\}", "", body.lstrip())                      # column spec {lrr}
+    outside = [l.strip() for l in head.splitlines() if l.strip() and not l.startswith(("```", "<!--"))]
+    body = re.sub(r"\\(?:hline|cline\{[^{}]*\}|toprule|midrule|bottomrule)", "", body)
+    body = re.sub(r"\\hspace\*?\{(\d+(?:\.\d+)?)\s*em\}", lambda m: "\u3000" * int(float(m.group(1))), body)
+    rows = []
+    for raw_row in body.split("\\\\"):
+        if not raw_row.strip():
+            continue
+        cells = []
+        for cell in re.split(r"(?<!\\)&", raw_row):
+            m = re.fullmatch(r"\s*\\multicolumn\{(\d+)\}\{[^{}]*\}\{(.*)\}\s*", cell, flags=re.S)
+            span, content = (int(m.group(1)), m.group(2)) if m else (1, cell)
+            for _ in range(3):
+                content = re.sub(r"\\(?:textbf|text|mathrm|textrm|mbox)\{([^{}]*)\}", r"\1", content)
+            content = _indent_markup(content)
+            content = content.replace("\\%", "%").replace("\\&", "&").replace("$", "").replace("\\,", "")
+            cells.append(re.sub(r"[ \t\n]+", " ", content).strip(" \t\n"))
+            cells.extend([""] * (span - 1))
+        rows.append(cells)
     return rows, outside
 
 
@@ -87,6 +122,8 @@ def _split_rows(text: str) -> Tuple[List[List[str]], List[str]]:
         p.feed(text)
         outside = list(p.outside)
         return p.rows, outside + [c for r in p.rows[:6] for c in r if "単位" in c]
+    if "\\begin{tabular}" in text:
+        return _latex_rows(text)
     return _markdown_rows(text)
 
 
@@ -205,3 +242,71 @@ def compare_numeric_rows(pred: RawDocumentTree, gold: RawDocumentTree) -> dict:
     misplaced = sum((g_vals & p_vals).values())
     return {"gold_rows": sum(g.values()), "exact": exact, "misplaced": misplaced,
             "missing": sum(g_left.values()) - misplaced, "extra": sum(p_left.values()) - misplaced}
+
+
+def replay_extractor(root, kind: str) -> Callable[[str], Optional[str]]:
+    """Re-parse model answers saved by an earlier run (`<image>.<kind>.txt`, found by image file name under `root`):
+    lets a parser fix be scored without calling the model again. Returns None for an image with no saved answer."""
+    root = Path(root)
+    index = {p.name[: -len(f".{kind}.txt")]: p for p in root.rglob(f"*.{kind}.txt")}
+
+    def extract(image_path: str) -> Optional[str]:
+        saved = index.get(Path(image_path).name)
+        if saved is None:
+            return None
+        try:
+            return parse_table_text(saved.read_text(encoding="utf-8")).model_dump_json(indent=2)
+        except Exception:
+            return None
+
+    return extract
+
+
+# ----------------------------------------------------------------------------- Markdown reads of a band
+_PERIOD_WORDS = re.compile(r"年|期|月|日|前|当")
+
+
+def rows_from_markdown(text: str, ncols: int):
+    """Rows of a band read in Qwen's Markdown mode: (label, values) per table row.
+
+    Column-heading rows (an empty or date-like label with no numbers) are dropped, since the page-level call supplies the
+    columns. Returns None when the answer holds digits but no parsable table (so the caller can retry on smaller pieces)."""
+    from solution2.repair.reader import ReadRow
+    table_rows, _ = _split_rows(text)
+    out = []
+    for r in table_rows:
+        if not r:
+            continue
+        label = r[0].replace("**", "").strip("　  ").strip()
+        values = list(r[1:])
+        while values and not values[-1].strip():
+            values.pop()
+        has_numbers = any(_is_numeric(c) for c in values)
+        if not has_numbers:
+            if not label or _PERIOD_WORDS.search(label) and re.search(r"\d{4}\s*年|\d+\s*月", " ".join(r)):
+                continue                                             # a column-heading row
+            values = []
+        elif len(values) > ncols and not any(v.strip() for v in values[ncols:]):
+            values = values[:ncols]
+        out.append(ReadRow(label, values))
+    if not out and re.search(r"\d{2,}", text):
+        return None
+    return out
+
+
+class MarkdownBandReader:
+    """A band read with the prompt "QwenVL Markdown" (no JSON constraint), same interface as the repair loop's reader."""
+
+    def __init__(self, model: str = "qwen3-vl:4b-instruct", num_ctx: int = 12288, num_predict: int = 3072):
+        self.model, self.num_ctx, self.num_predict = model, num_ctx, num_predict
+
+    def read(self, crop, ncols: int):
+        import ollama
+        try:
+            resp = ollama.chat(model=self.model, messages=[{"role": "user", "content": PROMPTS["markdown"], "images": [str(crop.image_path)]}],
+                               options={"num_ctx": self.num_ctx, "num_predict": self.num_predict, "temperature": 0.0})
+            text = resp["message"]["content"]
+        except Exception:
+            return None
+        Path(str(crop.image_path) + ".md.txt").write_text(text, encoding="utf-8")
+        return rows_from_markdown(text, ncols)

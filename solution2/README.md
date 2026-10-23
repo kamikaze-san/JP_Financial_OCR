@@ -9,6 +9,9 @@ Measured accuracy and latency of everything built so far: [RESULTS.md](RESULTS.m
 solution2/
   pipeline.py  entry point: render -> VLM -> verify -> repair -> export (solution1's pipeline is untouched)
   extract.py   Stage-1 VLM call (solution1's prompt, imported unchanged) and page rendering
+  bands.py     first read in bands: the page cut at the white gaps between text lines, each band read on its own, rows stitched
+  formats.py   first read as Qwen HTML / Markdown tables (+ LaTeX tabular) converted to the Stage-1 tree; structure-blind row scoring
+  benchmark_docs.py  the original benchmark documents, clean and degraded (scan-like, skewed) renders
   export.py    per-cell-status exporters (json / xlsx / md)
   verify/      parsing.py   strict cell / unit / date / label parsers (no silent defaults)
                reducer.py   hierarchy-driven verifier -> DocumentVerdict (per-cell verdicts)
@@ -18,12 +21,15 @@ solution2/
   edinet/      EDINET downloader (list first, approve, then fetch) + XBRL-CSV gold + held-out evaluation (see edinet/README.md)
   harness/     mutation suite, real-output scoring, repair scoring, gate (see harness/README.md)
   fixtures/    real Qwen3-VL output collected for the gold pages
+  data_sample/ the 40 TDnet filings (PDF), the plan and the prepared gold pages (tracked; solution2/data/ is the git-ignored scratch area)
+  tests/       pipeline, bands and formats tests (the verifier, repair and TDnet/EDINET tests sit next to their packages)
 ```
 
 ## Use
 
 ```bash
-python -m solution2.pipeline statement.pdf                 # the whole thing: PDF -> VLM -> verify -> repair -> xlsx/md/json
+python -m solution2.pipeline statement.pdf                 # the whole thing: PDF -> VLM (JSON read) -> verify -> join -> repair -> xlsx/md/json
+python -m solution2.tdnet eval --format bands --dpi 300 ...  # the same chain with another first read: json | html | markdown | bands | bands_md
 python -m solution2.verify path/to/stage1.json -v          # exit 1 if not trusted
 python -m solution2.harness.run --verifier v2 --gate        # acceptance gate
 python -m solution2.repair stage1.json --pdf page.pdf        # verify, then repair what is not trusted

@@ -17,6 +17,10 @@ NUMBER, NIL, BLANK, BAD = "number", "nil", "blank", "bad"
 _NIL = {"-", "―", "ー", "—", "–", "−", "─"}            # after NFKC ("－" has become "-")
 _NEGATIVE_PREFIXES = "△▲-−"
 _GROUPED_INT = re.compile(r"\d{1,3}(?:,\d{3})+|\d+")   # commas only at thousands boundaries
+# a footnote reference printed next to a number ("※1 110,588", "△17,221 ※3"): not part of the value. The digit must be
+# separated from the number by a space, otherwise "※1110,588" is ambiguous and stays a bad cell.
+_FOOTNOTE_LEAD = re.compile(r"^\s*[※*]\d{0,2}\s+")
+_FOOTNOTE_TRAIL = re.compile(r"(?<=\d)\s+[※*]\d{0,2}\s*$")
 
 
 @dataclass(frozen=True)
@@ -29,7 +33,9 @@ class Cell:
 
 def parse_cell(raw: str) -> Cell:
     """Strict: anything that is not an unambiguous integer, nil dash or blank is `bad`."""
-    s = re.sub(r"\s+", "", unicodedata.normalize("NFKC", raw or ""))
+    text = unicodedata.normalize("NFKC", raw or "")
+    text = _FOOTNOTE_TRAIL.sub("", _FOOTNOTE_LEAD.sub("", text))
+    s = re.sub(r"\s+", "", text)
     if not s:
         return Cell(BLANK, None, raw)
     if s in _NIL:

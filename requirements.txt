@@ -1,0 +1,7 @@
+pymupdf
+pillow
+numpy
+pydantic>=2
+openpyxl
+ollama
+pytest

@@ -25,7 +25,8 @@ from typing import Any, Dict, List, Optional, Sequence
 
 from solution1.models import RawDocumentTree
 from solution2.extract import ollama_extractor
-from solution2.formats import compare_numeric_rows, format_extractor
+from solution2.bands import BandConfig, band_extractor
+from solution2.formats import compare_numeric_rows, format_extractor, replay_extractor
 from solution2.harness.adapters import V1Verifier
 from solution2.harness.realcheck import numbers_match, wrong_cells
 from solution2.pipeline import OK_STATUSES, process_pages
@@ -36,9 +37,9 @@ SOLUTION2 = Path(__file__).resolve().parents[1]
 
 
 def code_fingerprint() -> str:
-    """Hash of the verifier / repair / pipeline source, so a test-split number is tied to the code that made it."""
+    """Hash of the verifier / repair / pipeline / first-read (bands, formats) source, so a test-split number is tied to the code that made it."""
     h = hashlib.sha256()
-    for sub in ("verify", "repair", "extract.py", "pipeline.py", "export.py"):
+    for sub in ("verify", "repair", "extract.py", "pipeline.py", "export.py", "bands.py", "formats.py"):
         path = SOLUTION2 / sub
         for p in ([path] if path.is_file() else sorted(path.rglob("*.py"))):
             if "tests" not in p.parts:
@@ -101,9 +102,14 @@ def _timed_ms(fn) -> float:
 
 
 def evaluate_group(group: List[Dict[str, Any]], out_dir: Path, model: str, do_repair: bool = True,
-                   join: bool = True, dpi: int = 200, fmt: str = "json") -> List[Dict[str, Any]]:
+                   join: bool = True, dpi: int = 200, fmt: str = "json",
+                   replay_from: Optional[Path] = None, num_ctx: Optional[int] = None) -> List[Dict[str, Any]]:
     folder = out_dir / f"{group[0]['docID'] if 'docID' in group[0] else group[0]['id']}_p{group[0]['page_index'] + 1}"
-    extractor = ollama_extractor(model) if fmt == "json" else format_extractor(model, fmt)
+    extractor = (replay_extractor(replay_from, fmt) if replay_from else
+                 ollama_extractor(model) if fmt == "json" else
+                 band_extractor(model, BandConfig(dpi=dpi, reader="markdown" if fmt == "bands_md" else "json",
+                                                  **({"num_ctx": num_ctx} if num_ctx else {}))) if fmt in ("bands", "bands_md") else
+                 format_extractor(model, fmt, **({"num_ctx": num_ctx} if num_ctx else {})))
     outcomes = process_pages(group[0]["pdf"], [e["page_index"] for e in group], folder, extractor,
                              lambda page: OllamaReader(model), dpi=dpi, do_repair=do_repair, join=join)
     rows = []
@@ -139,14 +145,14 @@ def evaluate_group(group: List[Dict[str, Any]], out_dir: Path, model: str, do_re
 
 
 def run_eval(manifest: List[Dict[str, Any]], split: str, model: str, out_dir: Path, only: str = "",
-             do_repair: bool = True, join: bool = True, dpi: int = 200, fmt: str = "json", progress=print) -> Dict[str, Any]:
+             do_repair: bool = True, join: bool = True, dpi: int = 200, fmt: str = "json", replay_from: Optional[Path] = None, num_ctx: Optional[int] = None, progress=print) -> Dict[str, Any]:
     chosen = [e for e in manifest if (split == "all" or e["split"] == split) and only in e["id"]]
-    load_s = warm_up(model)
+    load_s = None if replay_from else warm_up(model)
     progress(f"model {model} loaded in {load_s}s (cold start); scoring {len(chosen)} pages")
     rows: List[Dict[str, Any]] = []
     wall0 = time.perf_counter()
     for group in contiguous_groups(chosen):
-        for r in evaluate_group(group, out_dir, model, do_repair, join, dpi, fmt):
+        for r in evaluate_group(group, out_dir, model, do_repair, join, dpi, fmt, replay_from, num_ctx):
             rows.append(r)
             t = r["timing"]
             progress(f"[{len(rows)}/{len(chosen)}] {r['id']:<24} {r['company'][:14]:<14} {r['standard']:<7} {r['status']:<15} "

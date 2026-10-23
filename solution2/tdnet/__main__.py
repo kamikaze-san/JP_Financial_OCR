@@ -97,7 +97,8 @@ def cmd_eval(args) -> int:
     manifest = [m for m in manifest if m["status"] in keep and (not args.docs or m["docID"] in args.docs)]
     tag = f"{args.split}_{args.run_name}" if args.run_name else args.split
     rep = run_eval(manifest, args.split, args.model, data / "eval_runs" / tag, args.only, not args.no_repair,
-                   not args.no_join, args.dpi, args.format)
+                   not args.no_join, args.dpi, args.format,
+                   Path(args.replay_from) if args.replay_from else None, args.num_ctx or None)
     text = format_report(rep)
     print("\n" + text)
     (data / f"eval_{tag}.json").write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -143,8 +144,10 @@ def main(argv=None) -> int:
     p.add_argument("--include-ambiguous", action="store_true")
     p.add_argument("--no-repair", action="store_true")
     p.add_argument("--no-join", action="store_true", help="verify every page on its own (no joining of split statements)")
-    p.add_argument("--format", choices=["json", "html", "markdown"], default="json",
-                   help="what the first full-page read asks for: solution1 Stage-1 JSON, or Qwen HTML / Markdown tables")
+    p.add_argument("--format", choices=["json", "html", "markdown", "bands", "bands_md"], default="json",
+                   help="what the first read is: solution1 Stage-1 JSON, Qwen HTML / Markdown tables, or bands (the page cut into bands of text lines)")
+    p.add_argument("--replay-from", help="re-parse the saved HTML/Markdown answers under this folder instead of calling the model")
+    p.add_argument("--num-ctx", type=int, default=0, help="context window for the model calls (0 = each extractor's default); a smaller one keeps an 8B model mostly on the GPU")
     p.add_argument("--dpi", type=int, default=200, help="render DPI for the first full-page read (repair crops use their own)")
     p.add_argument("--docs", nargs="*", help="score only these docIDs")
     p.add_argument("--run-name", default="", help="suffix for the output folder / report names (e.g. the model), so runs do not overwrite each other")

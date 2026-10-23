@@ -70,3 +70,12 @@ def test_tolerant_loader_reports_its_repairs():
     assert len(notes) == 2
     with pytest.raises(ValueError):
         parse_stage1("not json at all")
+
+
+def test_a_footnote_reference_next_to_a_number_is_not_part_of_the_value():
+    from solution2.verify.parsing import NUMBER, BAD, parse_cell
+    for raw, value in [("※1 110,588", 110588), ("※3 △17,221", -17221), ("△17,221 ※3", -17221), ("110,588 ※1", 110588), ("※ 5", 5), ("*2 9,000", 9000)]:
+        cell = parse_cell(raw)
+        assert cell.kind == NUMBER and cell.value == value, raw
+    assert parse_cell("※1110,588").kind == BAD            # no space: the footnote digit cannot be told from the number
+    assert parse_cell("※1").kind == BAD
