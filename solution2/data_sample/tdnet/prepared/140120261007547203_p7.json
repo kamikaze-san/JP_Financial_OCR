@@ -1,0 +1,256 @@
+{
+ "metadata": {
+  "title": "",
+  "is_amended": false,
+  "unit_raw": "（単位：千円）",
+  "periods": [
+   {
+    "col_index": 1,
+    "raw_label": "column 1",
+    "raw_date": "2026年５月31日"
+   },
+   {
+    "col_index": 2,
+    "raw_label": "column 2",
+    "raw_date": "2026年８月31日"
+   }
+  ]
+ },
+ "rows": [
+  {
+   "row_index": 1,
+   "indent_level": 0,
+   "account_raw": "負債及び資本",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 2,
+   "indent_level": 1,
+   "account_raw": "負債",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 3,
+   "indent_level": 1,
+   "account_raw": "流動負債",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 4,
+   "indent_level": 1,
+   "account_raw": "営業債務及びその他の債務",
+   "role": "item",
+   "values": [
+    "1,004,756",
+    "865,483"
+   ]
+  },
+  {
+   "row_index": 5,
+   "indent_level": 1,
+   "account_raw": "契約負債",
+   "role": "item",
+   "values": [
+    "2,431",
+    "3,810"
+   ]
+  },
+  {
+   "row_index": 6,
+   "indent_level": 1,
+   "account_raw": "リース負債",
+   "role": "item",
+   "values": [
+    "364,400",
+    "362,759"
+   ]
+  },
+  {
+   "row_index": 7,
+   "indent_level": 1,
+   "account_raw": "未払法人所得税等",
+   "role": "item",
+   "values": [
+    "592,799",
+    "135,383"
+   ]
+  },
+  {
+   "row_index": 8,
+   "indent_level": 1,
+   "account_raw": "その他の流動負債",
+   "role": "item",
+   "values": [
+    "1,222,760",
+    "744,910"
+   ]
+  },
+  {
+   "row_index": 9,
+   "indent_level": 1,
+   "account_raw": "流動負債合計",
+   "role": "subtotal",
+   "values": [
+    "3,187,148",
+    "2,112,348"
+   ]
+  },
+  {
+   "row_index": 10,
+   "indent_level": 1,
+   "account_raw": "非流動負債",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 11,
+   "indent_level": 1,
+   "account_raw": "リース負債",
+   "role": "item",
+   "values": [
+    "926,297",
+    "839,336"
+   ]
+  },
+  {
+   "row_index": 12,
+   "indent_level": 1,
+   "account_raw": "その他の金融負債",
+   "role": "item",
+   "values": [
+    "69,226",
+    "69,419"
+   ]
+  },
+  {
+   "row_index": 13,
+   "indent_level": 1,
+   "account_raw": "引当金",
+   "role": "item",
+   "values": [
+    "133,858",
+    "134,231"
+   ]
+  },
+  {
+   "row_index": 14,
+   "indent_level": 1,
+   "account_raw": "その他の非流動負債",
+   "role": "item",
+   "values": [
+    "67,871",
+    "72,310"
+   ]
+  },
+  {
+   "row_index": 15,
+   "indent_level": 1,
+   "account_raw": "非流動負債合計",
+   "role": "subtotal",
+   "values": [
+    "1,197,254",
+    "1,115,298"
+   ]
+  },
+  {
+   "row_index": 16,
+   "indent_level": 1,
+   "account_raw": "負債合計",
+   "role": "subtotal",
+   "values": [
+    "4,384,403",
+    "3,227,646"
+   ]
+  },
+  {
+   "row_index": 17,
+   "indent_level": 1,
+   "account_raw": "資本",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 18,
+   "indent_level": 1,
+   "account_raw": "資本金",
+   "role": "item",
+   "values": [
+    "1,195,288",
+    "1,195,288"
+   ]
+  },
+  {
+   "row_index": 19,
+   "indent_level": 1,
+   "account_raw": "資本剰余金",
+   "role": "item",
+   "values": [
+    "1,555,716",
+    "1,647,073"
+   ]
+  },
+  {
+   "row_index": 20,
+   "indent_level": 1,
+   "account_raw": "利益剰余金",
+   "role": "item",
+   "values": [
+    "5,370,780",
+    "5,543,424"
+   ]
+  },
+  {
+   "row_index": 21,
+   "indent_level": 1,
+   "account_raw": "自己株式",
+   "role": "item",
+   "values": [
+    "△512,344",
+    "△512,344"
+   ]
+  },
+  {
+   "row_index": 22,
+   "indent_level": 1,
+   "account_raw": "その他の資本の構成要素",
+   "role": "item",
+   "values": [
+    "23,587",
+    "25,862"
+   ]
+  },
+  {
+   "row_index": 23,
+   "indent_level": 1,
+   "account_raw": "親会社の所有者に帰属する持分合計",
+   "role": "subtotal",
+   "values": [
+    "7,633,027",
+    "7,899,305"
+   ]
+  },
+  {
+   "row_index": 24,
+   "indent_level": 1,
+   "account_raw": "資本合計",
+   "role": "subtotal",
+   "values": [
+    "7,633,027",
+    "7,899,305"
+   ]
+  },
+  {
+   "row_index": 25,
+   "indent_level": 1,
+   "account_raw": "負債及び資本合計",
+   "role": "subtotal",
+   "values": [
+    "12,017,431",
+    "11,126,951"
+   ]
+  }
+ ]
+}

@@ -12,7 +12,7 @@ from solution1.baseline_data import get_baseline_raw_tree
 from solution1.normalizer import normalize_tree
 from solution1.validator import AccountingValidator
 from solution1.vlm_interface import parse_vlm_response
-from run_benchmark import BENCHMARK_PROMPT
+from legacy.run_benchmark import BENCHMARK_PROMPT
 
 def run_pure_autonomous_loop():
     print("=" * 70)

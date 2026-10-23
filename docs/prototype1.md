@@ -1,3 +1,5 @@
+> **Historical document.** This is the specification written for the first prototype. The current design and results are in `solution2/README.md` and `solution2/RESULTS.md`; the links below point to files on the original author's machine.
+
 # Enterprise Japanese Financial Table Parser — Prototype 1 Specification
 **Document Version:** 1.0  
 **Target Domain:** Enterprise Document Intelligence for M&A Due Diligence & Financial Modeling  

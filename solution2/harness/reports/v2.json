@@ -1,7 +1,7 @@
 {
   "verifier": "v2",
   "mutations": 28280,
-  "seconds": 21.8,
+  "seconds": 20.8,
   "clean": {
     "baseline": {
       "flagged": false,

@@ -37,7 +37,7 @@ SILVER = ROOT / "solution2" / "fixtures" / "silver"
 
 def documents() -> Dict[str, Tuple[Path, List[int], RawDocumentTree]]:
     from solution1.baseline_data import get_baseline_raw_tree
-    import build_golden_anchors as bga
+    from solution2.harness import golden_anchors as bga
 
     def silver(name):
         return RawDocumentTree.model_validate_json((SILVER / f"{name}.json").read_text(encoding="utf-8"))

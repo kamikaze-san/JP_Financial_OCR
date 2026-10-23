@@ -12,7 +12,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 from solution1.models import NormalizedDocumentTree
 from solution1.normalizer import parse_numeric_value
-from benchmark_comparator import clean_account_name, parse_html_table_to_rows
+from legacy.benchmark_comparator import clean_account_name, parse_html_table_to_rows
 
 MODELS = [
     "glm-ocr:latest",

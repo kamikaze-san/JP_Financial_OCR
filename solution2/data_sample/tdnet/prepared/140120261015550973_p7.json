@@ -1,0 +1,293 @@
+{
+ "metadata": {
+  "title": "",
+  "is_amended": false,
+  "unit_raw": "（単位：千円）",
+  "periods": [
+   {
+    "col_index": 1,
+    "raw_label": "column 1",
+    "raw_date": "2026年２月28日"
+   },
+   {
+    "col_index": 2,
+    "raw_label": "column 2",
+    "raw_date": "2026年８月31日"
+   }
+  ]
+ },
+ "rows": [
+  {
+   "row_index": 1,
+   "indent_level": 0,
+   "account_raw": "負債の部",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 2,
+   "indent_level": 1,
+   "account_raw": "流動負債",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 3,
+   "indent_level": 2,
+   "account_raw": "買掛金",
+   "role": "item",
+   "values": [
+    "412,064",
+    "452,207"
+   ]
+  },
+  {
+   "row_index": 4,
+   "indent_level": 2,
+   "account_raw": "電子記録債務",
+   "role": "item",
+   "values": [
+    "805,809",
+    "754,106"
+   ]
+  },
+  {
+   "row_index": 5,
+   "indent_level": 2,
+   "account_raw": "短期借入金",
+   "role": "item",
+   "values": [
+    "600,000",
+    "800,000"
+   ]
+  },
+  {
+   "row_index": 6,
+   "indent_level": 2,
+   "account_raw": "１年内返済予定の長期借入金",
+   "role": "item",
+   "values": [
+    "182,096",
+    "182,096"
+   ]
+  },
+  {
+   "row_index": 7,
+   "indent_level": 2,
+   "account_raw": "未払法人税等",
+   "role": "item",
+   "values": [
+    "142,497",
+    "186,786"
+   ]
+  },
+  {
+   "row_index": 8,
+   "indent_level": 2,
+   "account_raw": "賞与引当金",
+   "role": "item",
+   "values": [
+    "16,467",
+    "25,639"
+   ]
+  },
+  {
+   "row_index": 9,
+   "indent_level": 2,
+   "account_raw": "その他",
+   "role": "item",
+   "values": [
+    "228,889",
+    "139,506"
+   ]
+  },
+  {
+   "row_index": 10,
+   "indent_level": 2,
+   "account_raw": "流動負債合計",
+   "role": "subtotal",
+   "values": [
+    "2,387,825",
+    "2,540,341"
+   ]
+  },
+  {
+   "row_index": 11,
+   "indent_level": 1,
+   "account_raw": "固定負債",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 12,
+   "indent_level": 2,
+   "account_raw": "長期借入金",
+   "role": "item",
+   "values": [
+    "1,959,962",
+    "1,861,362"
+   ]
+  },
+  {
+   "row_index": 13,
+   "indent_level": 2,
+   "account_raw": "退職給付引当金",
+   "role": "item",
+   "values": [
+    "65,832",
+    "75,071"
+   ]
+  },
+  {
+   "row_index": 14,
+   "indent_level": 2,
+   "account_raw": "役員退職慰労引当金",
+   "role": "item",
+   "values": [
+    "146,816",
+    "146,816"
+   ]
+  },
+  {
+   "row_index": 15,
+   "indent_level": 2,
+   "account_raw": "その他",
+   "role": "item",
+   "values": [
+    "70,937",
+    "67,902"
+   ]
+  },
+  {
+   "row_index": 16,
+   "indent_level": 2,
+   "account_raw": "固定負債合計",
+   "role": "subtotal",
+   "values": [
+    "2,243,549",
+    "2,151,153"
+   ]
+  },
+  {
+   "row_index": 17,
+   "indent_level": 1,
+   "account_raw": "負債合計",
+   "role": "subtotal",
+   "values": [
+    "4,631,374",
+    "4,691,495"
+   ]
+  },
+  {
+   "row_index": 18,
+   "indent_level": 0,
+   "account_raw": "純資産の部",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 19,
+   "indent_level": 1,
+   "account_raw": "株主資本",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 20,
+   "indent_level": 2,
+   "account_raw": "資本金",
+   "role": "item",
+   "values": [
+    "938,185",
+    "938,185"
+   ]
+  },
+  {
+   "row_index": 21,
+   "indent_level": 2,
+   "account_raw": "資本剰余金",
+   "role": "item",
+   "values": [
+    "936,214",
+    "936,214"
+   ]
+  },
+  {
+   "row_index": 22,
+   "indent_level": 2,
+   "account_raw": "利益剰余金",
+   "role": "item",
+   "values": [
+    "3,680,351",
+    "3,974,256"
+   ]
+  },
+  {
+   "row_index": 23,
+   "indent_level": 2,
+   "account_raw": "自己株式",
+   "role": "item",
+   "values": [
+    "△85,114",
+    "△85,114"
+   ]
+  },
+  {
+   "row_index": 24,
+   "indent_level": 2,
+   "account_raw": "株主資本合計",
+   "role": "subtotal",
+   "values": [
+    "5,469,636",
+    "5,763,542"
+   ]
+  },
+  {
+   "row_index": 25,
+   "indent_level": 1,
+   "account_raw": "評価・換算差額等",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 26,
+   "indent_level": 2,
+   "account_raw": "その他有価証券評価差額金",
+   "role": "item",
+   "values": [
+    "183,756",
+    "202,102"
+   ]
+  },
+  {
+   "row_index": 27,
+   "indent_level": 2,
+   "account_raw": "評価・換算差額等合計",
+   "role": "subtotal",
+   "values": [
+    "183,756",
+    "202,102"
+   ]
+  },
+  {
+   "row_index": 28,
+   "indent_level": 1,
+   "account_raw": "純資産合計",
+   "role": "subtotal",
+   "values": [
+    "5,653,393",
+    "5,965,644"
+   ]
+  },
+  {
+   "row_index": 29,
+   "indent_level": 0,
+   "account_raw": "負債純資産合計",
+   "role": "grand_total",
+   "values": [
+    "10,284,767",
+    "10,657,140"
+   ]
+  }
+ ]
+}

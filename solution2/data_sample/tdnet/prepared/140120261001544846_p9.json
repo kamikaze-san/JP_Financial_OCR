@@ -1,0 +1,202 @@
+{
+ "metadata": {
+  "title": "",
+  "is_amended": false,
+  "unit_raw": "（単位：百万円）",
+  "periods": [
+   {
+    "col_index": 1,
+    "raw_label": "column 1",
+    "raw_date": "2026年２月28日"
+   },
+   {
+    "col_index": 2,
+    "raw_label": "column 2",
+    "raw_date": "2026年８月31日"
+   }
+  ]
+ },
+ "rows": [
+  {
+   "row_index": 1,
+   "indent_level": 0,
+   "account_raw": "資産",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 2,
+   "indent_level": 1,
+   "account_raw": "流動資産",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 3,
+   "indent_level": 1,
+   "account_raw": "現金及び現金同等物",
+   "role": "item",
+   "values": [
+    "18,109",
+    "15,984"
+   ]
+  },
+  {
+   "row_index": 4,
+   "indent_level": 1,
+   "account_raw": "売上債権及びその他の債権",
+   "role": "item",
+   "values": [
+    "35,151",
+    "29,712"
+   ]
+  },
+  {
+   "row_index": 5,
+   "indent_level": 1,
+   "account_raw": "棚卸資産",
+   "role": "item",
+   "values": [
+    "31,682",
+    "30,057"
+   ]
+  },
+  {
+   "row_index": 6,
+   "indent_level": 1,
+   "account_raw": "その他の金融資産",
+   "role": "item",
+   "values": [
+    "57",
+    "17"
+   ]
+  },
+  {
+   "row_index": 7,
+   "indent_level": 1,
+   "account_raw": "その他の流動資産",
+   "role": "item",
+   "values": [
+    "1,771",
+    "2,974"
+   ]
+  },
+  {
+   "row_index": 8,
+   "indent_level": 1,
+   "account_raw": "流動資産合計",
+   "role": "subtotal",
+   "values": [
+    "86,771",
+    "78,744"
+   ]
+  },
+  {
+   "row_index": 9,
+   "indent_level": 1,
+   "account_raw": "非流動資産",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 10,
+   "indent_level": 1,
+   "account_raw": "有形固定資産",
+   "role": "item",
+   "values": [
+    "33,412",
+    "34,093"
+   ]
+  },
+  {
+   "row_index": 11,
+   "indent_level": 1,
+   "account_raw": "使用権資産",
+   "role": "item",
+   "values": [
+    "46,318",
+    "41,808"
+   ]
+  },
+  {
+   "row_index": 12,
+   "indent_level": 1,
+   "account_raw": "のれん",
+   "role": "item",
+   "values": [
+    "61,168",
+    "61,168"
+   ]
+  },
+  {
+   "row_index": 13,
+   "indent_level": 1,
+   "account_raw": "無形資産",
+   "role": "item",
+   "values": [
+    "21,488",
+    "21,186"
+   ]
+  },
+  {
+   "row_index": 14,
+   "indent_level": 1,
+   "account_raw": "持分法で会計処理されている投資",
+   "role": "item",
+   "values": [
+    "1,418",
+    "1,432"
+   ]
+  },
+  {
+   "row_index": 15,
+   "indent_level": 1,
+   "account_raw": "繰延税金資産",
+   "role": "item",
+   "values": [
+    "7,952",
+    "7,986"
+   ]
+  },
+  {
+   "row_index": 16,
+   "indent_level": 1,
+   "account_raw": "その他の金融資産",
+   "role": "item",
+   "values": [
+    "19,801",
+    "19,598"
+   ]
+  },
+  {
+   "row_index": 17,
+   "indent_level": 1,
+   "account_raw": "その他の非流動資産",
+   "role": "item",
+   "values": [
+    "1,731",
+    "1,214"
+   ]
+  },
+  {
+   "row_index": 18,
+   "indent_level": 1,
+   "account_raw": "非流動資産合計",
+   "role": "subtotal",
+   "values": [
+    "193,288",
+    "188,485"
+   ]
+  },
+  {
+   "row_index": 19,
+   "indent_level": 0,
+   "account_raw": "資産合計",
+   "role": "grand_total",
+   "values": [
+    "280,059",
+    "267,228"
+   ]
+  }
+ ]
+}

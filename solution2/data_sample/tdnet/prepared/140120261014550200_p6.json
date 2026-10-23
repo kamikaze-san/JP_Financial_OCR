@@ -1,0 +1,380 @@
+{
+ "metadata": {
+  "title": "",
+  "is_amended": false,
+  "unit_raw": "　 （単位：百万円）",
+  "periods": [
+   {
+    "col_index": 1,
+    "raw_label": "column 1",
+    "raw_date": "2026年２月28日"
+   },
+   {
+    "col_index": 2,
+    "raw_label": "column 2",
+    "raw_date": "2026年８月31日"
+   }
+  ]
+ },
+ "rows": [
+  {
+   "row_index": 1,
+   "indent_level": 0,
+   "account_raw": "資産の部",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 2,
+   "indent_level": 1,
+   "account_raw": "流動資産",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 3,
+   "indent_level": 2,
+   "account_raw": "現金及び預金",
+   "role": "item",
+   "values": [
+    "5,370",
+    "4,256"
+   ]
+  },
+  {
+   "row_index": 4,
+   "indent_level": 2,
+   "account_raw": "売掛金",
+   "role": "item",
+   "values": [
+    "837",
+    "935"
+   ]
+  },
+  {
+   "row_index": 5,
+   "indent_level": 2,
+   "account_raw": "商品及び製品",
+   "role": "item",
+   "values": [
+    "4,392",
+    "4,170"
+   ]
+  },
+  {
+   "row_index": 6,
+   "indent_level": 2,
+   "account_raw": "仕掛品",
+   "role": "item",
+   "values": [
+    "1",
+    "0"
+   ]
+  },
+  {
+   "row_index": 7,
+   "indent_level": 2,
+   "account_raw": "原材料及び貯蔵品",
+   "role": "item",
+   "values": [
+    "123",
+    "125"
+   ]
+  },
+  {
+   "row_index": 8,
+   "indent_level": 2,
+   "account_raw": "未収入金",
+   "role": "item",
+   "values": [
+    "3,406",
+    "3,197"
+   ]
+  },
+  {
+   "row_index": 9,
+   "indent_level": 2,
+   "account_raw": "その他",
+   "role": "item",
+   "values": [
+    "300",
+    "246"
+   ]
+  },
+  {
+   "row_index": 10,
+   "indent_level": 2,
+   "account_raw": "流動資産合計",
+   "role": "subtotal",
+   "values": [
+    "14,433",
+    "12,932"
+   ]
+  },
+  {
+   "row_index": 11,
+   "indent_level": 1,
+   "account_raw": "固定資産",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 12,
+   "indent_level": 2,
+   "account_raw": "有形固定資産",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 13,
+   "indent_level": 3,
+   "account_raw": "建物及び構築物（純額）",
+   "role": "netted_item",
+   "values": [
+    "15,291",
+    "14,739"
+   ]
+  },
+  {
+   "row_index": 14,
+   "indent_level": 3,
+   "account_raw": "土地",
+   "role": "item",
+   "values": [
+    "12,039",
+    "11,994"
+   ]
+  },
+  {
+   "row_index": 15,
+   "indent_level": 3,
+   "account_raw": "その他（純額）",
+   "role": "netted_item",
+   "values": [
+    "4,102",
+    "4,027"
+   ]
+  },
+  {
+   "row_index": 16,
+   "indent_level": 3,
+   "account_raw": "有形固定資産合計",
+   "role": "subtotal",
+   "values": [
+    "31,433",
+    "30,760"
+   ]
+  },
+  {
+   "row_index": 17,
+   "indent_level": 2,
+   "account_raw": "無形固定資産",
+   "role": "item",
+   "values": [
+    "2,483",
+    "2,588"
+   ]
+  },
+  {
+   "row_index": 18,
+   "indent_level": 2,
+   "account_raw": "投資その他の資産",
+   "role": "item",
+   "values": [
+    "3,608",
+    "3,977"
+   ]
+  },
+  {
+   "row_index": 19,
+   "indent_level": 2,
+   "account_raw": "固定資産合計",
+   "role": "subtotal",
+   "values": [
+    "37,525",
+    "37,326"
+   ]
+  },
+  {
+   "row_index": 20,
+   "indent_level": 1,
+   "account_raw": "資産合計",
+   "role": "grand_total",
+   "values": [
+    "51,958",
+    "50,258"
+   ]
+  },
+  {
+   "row_index": 21,
+   "indent_level": 0,
+   "account_raw": "負債の部",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 22,
+   "indent_level": 1,
+   "account_raw": "流動負債",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 23,
+   "indent_level": 2,
+   "account_raw": "買掛金",
+   "role": "item",
+   "values": [
+    "7,882",
+    "7,568"
+   ]
+  },
+  {
+   "row_index": 24,
+   "indent_level": 2,
+   "account_raw": "短期借入金",
+   "role": "item",
+   "values": [
+    "2,200",
+    "1,300"
+   ]
+  },
+  {
+   "row_index": 25,
+   "indent_level": 2,
+   "account_raw": "１年内返済予定の長期借入金",
+   "role": "item",
+   "values": [
+    "984",
+    "484"
+   ]
+  },
+  {
+   "row_index": 26,
+   "indent_level": 2,
+   "account_raw": "未払法人税等",
+   "role": "item",
+   "values": [
+    "310",
+    "218"
+   ]
+  },
+  {
+   "row_index": 27,
+   "indent_level": 2,
+   "account_raw": "賞与引当金",
+   "role": "item",
+   "values": [
+    "270",
+    "270"
+   ]
+  },
+  {
+   "row_index": 28,
+   "indent_level": 2,
+   "account_raw": "契約負債",
+   "role": "item",
+   "values": [
+    "461",
+    "564"
+   ]
+  },
+  {
+   "row_index": 29,
+   "indent_level": 2,
+   "account_raw": "その他",
+   "role": "item",
+   "values": [
+    "5,086",
+    "4,746"
+   ]
+  },
+  {
+   "row_index": 30,
+   "indent_level": 2,
+   "account_raw": "流動負債合計",
+   "role": "subtotal",
+   "values": [
+    "17,196",
+    "15,152"
+   ]
+  },
+  {
+   "row_index": 31,
+   "indent_level": 1,
+   "account_raw": "固定負債",
+   "role": "group_header",
+   "values": []
+  },
+  {
+   "row_index": 32,
+   "indent_level": 2,
+   "account_raw": "長期借入金",
+   "role": "item",
+   "values": [
+    "3,117",
+    "2,861"
+   ]
+  },
+  {
+   "row_index": 33,
+   "indent_level": 2,
+   "account_raw": "退職給付に係る負債",
+   "role": "item",
+   "values": [
+    "135",
+    "227"
+   ]
+  },
+  {
+   "row_index": 34,
+   "indent_level": 2,
+   "account_raw": "資産除去債務",
+   "role": "item",
+   "values": [
+    "1,254",
+    "1,263"
+   ]
+  },
+  {
+   "row_index": 35,
+   "indent_level": 2,
+   "account_raw": "リース債務",
+   "role": "item",
+   "values": [
+    "2,717",
+    "2,578"
+   ]
+  },
+  {
+   "row_index": 36,
+   "indent_level": 2,
+   "account_raw": "その他",
+   "role": "item",
+   "values": [
+    "791",
+    "787"
+   ]
+  },
+  {
+   "row_index": 37,
+   "indent_level": 2,
+   "account_raw": "固定負債合計",
+   "role": "subtotal",
+   "values": [
+    "8,017",
+    "7,719"
+   ]
+  },
+  {
+   "row_index": 38,
+   "indent_level": 1,
+   "account_raw": "負債合計",
+   "role": "subtotal",
+   "values": [
+    "25,213",
+    "22,871"
+   ]
+  }
+ ]
+}

@@ -1,43 +1,70 @@
 # solution2 results: accuracy and latency
 
-Model for every VLM number below unless stated (section 1e compares 2B and GLM-OCR): `qwen3-vl:4b-instruct` via Ollama, 200 DPI pages, 8 GB GPU, one request at a time.
-Latency is wall-clock seconds per page, measured after a warm-up call (cold start ~6 s, reported separately).
-Everything here was produced by the code in this repo; the commands to reproduce each table are at the bottom.
+Every number here was produced by the code in this repository (commands at the bottom). Hardware: one 8 GB GPU, Ollama, Q4 models, one request at a time.
+Model for the numbers below unless stated: `qwen3-vl:4b-instruct`. Latency is wall-clock seconds per page, measured after a warm-up call (cold start about 6 s, reported separately).
+The sections are a chronological log (what was tried, what it showed, what was corrected afterwards), so later sections can refine or correct earlier ones; this summary is the current state.
 
 ## Summary (read this first)
 
-Everything below was measured on 19 balance-sheet pages from 10 TDnet filings (two independent random samples, dev split; the test split of 21 filings is unparsed and sealed). 477 gold rows carry numbers.
-These are first-read numbers (repair off) unless stated; the verifier, joining and repair sit on top of every first read.
+**The data used.** 50 real TDnet 決算短信 filings (92 balance-sheet pages; gold = the PDF text layer, kept only where the verifier independently agrees), used in separate roles, plus the 5 original benchmark documents (8 pages):
+
+| Set | Filings / pages | Used for |
+| :-- | :-: | :-- |
+| dev A, dev B | 5 + 5 / 11 + 8 | building, and choosing the configurations by a written rule (sections 1a-1k) |
+| sealed test | 21 / 38 | run once, with the configurations frozen beforehand (1m) |
+| dev C, dev D | 5 + 4 / 9 + 7 | the PDF text-layer check, run after it was frozen (1p) |
+| fresh set E | 10 / 19 | downloaded afterwards on request; the frozen pipelines and the text-layer check (1p) |
+| benchmark documents | 5 / 8 | Yamato (T-account), Calbee, FastRetailing, Nikon, baseline; clean, scan-like and skewed renders (1l, 1o) |
+
+**First read compared on the dev pages (19 pages, 477 gold rows with numbers, repair off):**
 
 | First read | Model | Rows exact | Pages with a wrong or missing number | Read per page | Section |
 | :-- | :-- | :-: | :-: | :-: | :-: |
 | solution1 JSON, whole page | 4B | 98.5% | 3 | 38.9 s | 1h |
 | Qwen HTML, whole page | 4B | 98.7% | 1 | 22.1 s | 1h |
-| Qwen Markdown, whole page | 4B | 93.7% (label slips) | 1 | 18.0 s | 1h |
+| Qwen Markdown, whole page | 4B | 97.9% | 1 | 18.0 s | 1h (corrected) |
 | **Bands (12 text lines per read)** | **4B** | **99.6%** (99.4% re-run with the final code, 1n) | **0** | **40.5 s** | 1i |
 | solution1 JSON, whole page | 2B | 84.1% | 6 | 22.0 s | 1h |
 | Qwen Markdown, whole page | 2B | 97.1% | 2 | 9.9 s | 1h |
 | Bands | 2B | 84.3% | 15 | 24.7 s | 1i |
 | Qwen Markdown, whole page | 8B (20% on CPU) | 99.6% | 0 | 56.1 s | 1j |
 
-**Sealed test (21 filings never seen while building, 38 pages, full pipeline with joining and repair; section 1m):**
+**Full pipeline (first read -> verify -> join split pages -> retry loop) on filings no model had seen:**
 
-| Configuration | First-read rows exact | Final: trusted / left for review | Trusted pages with a wrong cell | Total per page |
-| :-- | :-: | :-: | :-: | :-: |
-| **4B, bands** | **98.9%** | 33 / 5 | **0** | 48.4 s |
-| 2B, whole-page Markdown | 96.5% | 25 / 13 | 0 | **17.0 s** |
-| 4B, whole-page JSON (previous default) | 97.9% | 35 / 3 | 1 | 58.0 s |
+| Configuration | Set | First-read rows exact | Trusted / left for review | Trusted pages with a wrong cell | Total per page |
+| :-- | :-: | :-: | :-: | :-: | :-: |
+| **4B, bands** | sealed test (38 pages) | **98.9%** | 33 / 5 | **0** | 48.4 s |
+| 2B, whole-page Markdown | sealed test | 96.5% | 25 / 13 | 0 | **17.0 s** |
+| 4B, whole-page JSON (previous default) | sealed test | 97.9% | 35 / 3 | 1 | 58.0 s |
+| 4B, bands | fresh set E (19 pages) | 98.6% | 14 / 5 | 0 | 47.6 s |
+| 2B, whole-page Markdown | fresh set E | 95.9% | 8 / 11 | 0 | 16.8 s |
 
-* Safety held in every configuration: the verifier vouched for no wrong number. The one trusted misattribution (2B, values shifted one row inside a block, JSON) is described in 1e.
-* The best accuracy per second so far is **4B in bands** (99.6%, 40 s) or **2B in Markdown** (97.1%, 10 s) when speed matters; 8B matches 4B bands on accuracy at 1.4x the time and is not worth it as a first reader.
-* Not yet in the main pipeline: bands, HTML and Markdown are available only through the evaluation command (`--format`); `python -m solution2.pipeline` still uses the JSON read. The choice of bands for 4B was made on the 19 dev pages and confirmed on the sealed test (1m).
-* Known weak spots: label slips in Markdown reads (繰延 -> 練延, 賞与 -> 貸与), a single sample of IFRS pages, T-account pages (not cut into bands yet), scans (the band cutter has only seen clean renders), and the layer that would catch receivable/payable label flips (not built).
+**The PDF text layer as a witness for the model's rows (1p):** on native digital PDFs it flagged **315 of 315** wrong rows (label slips, values moved onto another row, wrong or invented numbers) across 7 samples, with 5 false alarms in 9,590 correct rows (0.05%); 200 of 200 on the filings it was not developed on. The gold there is built from the same text layer, and the PDFs come from two main generators and none is scanned, so this measures the matching, not other producers or scans.
 
----
+* **Safety held everywhere:** the verifier vouched for no wrong number in any configuration on the sealed test or the fresh set. The one trusted misattribution seen anywhere (2B, values shifted one row inside a block, JSON) is in 1e; the old validator (v1) vouched for 9, 3 and 2 wrong pages after the sealed-test JSON, bands and Markdown reads.
+* **Best accuracy per second: 4B in bands** (about 99%, 40 s), or **2B in Markdown** (about 96-97%, 10 s) when throughput matters more than coverage; 8B matches 4B bands on accuracy at 1.4x the time and is not worth it as a first reader.
+* **Not in the main pipeline yet:** bands, HTML and Markdown are only selectable in the evaluation command (`--format`); `python -m solution2.pipeline` still uses the JSON read. The text-layer witness is an evaluation tool, not a pipeline stage.
+* **Known weak spots:** two-sided T-account pages (the 4B Markdown read is largely right but the converter and retry loop are one-sided: 1o), real scans (never run), label slips that arithmetic cannot see (the witness covers digital PDFs only), IFRS and other layouts are a small part of the sample, and some correct pages are held for review because the verifier is strict (false alarms on the sealed test: 2 of 38 pages for 4B bands, 9 of 38 for 2B Markdown).
 
-Scope of the unseen-data run: **5 TDnet 決算短信 filings (11 balance-sheet pages) from the dev split.** The other 35 downloaded
-filings and the whole test split have not been parsed. n = 11 pages is small: read the rates as "what happened", not as a
-tight estimate.
+## Contents of the log
+
+| Section | What it covers |
+| :-- | :-- |
+| 1a-1d | First unseen-data run: 5 filings, accuracy, latency, what it showed |
+| 1e | Three models (4B, 2B, GLM-OCR) on the same pages |
+| 1f | 200 vs 300 DPI |
+| 1g | Second random sample and its failure modes |
+| 1h | First-read format: solution1 JSON vs Qwen HTML vs Qwen Markdown |
+| 1i | Reading in bands |
+| 1j | The 8B-instruct model (CPU offload) |
+| 1k | Bands with the Markdown prompt, and **the protocol for the sealed test** |
+| 1l | The original benchmark documents, scan-like and skewed renders, two pipeline bugs found (footnote markers, the band cutter) |
+| 1m | **Sealed test result** |
+| 1n | Check that later code changes did not move the dev numbers |
+| 1o | T-account pages: model or converter? |
+| 1p | The PDF text layer as a witness (seven samples) |
+| 2-5 | Verifier v1 vs v2 on 28,280 synthetic corruptions; real-output scorecard; retry loop on real outputs; earlier benchmark numbers |
+| Limits, Reproduce, Appendix | Limits of these results, the commands, and the bugs the first unseen-data pass exposed |
 
 ---
 
@@ -540,24 +567,46 @@ A text-layer reader (digital PDFs only, no model) repaired the same pages with n
 
 ## Limits of these results
 
-* 11 + 8 pages from 10 filings (two independent random samples), dev split only; no test-split number exists yet. The test split must stay unseen until the verifier is frozen.
-* The text-layer gold covers digital PDFs only. Scans would need the XBRL gold (EDINET path is built but has never been run with a key).
-* Arithmetic identities do not see a consistent mislabel, a swapped period, or values moved between rows of one block (seen once in 1e, 2B @200 DPI);
-  these show up as "known gaps" in section 2. A per-row cross-check against the PDF text layer is the planned second signal for digital PDFs.
-* One P-LOOPLACE-style false alarm per ~11 pages is the current cost of failing closed.
+* 92 TDnet pages from 50 filings plus 8 benchmark pages: small samples, mostly J-GAAP, all digital PDFs; no real scan has been run. Differences of one page between configurations are within noise.
+* The gold for TDnet pages is the PDF text layer (kept only where the verifier agrees), so a model error that the text layer shares cannot show up; the benchmark documents' hand-built gold agrees with their text layer exactly.
+* The PDFs come from two main generators (PDFlib and iText 7); the text-layer witness is not shown to hold for other producers, OCR layers or scans.
+* Arithmetic identities do not see a consistent mislabel, a swapped period, or values moved between rows of one block (seen once in 1e, 2B @200 DPI); these are the "known gaps" in section 2. The text-layer witness (1p) covers them on digital PDFs.
+* T-account (two-sided) pages are read by the models but not supported by the converter, the band cutter or the retry loop (1o).
+* The cost of failing closed: some correct pages are held for review (verifier false alarms, e.g. a flattened sub-group, a half statement that starts at 負債及び資本).
 
 ## Reproduce
 
 ```bash
-python -m pytest solution2 -q                                                            # 165 tests
-python -m solution2.harness.run --verifier v2 --gate                                     # section 2
-python -m solution2.tdnet eval --data-dir solution2/data_sample/tdnet --split dev --include-split   # section 1 (needs Ollama + qwen3-vl:4b-instruct)
-python -m solution2.tdnet eval --data-dir solution2/data_sample/tdnet --split dev --include-split --no-join   # same run, page by page
-python -m solution2.tdnet eval --data-dir solution2/data_sample/tdnet --split dev --include-split --model qwen3-vl:2b-instruct --run-name qwen2b   # 1e (also glm-ocr:latest)
-python -m solution2.tdnet eval --data-dir solution2/data_sample/tdnet --split dev --include-split --model qwen3-vl:4b-instruct --dpi 300 --run-name qwen4b_300   # 1f
-python -m solution2.tdnet eval --data-dir solution2/data_sample/tdnet --split dev --include-split --include-ambiguous --no-repair --model qwen3-vl:4b-instruct --format html --run-name fmt_html_qwen4b   # 1h (also --format markdown, --model qwen3-vl:2b-instruct)
-python -m solution2.tdnet eval --data-dir solution2/data_sample/tdnet --split dev --include-split --include-ambiguous --no-repair --model qwen3-vl:4b-instruct --format bands --dpi 300 --run-name fmt_bands_qwen4b   # 1i
+python -m pytest solution2 -q                                         # 171 tests, no model needed
+python -m solution2.harness.run --verifier v2 --gate                  # section 2 (the mutation gate)
+D=solution2/data_sample/tdnet                                         # the 50 filings, plan files and prepared gold pages (relative paths)
+# first reads on the dev filings (needs Ollama and the model): 1h-1k
+python -m solution2.tdnet eval --data-dir $D --split dev --include-split --include-ambiguous --no-repair --model qwen3-vl:4b-instruct --format bands --dpi 300 --run-name fmt_bands_qwen4b
+#   --format json | html | markdown | bands | bands_md    --model qwen3-vl:2b-instruct | qwen3-vl:8b-instruct (--num-ctx 8192)
+# full pipeline on the sealed test, the frozen configurations (1m): --split test, repair and joining on
+python -m solution2.tdnet eval --data-dir $D --split test --include-split --include-ambiguous --model qwen3-vl:4b-instruct --format bands --dpi 300 --run-name sealed_4b_bands
+python -m solution2.tdnet eval --data-dir $D --split test --include-split --include-ambiguous --model qwen3-vl:2b-instruct --format markdown --dpi 200 --run-name sealed_2b_markdown
+# the original benchmark documents, clean and degraded (1l, 1o)
+python -m solution2.benchmark_docs --model qwen3-vl:4b-instruct --configs json markdown bands --degrade scan skew
+# the PDF text-layer witness on the saved answers of the runs above (1p); no model needed
+python -m solution2.witness_eval --splits A B T C D E
 ```
 
-`solution2/data_sample/tdnet` holds all 40 downloaded filings (about 20 MB), the plan (token `b174e2e274`), and the 11 prepared gold pages
-(relative paths). TDnet's viewer only keeps about 31 days, so these copies are the only way to reproduce the run later.
+`solution2/data_sample/tdnet` holds the 50 filings (PDF, about 24 MB), the sampling plans (`plan.json`: 40 filings, token `b174e2e274`; `plan_2.json`: the 10 of set E, token `a10fb2567c`) and the 92 prepared gold pages.
+TDnet's viewer only keeps about 31 days, so these copies are the only way to reproduce the runs later. The saved model answers of the runs themselves live in `solution2/data/` (git-ignored scratch), which `witness_eval` reads.
+Note: the dev/test split recorded in the manifest is the one made when each plan was drawn (a hash of the docID); set E was drawn with every filing marked "test", which is why `--split test` also contains the 10 fresh filings (use `--docs` to pick a subset).
+
+## Appendix: what the first unseen-data pass exposed (history)
+
+The first pass over pages that nothing had been tuned on (Nikon IFRS, Fast Retailing) found these verifier faults, all fixed since; those pages are now part of the mutation suite (`fixtures/silver/`).
+
+| finding | cause | fix |
+|---|---|---|
+| Fast Retailing p2 flagged on a clean page | sub-group heading with no subtotal (`その他利益剰余金`) read as a dropped total | only suspicious when the swallowing window also holds closed section totals |
+| Nikon (IFRS) p2: `非流動負債合計` off by +2 | rounding convention defaulted to truncation on thin evidence | convention needs evidence; with none, both are allowed; one outlier no longer flips it |
+| Nikon p2: `資本合計` double counts | inline subtotal `親会社の所有者に帰属する持分` has no 計 label | a row equal to the sum of the rows above is a subtotal; role-only totals no longer close sections |
+| Nikon: false `date_unresolved` / "3 values for 2 periods" | a 増減 (change) column has no date, and the VLM left it out of `periods` | change columns need no date, are inferred from `current - prior = change`, and add a per-row identity check; the pipeline prompt now asks for every numeric column |
+| Nikon p2 flagged although every number was right | VLM echoed `資本金` as a heading above the `資本金` line | an echoed heading is ignored unless a total is named after it |
+| Nikon p1 never repaired | the VLM turned the line item `有形固定資産` into a heading; "too broken" fired on one large window | blank cells of a heading beside the window can be filled by the reads; "too broken" only on near-total failure |
+| loop crash on the Yamato T-account; one outcome got *worse* | overlapping crops disagreed about a row; two-column pages were not detected | deletes need unanimity, any error in a window fails closed, T-account pages are detected and declined |
+

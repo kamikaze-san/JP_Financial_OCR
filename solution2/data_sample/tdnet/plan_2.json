@@ -1,0 +1,276 @@
+{
+ "source": "tdnet",
+ "created": "2026-10-23T19:24:30",
+ "filters": {
+  "from": "2026-09-23",
+  "to": "2026-10-22",
+  "n": 10,
+  "seed": 31,
+  "min_ifrs": 3,
+  "test_fraction": 1.0,
+  "allow_unknown": false,
+  "excluded_codes": [
+   "2157",
+   "2229",
+   "2653",
+   "2742",
+   "2753",
+   "2792",
+   "325A",
+   "3333",
+   "339A",
+   "3536",
+   "3612",
+   "3697",
+   "3915",
+   "4016",
+   "428A",
+   "434A",
+   "4432",
+   "4433",
+   "4645",
+   "464A",
+   "4992",
+   "5026",
+   "523A",
+   "557A",
+   "5817",
+   "581A",
+   "6159",
+   "6199",
+   "638A",
+   "6496",
+   "6572",
+   "7731",
+   "7886",
+   "7894",
+   "8095",
+   "8167",
+   "8904",
+   "9168",
+   "9252",
+   "9602",
+   "9837",
+   "9982",
+   "9983",
+   "9993"
+  ],
+  "eligible_found": 476,
+  "eligible_ifrs": 17
+ },
+ "total_bytes_known": 4043993,
+ "unknown_sizes": 0,
+ "entries": [
+  {
+   "docID": "140120261013549760",
+   "secCode": "30860",
+   "filerName": "Jフロント",
+   "title": "2027年2月期 第2四半期(中間期)決算短信〔IFRS〕(連結)",
+   "date": "2026-10-13",
+   "time": "15:30",
+   "standard": "IFRS",
+   "pdf": "140120261013549760.pdf",
+   "pdf_url": "https://www.release.tdnet.info/inbs/140120261013549760.pdf",
+   "xbrl": "081220261013549760.zip",
+   "split": "test",
+   "files": [
+    {
+     "type": "pdf",
+     "name": "pdf",
+     "size": 346627,
+     "how": "range"
+    }
+   ]
+  },
+  {
+   "docID": "140120261007547203",
+   "secCode": "277A0",
+   "filerName": "グロービング",
+   "title": "2027年5月期  第1四半期決算短信〔IFRS〕(連結)",
+   "date": "2026-10-15",
+   "time": "15:30",
+   "standard": "IFRS",
+   "pdf": "140120261007547203.pdf",
+   "pdf_url": "https://www.release.tdnet.info/inbs/140120261007547203.pdf",
+   "xbrl": "081220261007547203.zip",
+   "split": "test",
+   "files": [
+    {
+     "type": "pdf",
+     "name": "pdf",
+     "size": 244774,
+     "how": "range"
+    }
+   ]
+  },
+  {
+   "docID": "140120261015551650",
+   "secCode": "65550",
+   "filerName": "MSコンサル",
+   "title": "2027年2月期第2四半期(中間期)決算短信〔IFRS〕(連結)",
+   "date": "2026-10-15",
+   "time": "16:10",
+   "standard": "IFRS",
+   "pdf": "140120261015551650.pdf",
+   "pdf_url": "https://www.release.tdnet.info/inbs/140120261015551650.pdf",
+   "xbrl": "081220261015551650.zip",
+   "split": "test",
+   "files": [
+    {
+     "type": "pdf",
+     "name": "pdf",
+     "size": 536049,
+     "how": "range"
+    }
+   ]
+  },
+  {
+   "docID": "140120261013550007",
+   "secCode": "66340",
+   "filerName": "JNグループ",
+   "title": "2026年11月期第3四半期決算短信〔日本基準〕(連結)",
+   "date": "2026-10-14",
+   "time": "15:30",
+   "standard": "J-GAAP",
+   "pdf": "140120261013550007.pdf",
+   "pdf_url": "https://www.release.tdnet.info/inbs/140120261013550007.pdf",
+   "xbrl": "081220261013550007.zip",
+   "split": "test",
+   "files": [
+    {
+     "type": "pdf",
+     "name": "pdf",
+     "size": 578203,
+     "how": "range"
+    }
+   ]
+  },
+  {
+   "docID": "140120261009548383",
+   "secCode": "77130",
+   "filerName": "シグマ光機",
+   "title": "2027年5月期 第1四半期決算短信〔日本基準〕(連結)",
+   "date": "2026-10-09",
+   "time": "15:00",
+   "standard": "J-GAAP",
+   "pdf": "140120261009548383.pdf",
+   "pdf_url": "https://www.release.tdnet.info/inbs/140120261009548383.pdf",
+   "xbrl": "081220261009548383.zip",
+   "split": "test",
+   "files": [
+    {
+     "type": "pdf",
+     "name": "pdf",
+     "size": 257284,
+     "how": "range"
+    }
+   ]
+  },
+  {
+   "docID": "140120260929542125",
+   "secCode": "47600",
+   "filerName": "アルファ",
+   "title": "2026年8月期 決算短信〔日本基準〕(連結)",
+   "date": "2026-10-09",
+   "time": "15:30",
+   "standard": "J-GAAP",
+   "pdf": "140120260929542125.pdf",
+   "pdf_url": "https://www.release.tdnet.info/inbs/140120260929542125.pdf",
+   "xbrl": "081220260929542125.zip",
+   "split": "test",
+   "files": [
+    {
+     "type": "pdf",
+     "name": "pdf",
+     "size": 323634,
+     "how": "range"
+    }
+   ]
+  },
+  {
+   "docID": "140120260926540603",
+   "secCode": "46160",
+   "filerName": "川上塗料",
+   "title": "2026年11月期 第3四半期決算短信〔日本基準〕(連結)",
+   "date": "2026-10-15",
+   "time": "15:30",
+   "standard": "J-GAAP",
+   "pdf": "140120260926540603.pdf",
+   "pdf_url": "https://www.release.tdnet.info/inbs/140120260926540603.pdf",
+   "xbrl": "081220260926540603.zip",
+   "split": "test",
+   "files": [
+    {
+     "type": "pdf",
+     "name": "pdf",
+     "size": 173700,
+     "how": "range"
+    }
+   ]
+  },
+  {
+   "docID": "140120260930543256",
+   "secCode": "13770",
+   "filerName": "サカタのタネ",
+   "title": "2027年5月期第1四半期決算短信[日本基準](連結)",
+   "date": "2026-10-06",
+   "time": "15:30",
+   "standard": "J-GAAP",
+   "pdf": "140120260930543256.pdf",
+   "pdf_url": "https://www.release.tdnet.info/inbs/140120260930543256.pdf",
+   "xbrl": "081220260930543256.zip",
+   "split": "test",
+   "files": [
+    {
+     "type": "pdf",
+     "name": "pdf",
+     "size": 569243,
+     "how": "range"
+    }
+   ]
+  },
+  {
+   "docID": "140120261013549514",
+   "secCode": "323A0",
+   "filerName": "G-フライヤー",
+   "title": "2027年2月期第2四半期(中間期)決算短信〔日本基準〕(連結)",
+   "date": "2026-10-14",
+   "time": "16:00",
+   "standard": "J-GAAP",
+   "pdf": "140120261013549514.pdf",
+   "pdf_url": "https://www.release.tdnet.info/inbs/140120261013549514.pdf",
+   "xbrl": "081220261013549514.zip",
+   "split": "test",
+   "files": [
+    {
+     "type": "pdf",
+     "name": "pdf",
+     "size": 475105,
+     "how": "range"
+    }
+   ]
+  },
+  {
+   "docID": "140120261006546736",
+   "secCode": "39070",
+   "filerName": "シリコンスタジオ",
+   "title": "2026年11月期 第3四半期決算短信〔日本基準〕(非連結)",
+   "date": "2026-10-08",
+   "time": "16:00",
+   "standard": "J-GAAP",
+   "pdf": "140120261006546736.pdf",
+   "pdf_url": "https://www.release.tdnet.info/inbs/140120261006546736.pdf",
+   "xbrl": "081220261006546736.zip",
+   "split": "test",
+   "files": [
+    {
+     "type": "pdf",
+     "name": "pdf",
+     "size": 539374,
+     "how": "range"
+    }
+   ]
+  }
+ ],
+ "approval_token": "a10fb2567c"
+}

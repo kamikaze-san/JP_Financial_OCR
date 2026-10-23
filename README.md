@@ -1,110 +1,106 @@
 # JP_Parser
 
-Parsing Japanese financial statements (balance sheets, 決算短信 / 有価証券報告書 pages) with a small local vision-language model,
-and verification loop.
+Parsing Japanese financial statements (balance sheets from 決算短信 and similar filings) with a small local vision-language model
+and a deterministic verification loop.
 
-A VLM reads the page. A deterministic verifier then checks every number against the accounting identities of the table
-(section totals, netting, the assets = liabilities + net assets tie), gives every cell a verdict, and sends only the
-failing cells to an automated, location-only retry. Nothing a human types is ever fed back, and the verifier fails closed:
-a page is "trusted" only when it balances.
+A VLM reads the page. A verifier then checks every number against the accounting identities of the table (section totals, netting,
+assets = liabilities + net assets), gives every cell a verdict, and sends only the failing cells to an automated, location-only retry.
+Nothing a human types is ever fed back, and the verifier fails closed: a page is "trusted" only when it balances.
 
 ```
 PDF page
   -> render (PyMuPDF)
-  -> first read (VLM, Ollama)       bands (default for 4B) | Qwen Markdown | Qwen HTML | solution1 JSON
-  -> verify (no model)               per-cell verdicts: exact | rounding | unverified | failed | structure_ambiguous
+  -> first read (VLM via Ollama)    bands | Qwen Markdown | Qwen HTML | solution1 JSON
+  -> verify (no model)               per-cell verdict: exact | rounding | unverified | failed | structure_ambiguous
   -> join split pages                a statement that continues on the next page is verified as one table
-  -> retry loop (VLM on crops)       only the failing cells, fresh crop, 3 reads, majority; accepted only if the verifier is happier
+  -> retry loop (VLM on crops)       only the failing cells; fresh crop, 3 reads, majority; kept only if the verifier is happier
   -> export                          json + xlsx + md, every cell with its status, timing per stage
 ```
 
-## Where things stand
+## Results in one table
 
-Measured on 92 balance-sheet pages from 50 real TDnet filings (plus 8 pages of the 5 original benchmark documents) (the numbers are in [solution2/RESULTS.md](solution2/RESULTS.md)).
-The most important result is the **sealed test**: 21 filings (38 pages) that no model had read while the system was built,
-run once with configurations frozen beforehand.
+Sealed test: 21 filings (38 pages) that no model had read while the system was built, run once with configurations frozen beforehand,
+full pipeline. 8 GB GPU, Ollama, Q4 models.
 
-| Configuration (full pipeline) | First-read rows exact | Trusted / left for review | Trusted pages with a wrong cell | Total per page |
+| Configuration | First-read rows exact | Pages trusted / left for review | Trusted pages with a wrong cell | Time per page |
 | :-- | :-: | :-: | :-: | :-: |
-| qwen3-vl 4B, **bands** | **98.9%** | 33 / 5 | **0** | 48 s |
+| qwen3-vl 4B, **bands** (page cut into bands of ~12 text lines) | **98.9%** | 33 / 5 | **0** | 48 s |
 | qwen3-vl 2B, whole-page Markdown | 96.5% | 25 / 13 | 0 | **17 s** |
-| qwen3-vl 4B, whole-page JSON (previous default) | 97.9% | 35 / 3 | 1 | 58 s |
+| qwen3-vl 4B, whole-page JSON (the earlier default) | 97.9% | 35 / 3 | 1 | 58 s |
 
-(8 GB GPU, Ollama, Q4 models, one request at a time. "Bands" = the page is cut into bands of about 12 text lines and each band
-is read on its own.) The old solution1 validator would have vouched for 9 wrong pages after the JSON read; the v2 verifier
-vouched for 1 and for none after bands.
+Ten filings downloaded afterwards gave the same picture (4B bands 98.6%, 2B Markdown 95.9%, no trusted wrong cell). The old solution1 validator
+would have vouched for 9 wrong pages after the JSON read; the verifier here vouched for 1, and for none after bands.
+A check against the PDF's own text layer, on digital PDFs, flagged 315 of 315 wrong rows (0.05% false alarms): an evaluation tool, not yet a pipeline stage.
+**Every number, with its caveats and the corrections made along the way, is in [solution2/RESULTS.md](solution2/RESULTS.md); start with its summary.**
 
-Weaknesses from current evals:
+## What is not solved
 
-* **Two-sided T-account pages** (assets on the left, liabilities on the right). The models can read them (4B Markdown gets 43 of 49
-  rows of the Yamato page, 48 if one label-spelling quirk is ignored) but the converter and the retry loop treat a page as one list of rows, so
-  these pages score low and are never repaired. See the T-account section of `solution2/RESULTS.md`.
-* **Scans.** The band cutter holds up on noisy and skewed renders of digital pages, but nothing has been run on a real scan.
-* **Label slips** that arithmetic cannot see (a misread kanji, receivable vs payable, a value shifted onto a neighbouring row).
-  The shifted-row case was seen once and was trusted by the verifier. A PDF text-layer cross-check (`solution2/witness.py`) catches all of the ones
-  we have saved on native digital PDFs (315 of 315 wrong rows, 0.05% false alarms) but is an evaluation tool, not yet in the pipeline, and has not been
-  tried on other PDF producers or scans. A financial-term lexicon and a balance-sheet side check are designed but not built.
-* IFRS and the IFRS-specific layouts are a small part of the sample (7 sealed-test pages).
-* The main CLI (`python -m solution2.pipeline`) still uses the JSON first read; bands, Markdown and HTML are selected in the evaluation command.
+* **Two-sided (T-account) pages**: the models read them, but the converter, the band cutter and the retry loop work on one list of rows.
+* **Real scans**: only digital PDFs and synthetic scan-like renders were tested.
+* **Label slips that arithmetic cannot see** (a misread kanji, receivable vs payable, a value moved to a neighbouring row): the text-layer check covers digital PDFs only;
+  a financial-term lexicon and a balance-sheet side check are designed but not built.
+* **Variety of data**: 50 TDnet filings from two main PDF generators, mostly J-GAAP. No other document types or producers yet.
+* The main CLI (`python -m solution2.pipeline`) still uses the JSON first read; bands, Markdown and HTML are chosen in the evaluation command.
 
-## Repository layout
+## Repository map
 
 | Path | What it is |
 | :-- | :-- |
-| `solution1/` | The original pipeline (VLM -> hard-coded validator -> feedback loop). **Frozen**; kept as the baseline. |
-| `solution2/` | The current system: strict parsers, the hierarchy-driven verifier, the retry loop, first-read formats and bands, the test harness, and the data tooling. See `solution2/README.md`. |
-| `solution2/RESULTS.md` | Every measurement (accuracy and latency), the sealed-test protocol and its result, and the corrections made along the way. **Start here.** |
-| `solution2/data_sample/tdnet/` | The 40 TDnet filings (PDF), the sampling plan and the prepared gold pages, so the evaluation can be reproduced after TDnet drops the filings (its viewer keeps about 31 days). |
-| `dataset/` | The original four benchmark companies (Yamato, Calbee, FastRetailing, Nikon) as PDFs. |
-| `benchmark_results/` | Results of the first benchmark rounds (model comparison at the start of the project). |
-| root `*.py` | The scripts of the first round (benchmarks, probes, downloaders). Kept for reference; not used by solution2 except `build_golden_anchors.py` (gold for the harness). |
+| `solution2/` | **The current system**: strict parsers, the verifier, the retry loop, first-read formats and bands, the PDF text-layer check, the test harness, the data tooling. Read `solution2/README.md`. |
+| `solution2/RESULTS.md` | Every measurement (accuracy, latency), the sealed-test protocol and its result, the corrections. |
+| `solution2/data_sample/` | The 50 TDnet filings (PDF, ~24 MB), the two sampling plans and the prepared gold pages, kept so runs can be reproduced after TDnet drops the filings (it keeps ~31 days). |
+| `solution1/` | The original pipeline (VLM -> hard-coded validator -> feedback loop). Frozen; the baseline everything is compared with. |
+| `dataset/` | The four original benchmark companies (Yamato, Calbee, FastRetailing, Nikon) as PDFs. |
+| `benchmark_results/` | Output of the first benchmark rounds (model comparison at the start). |
+| `legacy/` | The first-round scripts (benchmarks, probes, downloaders), kept for reference. See `legacy/README.md`. |
+| `docs/prototype1.md` | The first prototype's specification (historical). |
+| `references/` | The J-GAAP balance-sheet taxonomy used by solution1. |
+| `balance_sheet_after_correction.pdf` | The original sample page (used by the baseline code and tests). |
 
-## Setup
+## Setup and quick start
 
 ```bash
 pip install -r requirements.txt
-ollama pull qwen3-vl:4b-instruct          # the models that were evaluated
+ollama pull qwen3-vl:4b-instruct                           # the models that were evaluated
 ollama pull qwen3-vl:2b-instruct
-python -m pytest solution2 -q              # about 165 tests, no model needed
-python -m solution2.harness.run --verifier v2 --gate    # the acceptance gate: 28,280 injected corruptions, must be 0 violations
+
+python -m pytest -q                                       # 171 tests, no model needed (pytest.ini limits it to solution2)
+python -m solution2.harness.run --verifier v2 --gate        # the acceptance gate: 28,280 injected corruptions, must be 0 violations
+
+python -m solution2.pipeline statement.pdf --pages 1 2     # one PDF end to end (JSON first read) -> solution2/output/<name>/
 ```
 
-## Run
+Evaluate a first-read configuration on the prepared TDnet pages (needs Ollama):
 
 ```bash
-# one PDF, end to end (JSON first read; verify -> join -> repair -> xlsx/md/json with per-cell status)
-python -m solution2.pipeline statement.pdf --pages 1 2
-
-# the evaluation on the prepared TDnet pages, choosing the first read
 python -m solution2.tdnet eval --data-dir solution2/data_sample/tdnet --split dev --include-split \
        --model qwen3-vl:4b-instruct --format bands --dpi 300 --run-name my_run
-#   --format json | html | markdown | bands | bands_md      --no-repair   --no-join   --num-ctx N
-#   --split dev|test  (the test split is sealed: see the protocol in solution2/RESULTS.md before running it)
-
-# the original benchmark documents, including scan-like and skewed renders
-python -m solution2.benchmark_docs --model qwen3-vl:4b-instruct --configs json markdown bands --degrade scan skew
+# --format json | html | markdown | bands | bands_md     --no-repair   --no-join   --docs <docIDs>   --num-ctx N
+# the test split is sealed: read the protocol in solution2/RESULTS.md (section 1k) before running --split test
 ```
 
-Getting new data (nothing is downloaded until you approve the exact list):
+Score the PDF text-layer check on saved answers (no model): `python -m solution2.witness_eval --splits A B T C D E`.
+The original benchmark documents, clean and degraded: `python -m solution2.benchmark_docs --model qwen3-vl:4b-instruct --configs json bands --degrade scan skew`.
+
+Getting more data (nothing is downloaded until you approve the exact list; no API key needed for TDnet):
 
 ```bash
-python -m solution2.tdnet plan --n 40 --seed 7 --min-ifrs 8     # lists company, document id, PDF URL and size; writes plan.json
-python -m solution2.tdnet download --plan solution2/data/tdnet/plan.json --approve <token printed by plan>
-python -m solution2.tdnet prepare                                # text-layer gold for the balance-sheet pages
+python -m solution2.tdnet plan --n 10 --seed 31 --min-ifrs 3 --exclude-code <codes already used>   # lists company, docID, URL, size; writes plan.json
+python -m solution2.tdnet download --plan <plan.json> --approve <token printed by plan>
+python -m solution2.tdnet prepare --docs <docIDs>                                                  # text-layer gold for the balance-sheet pages
 ```
 
-(An EDINET downloader with XBRL ground truth exists in `solution2/edinet/` but has not been run: it needs an API key.)
+(An EDINET downloader with XBRL ground truth exists in `solution2/edinet/` but has never been run: it needs an API key.)
 
-## Principles the code follows
+## Principles
 
-* **Verify, don't trust.** Equations are discovered from the table rather than tied to account names; every cell gets a verdict.
-* **Fail closed.** A page is trusted only if the verifier balances it; an unparsable cell, a missing total or a structure it cannot explain means "review".
-* **No leaked answers.** The retry loop is never told the size of a discrepancy or what the value should be; it only gets the location and a fresh crop,
-  and a patch is accepted only if the verifier ends up strictly happier and nothing it already vouched for is lost.
-* **Ground truth without a model.** The gold pages come from the PDF text layer and are used only where the verifier independently agrees with them.
-* **Sealed evaluation.** Configurations are chosen on a dev split by a written rule; the test split is run once, after the protocol is recorded.
+* **Verify, don't trust.** Equations are discovered from the table, not tied to account names; every cell gets a verdict.
+* **Fail closed.** An unparsable cell, a missing total or a structure the verifier cannot explain means "review", never "ok".
+* **No leaked answers.** The retry loop is never told the size of a discrepancy or what the value should be, only where to look; a patch is kept only if the verifier ends up strictly happier.
+* **Ground truth without a model.** Gold pages come from the PDF text layer, used only where the verifier independently agrees.
+* **Sealed evaluation.** Configurations are chosen on dev filings by a written rule; the test filings are run once afterwards.
 
-## Data and licensing notes
+## Data notes
 
-TDnet 決算短信 are public disclosures; the downloader identifies itself honestly and rate-limits. Downloaded and generated files under `solution2/data/`
-are git-ignored; only the 40 source PDFs, the plan and the gold pages are tracked, in `solution2/data_sample/`. No credentials are stored in the repository.
+TDnet 決算短信 are public disclosures; the downloader identifies itself honestly and rate-limits. Everything under `solution2/data/` (saved model answers, rendered images, logs) is git-ignored
+scratch; only `solution2/data_sample/` is tracked. No credentials are stored in the repository.

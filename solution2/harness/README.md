@@ -84,7 +84,7 @@ already caught three no-op "equivalent spelling" mutations while this was being 
 
 ## Known limits
 
-- Clean corpus is 3 documents (baseline, Calbee, Yamato). Add more gold via `--extra`.
+- The clean corpus is 7 documents: baseline, Calbee and Yamato (hand-built gold in `golden_anchors.py`) and four silver pages from the text layer (`fixtures/silver/`). Add more gold via `--extra`.
 - `plug_subtotals` needs a children-then-total layout, so it does not apply to the Yamato T-account.
 - Detection on a document that already false-alarms (v1 on Calbee) is an upper bound.
 - Mutations are applied to Stage-1 output; pixel-level failures (blur, skew) are out of scope here.

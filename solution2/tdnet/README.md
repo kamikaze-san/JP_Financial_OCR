@@ -4,12 +4,15 @@ Public 決算短信 PDFs from TDnet's disclosure viewer, with text-layer **silve
 source: nothing is downloaded until you have seen the list and approved it.
 
 ```bash
-python -m solution2.tdnet plan --from 2026-09-21 --to 2026-10-20 --n 40 --seed 7 --min-ifrs 8   # LIST ONLY
-python -m solution2.tdnet download --plan solution2/data/tdnet/plan.json --approve <token>     # exactly that list
-python -m solution2.tdnet prepare [--sample 5 --split dev --ifrs 2]   # no network; incremental, so the rest can be done later: find balance-sheet pages, build silver gold, gold vs ambiguous
-python -m solution2.tdnet eval --split dev             # VLM -> verify -> repair vs the gold (local Ollama)
-python -m solution2.tdnet eval --split test            # only when the code is frozen
+python -m solution2.tdnet plan --n 10 --seed 31 --min-ifrs 3 --exclude-code <codes already used> [--from DATE --to DATE] [--test-fraction F]   # LIST ONLY
+python -m solution2.tdnet download --plan <plan.json> --approve <token>    # exactly that list
+python -m solution2.tdnet prepare [--docs ID ...] [--sample 5 --split dev --ifrs 2]   # no network; incremental: find balance-sheet pages, build silver gold
+python -m solution2.tdnet eval --split dev|test [--docs ID ...] [--data-dir DIR] [--model M] [--format json|html|markdown|bands|bands_md] [--dpi N]
+                              [--no-repair] [--no-join] [--include-split] [--include-ambiguous] [--run-name NAME] [--num-ctx N] [--replay-from DIR]
+python -m solution2.tdnet snapshot                                         # copy filings, plans and gold into solution2/data_sample/tdnet (relative paths)
 ```
+
+The tracked sample `solution2/data_sample/tdnet` holds 50 filings and 92 prepared pages; pass `--data-dir solution2/data_sample/tdnet` to `eval` to use it. The test split is sealed: only run `--split test` as described in `solution2/RESULTS.md` (1k). `eval` writes its results to `<data-dir>/eval_<split>[_<run-name>].json/.txt` and the per-page outputs to `<data-dir>/eval_runs/`.
 
 `plan` prints company, docID, accounting standard, date, **PDF size and URL** for every filing, the total size, and an
 approval token; it writes `solution2/data/tdnet/plan.json`. A PDF's URL is always `https://www.release.tdnet.info/inbs/<docID>.pdf`.
@@ -21,7 +24,7 @@ approval token; it writes `solution2/data/tdnet/plan.json`. A PDF's URL is alway
 | anything that is not a 決算短信 | title |
 | amendments | 訂正 / 修正 in the title |
 | REITs, infrastructure funds, ETFs | REIT / インフラ / 投資法人 / ファンド / ETF in title or name, names starting `R-`; and any title naming no accounting standard (`〔日本基準〕`, `〔IFRS〕`, `〔米国基準〕`), which is what ETFs and ETNs look like |
-| companies already used while developing the verifier | codes 2229, 7731, 7886, 9983 (`--exclude-code` adds more) |
+| companies already used | the four companies used while developing the verifier (2229, 7731, 7886, 9983) always; `--exclude-code` adds more, e.g. every company already downloaded |
 
 One filing per company, seeded. `--min-ifrs K` puts at least K IFRS filings in the sample (the window is ~95% Japanese GAAP).
 The dev/test split is a hash of the docID (same function as EDINET), so it cannot drift.
