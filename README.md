@@ -5,7 +5,7 @@ and a deterministic verification loop.
 
 A VLM reads the page. A verifier then checks every number against the accounting identities of the table (section totals, netting,
 assets = liabilities + net assets), gives every cell a verdict, and sends only the failing cells to an automated, location-only retry.
-Nothing a human types is ever fed back, and the verifier fails closed: a page is "trusted" only when it balances.
+
 
 ```
 PDF page
@@ -33,9 +33,9 @@ would have vouched for 9 wrong pages after the JSON read; the verifier here vouc
 A check against the PDF's own text layer, on digital PDFs, flagged 315 of 315 wrong rows (0.05% false alarms): an evaluation tool, not yet a pipeline stage.
 **Every number, with its caveats and the corrections made along the way, is in [solution2/RESULTS.md](solution2/RESULTS.md); start with its summary.**
 
-## What is not solved
+## Weaknesses
 
-* **Two-sided (T-account) pages**: the models read them, but the converter, the band cutter and the retry loop work on one list of rows.
+* **Two-sided (T-account) pages**: the models read them, but the converter, the band cutter and the retry loop work on one list of rows. possibly fixed by post-training.
 * **Real scans**: only digital PDFs and synthetic scan-like renders were tested.
 * **Label slips and moved values** (a misread kanji, receivable vs payable, a value moved to a neighbouring row), which arithmetic cannot see:
   - *Digital PDFs: detection is largely solved.* The PDF text-layer check (`solution2/witness.py`) flagged every such error we have (315 of 315 wrong rows, 0.05% false alarms), including look-alike swaps like 売/買 and 受/払 in injected tests.
@@ -83,14 +83,6 @@ python -m solution2.tdnet eval --data-dir solution2/data_sample/tdnet --split de
 ```
 
 More commands (the PDF text-layer check, the benchmark documents, downloading more filings with a list-and-approve step) are in `solution2/README.md` and `solution2/tdnet/README.md`.
-
-## Principles
-
-* **Verify, don't trust.** Equations are discovered from the table, not tied to account names; every cell gets a verdict.
-* **Fail closed.** An unparsable cell, a missing total or a structure the verifier cannot explain means "review", never "ok".
-* **No leaked answers.** The retry loop is never told the size of a discrepancy or what the value should be, only where to look; a patch is kept only if the verifier ends up strictly happier.
-* **Ground truth without a model.** Gold pages come from the PDF text layer, used only where the verifier independently agrees.
-* **Sealed evaluation.** Configurations are chosen on dev filings by a written rule; the test filings are run once afterwards.
 
 ## Data notes
 
