@@ -437,6 +437,32 @@ The first-read results in 1l (4B JSON 0 of 49 rows, Markdown 21, bands 24) made 
 * **What is missing to support these pages** (not built; about a day): a two-sided converter in the Markdown/HTML adapter (as used for the table above), a side-aware band cutter (find the vertical gutter, cut left and right separately, concatenate the sides), and crops per side in the retry loop (it currently declines two-column pages).
   The v2 verifier itself already accepts the flattened Yamato table (it is in the harness corpus and is trusted).
 
+### 1p. The PDF text layer as a witness for the VLM's rows (`solution2/witness.py`, scored by `solution2/witness_eval.py`)
+
+**What it is.** For a native digital PDF, every VLM row is matched to a text line of the page by its label (order-preserving, tolerant of a garbled character), and the line's numbers and label are compared with the model's. Per row: *agree*, *label_variant* (same numbers, a few characters of the label differ; the printed label is proposed), *conflict* (the numbers differ; kind = shifted / spurious / dropped / wrong / relabelled / elsewhere / duplicate) or *unknown*.
+It abstains on a page whose text layer cannot be trusted (OCR-software producer, invisible OCR font, glyphs without a unicode mapping, too few numbers) and on two-sided T-account pages. `snap_labels` returns a copy with the `label_variant` labels replaced by the printed ones (numbers never touched); it is not wired into the pipeline. Six unit tests.
+
+**How it was scored** (no model run: it re-reads the saved first-read answers of 11 answer sets, 1 to 3 times per page: 4B and 2B in JSON, HTML, Markdown, bands and bands-with-Markdown, 8B Markdown, and the three sealed-test runs). Each row with numbers is classified against the gold: correct / label_typo (numbers right, label 70% similar) / misattributed (numbers right, unrelated label: a value slid onto another row) / number_wrong; repeated rows are scored on the page only.
+Splits: **A** = the five dev filings the witness was developed on; **B** = the other five dev filings (held out); **T** = the sealed test answers, scored once after the code was frozen.
+
+| Split | Wrong rows detected | by type: label typo / misattributed / number wrong | Correct rows falsely flagged | Wrong pages flagged | Correct pages flagged |
+| :-- | :-: | :-: | :-: | :-: | :-: |
+| A (developed on) | 115 / 115 | 52 / 32 / 31 | 2 of 2884 (0.07%) | 58 / 58 | 0 / 60 |
+| B (held-out dev) | **99 / 99** | 17 / 66 / 16 | 3 of 1921 (0.16%) | 32 / 32 | 3 / 52 |
+| T (sealed test) | **54 / 54** | 39 / 11 / 4 | **0 of 2982** | 34 / 34 | 0 / 80 |
+
+Injected errors on fully correct 4B-bands answers (one error per copy: a block of 5 values moved up one row, a label character swapped for a look-alike or related one, one digit changed, a value put on a heading): **detected 100% of the time in every kind and split** (A 30, B 18, T 87 of each kind).
+In the first version the witness had no fallback for a row whose label could not be matched and abstained on 13 wrong rows of split A (and missed duplicated rows); the neighbour-line search and the `duplicate` verdict were added from split A only, which is why A is called developed-on.
+
+**Read this with its limits:**
+* **The gold is built from the same text layer** (silver gold), so this scores the witness's *matching* of rows to lines, not the correctness of the text layer. The independent evidence is the hand-built gold of the benchmark documents, which the text layer reproduces exactly (baseline 37/37, Calbee 51/51, FastRetailing 67/67, Nikon 41/41 rows; Yamato is two-sided and declined).
+* **Every PDF in the set comes from the same family of producers** (TDnet 決算短信) and none is scanned. The abstention paths for OCR or broken-font text layers are covered only by unit tests (a synthetic PDF stamped with an OCR producer); they never fired on real data. Whether the near-perfect rates survive other producers, annual reports or scans is **not shown**.
+* **False alarms are few and of one kind**: a correctly repeated row (a group and its only child with the same amount, e.g. 有形固定資産 or 資本金 on IFRS pages) is flagged `duplicate` (3 rows in B), and a repeated label such as その他 can mis-map (2 rows in split A, 2B bands).
+* **A dropped row is the weak spot**: the "text lines no row was matched to" list names a line on 4 of 9 (A) and 3 of 9 (B) pages where a row is missing, and on 10 of 109 and 10 of 75 pages where none is, so it is informational only; arithmetic remains the way to catch a dropped row.
+* The injected errors are single and clear; real errors are not always.
+
+**What it is good for.** On a digital PDF with a normal table it recognised every label slip (繰/練, 賞/貸, ソフトウエア/ソフトウェア, 内/內), every misattributed value and every wrong or invented number that appears in the saved answers, with a false-alarm rate of 0 to 0.2% of correct rows. The next step would be to use a `conflict` as a trigger for the retry loop (re-read that row's crop) and a `label_variant` on a native PDF as a label correction, and to measure that on a handful of PDFs from other producers and with OCR layers.
+
 ---
 
 ## 2. Verifier: v1 vs v2 on 28,280 synthetic corruptions (7 documents, no VLM)

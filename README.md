@@ -41,8 +41,9 @@ What does not work yet, honestly:
   these pages score low and are never repaired. See the T-account section of `solution2/RESULTS.md`.
 * **Scans.** The band cutter holds up on noisy and skewed renders of digital pages, but nothing has been run on a real scan.
 * **Label slips** that arithmetic cannot see (a misread kanji, receivable vs payable, a value shifted onto a neighbouring row).
-  The shifted-row case was seen once and was trusted by the verifier. The planned fixes (PDF text-layer cross-check, a financial-term
-  lexicon, a balance-sheet side check) are designed but not built.
+  The shifted-row case was seen once and was trusted by the verifier. A PDF text-layer cross-check (`solution2/witness.py`) catches all of the ones
+  we have saved on native digital PDFs (268 of 268 wrong rows, under 0.2% false alarms) but is an evaluation tool, not yet in the pipeline, and has not been
+  tried on other PDF producers or scans. A financial-term lexicon and a balance-sheet side check are designed but not built.
 * IFRS and the IFRS-specific layouts are a small part of the sample (7 sealed-test pages).
 * The main CLI (`python -m solution2.pipeline`) still uses the JSON first read; bands, Markdown and HTML are selected in the evaluation command.
 
