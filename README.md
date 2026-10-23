@@ -1,7 +1,7 @@
 # JP_Parser
 
 Parsing Japanese financial statements (balance sheets, 決算短信 / 有価証券報告書 pages) with a small local vision-language model,
-and **not trusting what the model says unless the arithmetic of the table agrees with it**.
+and verification loop.
 
 A VLM reads the page. A deterministic verifier then checks every number against the accounting identities of the table
 (section totals, netting, the assets = liabilities + net assets tie), gives every cell a verdict, and sends only the
@@ -34,7 +34,7 @@ run once with configurations frozen beforehand.
 is read on its own.) The old solution1 validator would have vouched for 9 wrong pages after the JSON read; the v2 verifier
 vouched for 1 and for none after bands.
 
-What does not work yet, honestly:
+Weaknesses from current evals:
 
 * **Two-sided T-account pages** (assets on the left, liabilities on the right). The models can read them (4B Markdown gets 43 of 49
   rows of the Yamato page, 48 if one label-spelling quirk is ignored) but the converter and the retry loop treat a page as one list of rows, so
