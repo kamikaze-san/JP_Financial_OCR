@@ -94,13 +94,14 @@ def cmd_eval(args) -> int:
     data = Path(args.data_dir)
     manifest = resolve_manifest(json.loads((data / "prepared" / "manifest.json").read_text(encoding="utf-8")), data)
     keep = {"gold"} | ({"gold_split"} if args.include_split else set()) | ({"gold_split", "ambiguous"} if args.include_ambiguous else set())
-    manifest = [m for m in manifest if m["status"] in keep]
-    rep = run_eval(manifest, args.split, args.model, data / "eval_runs" / args.split, args.only, not args.no_repair,
-                   not args.no_join)
+    manifest = [m for m in manifest if m["status"] in keep and (not args.docs or m["docID"] in args.docs)]
+    tag = f"{args.split}_{args.run_name}" if args.run_name else args.split
+    rep = run_eval(manifest, args.split, args.model, data / "eval_runs" / tag, args.only, not args.no_repair,
+                   not args.no_join, args.dpi)
     text = format_report(rep)
     print("\n" + text)
-    (data / f"eval_{args.split}.json").write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
-    (data / f"eval_{args.split}.txt").write_text(text, encoding="utf-8")
+    (data / f"eval_{tag}.json").write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
+    (data / f"eval_{tag}.txt").write_text(text, encoding="utf-8")
     return 0
 
 
@@ -142,6 +143,9 @@ def main(argv=None) -> int:
     p.add_argument("--include-ambiguous", action="store_true")
     p.add_argument("--no-repair", action="store_true")
     p.add_argument("--no-join", action="store_true", help="verify every page on its own (no joining of split statements)")
+    p.add_argument("--dpi", type=int, default=200, help="render DPI for the first full-page read (repair crops use their own)")
+    p.add_argument("--docs", nargs="*", help="score only these docIDs")
+    p.add_argument("--run-name", default="", help="suffix for the output folder / report names (e.g. the model), so runs do not overwrite each other")
     p.add_argument("--data-dir", default=str(DATA), help="folder with prepared/manifest.json (default: solution2/data/tdnet; "
                    "the tracked sample is solution2/data_sample/tdnet)")
     p.set_defaults(fn=cmd_eval)

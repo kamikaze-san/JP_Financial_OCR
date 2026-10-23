@@ -100,10 +100,10 @@ def _timed_ms(fn) -> float:
 
 
 def evaluate_group(group: List[Dict[str, Any]], out_dir: Path, model: str, do_repair: bool = True,
-                   join: bool = True) -> List[Dict[str, Any]]:
+                   join: bool = True, dpi: int = 200) -> List[Dict[str, Any]]:
     folder = out_dir / f"{group[0]['docID'] if 'docID' in group[0] else group[0]['id']}_p{group[0]['page_index'] + 1}"
     outcomes = process_pages(group[0]["pdf"], [e["page_index"] for e in group], folder, ollama_extractor(model),
-                             lambda page: OllamaReader(model), do_repair=do_repair, join=join)
+                             lambda page: OllamaReader(model), dpi=dpi, do_repair=do_repair, join=join)
     rows = []
     for entry, o in zip(group, outcomes):
         gold = RawDocumentTree.model_validate_json(Path(entry["silver"]).read_text(encoding="utf-8"))
@@ -123,7 +123,7 @@ def evaluate_group(group: List[Dict[str, Any]], out_dir: Path, model: str, do_re
         row["v1_verify_ms"] = _timed_ms(lambda: v1.verify(raw))
         row["v2_verify_ms"] = _timed_ms(lambda: verify_document(raw))
         v2 = verify_document(raw)
-        flagged_pipeline = o.status in ("needs_review", "repaired")          # what the pipeline did NOT trust at first sight
+        flagged_pipeline = o.status in ("needs_review", "repaired") or o.vlm_calls > 0   # not trusted at first sight (repair ran)
         row.update({
             "wrong_before": len(before), "wrong_after": len(after),
             "v1": classify_detection(bool(before), v1.verify(raw).flagged, ok_before),
@@ -137,27 +137,33 @@ def evaluate_group(group: List[Dict[str, Any]], out_dir: Path, model: str, do_re
 
 
 def run_eval(manifest: List[Dict[str, Any]], split: str, model: str, out_dir: Path, only: str = "",
-             do_repair: bool = True, join: bool = True, progress=print) -> Dict[str, Any]:
+             do_repair: bool = True, join: bool = True, dpi: int = 200, progress=print) -> Dict[str, Any]:
     chosen = [e for e in manifest if (split == "all" or e["split"] == split) and only in e["id"]]
     load_s = warm_up(model)
     progress(f"model {model} loaded in {load_s}s (cold start); scoring {len(chosen)} pages")
     rows: List[Dict[str, Any]] = []
     wall0 = time.perf_counter()
     for group in contiguous_groups(chosen):
-        for r in evaluate_group(group, out_dir, model, do_repair, join):
+        for r in evaluate_group(group, out_dir, model, do_repair, join, dpi):
             rows.append(r)
             t = r["timing"]
             progress(f"[{len(rows)}/{len(chosen)}] {r['id']:<24} {r['company'][:14]:<14} {r['standard']:<7} {r['status']:<15} "
                      f"v1={r.get('v1', '-'):<12} v2alone={r.get('v2_alone', '-'):<12} v2={r.get('v2', '-'):<12} "
                      f"repair={r.get('repair', '-'):<10} total={t.get('total_s', 0):.1f}s extract={t.get('extract_s', 0):.1f}s")
     wall = time.perf_counter() - wall0
+    return {"split": split, "model": model, "dpi": dpi, "code": code_fingerprint(),
+            "when": datetime.datetime.now().isoformat(timespec="seconds"), "wall_s": round(wall, 1), "model_load_s": load_s,
+            **aggregate(rows)}
+
+
+def aggregate(rows: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Counters and latency summaries from per-page rows (also used to re-score a saved report)."""
     scored = [r for r in rows if "v2" in r]
     timing = {k: latency_summary([r["timing"][k] for r in rows if k in r["timing"]])
               for k in ("render_s", "extract_s", "verify_s", "join_s", "repair_s", "export_s", "total_s")}
     repaired = [r for r in rows if r["timing"].get("repair_s") and r["calls"]]
     return {
-        "split": split, "model": model, "code": code_fingerprint(), "when": datetime.datetime.now().isoformat(timespec="seconds"),
-        "pages": len(rows), "wall_s": round(wall, 1), "model_load_s": load_s, "rows": rows,
+        "pages": len(rows), "rows": rows,
         "v1": dict(Counter(r["v1"] for r in scored)), "v2_alone": dict(Counter(r["v2_alone"] for r in scored)),
         "v2": dict(Counter(r["v2"] for r in scored)), "repair": dict(Counter(r["repair"] for r in scored if "repair" in r)),
         "status": dict(Counter(r["status"] for r in rows)), "by_standard": {
@@ -174,7 +180,7 @@ def _lat(d: Dict[str, float]) -> str:
 
 
 def format_report(rep: Dict[str, Any]) -> str:
-    L = [f"split={rep['split']}  model={rep['model']}  code={rep['code']}  {rep['when']}",
+    L = [f"split={rep['split']}  model={rep['model']}  dpi={rep.get('dpi', 200)}  code={rep['code']}  {rep['when']}",
          f"{rep['pages']} pages, wall {rep['wall_s']}s, model cold-start load {rep['model_load_s']}s", "",
          f"pipeline status: {rep['status']}", "",
          "verifier on the raw VLM output:",

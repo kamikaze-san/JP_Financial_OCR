@@ -169,3 +169,22 @@ def test_every_stage_is_timed_and_the_total_adds_up(tmp_path):
     assert rep["timing"]["total_s"] > 0 and "extract_s" in rep["timing"]
     summary = json.loads((tmp_path / "summary.json").read_text(encoding="utf-8"))
     assert summary[0]["timing"]["total_s"] > 0 and summary[0]["joined_with"] == [2]
+
+
+@pytest.mark.skipif(not (SILVER_NIKON_P2.exists() and CALBEE_PDF.exists()), reason="fixtures not available")
+def test_a_repaired_half_is_rejoined_with_its_neighbour(tmp_path, monkeypatch):
+    """The first joint check fails because a half has a wrong value; repair fixes it, but a half can never be trusted alone,
+    so the pages must be joined again after repair."""
+    from types import SimpleNamespace
+    from solution2 import pipeline
+    from solution2.verify import parse_stage1, verify_document
+    clean_second = parse_stage1(halves()[1])[0]
+
+    def fake_repair(raw, page, reader, config=None):          # puts back the value the VLM got wrong; a half still cannot balance alone
+        tree = clean_second if any("999,999" in v for r in raw.rows for v in r.values) else raw
+        return SimpleNamespace(raw=tree, verdict=verify_document(tree), attempts=[], vlm_calls=3, status="needs_review")
+
+    monkeypatch.setattr(pipeline, "repair", fake_repair)
+    outs = run(tmp_path, two_page_extractor(halves(corrupt=True)), pdf=CALBEE_PDF)
+    assert [o.status for o in outs] == ["trusted_joined", "trusted_joined"] and all(o.trusted for o in outs)
+    assert outs[0].joined_with == [2] and outs[1].joined_with == [1]

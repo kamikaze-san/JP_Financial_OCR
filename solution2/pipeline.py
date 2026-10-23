@@ -81,6 +81,27 @@ def _timed(page: _Page, key: str, fn):
         page.timing[key] = page.timing.get(key, 0.0) + (time.perf_counter() - t0)
 
 
+def _try_join(pg: _Page, by_n: Dict[int, "_Page"], tree) -> bool:
+    """Join `pg` with an adjacent page of the same statement; on success both pages take their share of the joint verdict."""
+    for other_n in (pg.n - 1, pg.n + 1):
+        other = by_n.get(other_n)
+        if other is None or not same_columns(tree(pg), tree(other)):
+            continue
+        first, second = (pg, other) if pg.n < other.n else (other, pg)
+        joined = _timed(pg, "join_s", lambda: verify_document(join_tables(tree(first), tree(second))))
+        if not joined.trusted:
+            continue
+        shift = join_offset(tree(first))
+        pg.verdict = page_share(joined, {r.row_index for r in tree(pg).rows}, shift if pg is second else 0)
+        pg.joined_with.append(other.n)
+        if other.status == "needs_review":                     # the neighbour was waiting for the same joint verdict
+            other.verdict = page_share(joined, {r.row_index for r in tree(other).rows}, shift if other is second else 0)
+            other.joined_with.append(pg.n)
+            other.status = "trusted_joined"
+        return True
+    return False
+
+
 def process_pages(pdf_path, page_indexes: Sequence[int], out_dir: Path, extractor: Extractor,
                   reader_factory: Callable[[PdfPage], Reader], dpi: int = 200, do_repair: bool = True,
                   config: Optional[RepairConfig] = None, join: bool = True) -> List[PageOutcome]:
@@ -110,19 +131,8 @@ def process_pages(pdf_path, page_indexes: Sequence[int], out_dir: Path, extracto
     by_n = {pg.n: pg for pg in pages if pg.raw is not None and pg.failure is None}
     if join:
         for pg in sorted(by_n.values(), key=lambda p: p.n):
-            if pg.verdict.trusted:
-                continue
-            for other_n in (pg.n - 1, pg.n + 1):
-                other = by_n.get(other_n)
-                if other is None or not same_columns(pg.raw, other.raw):
-                    continue
-                first, second = (pg, other) if pg.n < other.n else (other, pg)
-                joined = _timed(pg, "join_s", lambda: verify_document(join_tables(first.raw, second.raw)))
-                if joined.trusted:
-                    shift = join_offset(first.raw)
-                    pg.verdict = page_share(joined, {r.row_index for r in pg.raw.rows}, shift if pg is second else 0)
-                    pg.joined_with.append(other.n)
-                    break
+            if not pg.verdict.trusted:
+                _try_join(pg, by_n, lambda p: p.raw)
 
     # ---- 3. repair what is still untrusted
     for pg in by_n.values():
@@ -138,6 +148,13 @@ def process_pages(pdf_path, page_indexes: Sequence[int], out_dir: Path, extracto
             pg.status = {"already_trusted": "trusted", "repaired": "repaired", "needs_review": "needs_review"}[result.status]
         else:
             pg.status = "needs_review"
+
+    # ---- 3b. a half that needed repair may verify jointly once its (repaired) neighbour is fixed
+    if join:
+        for pg in sorted(by_n.values(), key=lambda p: p.n):
+            if pg.status == "needs_review":
+                if _try_join(pg, by_n, lambda p: p.final):
+                    pg.status = "trusted_joined"
 
     # ---- 4. export
     outcomes = []
