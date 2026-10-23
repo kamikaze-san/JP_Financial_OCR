@@ -12,7 +12,8 @@ CAUTION about what this measures: for the TDnet pages the gold is itself built f
 the witness's matching of VLM rows to text lines, not the text layer's own correctness. The independent evidence is `independence()`:
 the text layer of the hand-checked benchmark documents agrees with their hand-built gold. Producer diversity and scans are not covered.
 
-Splits: A = the five filings the witness was developed on, B = the other five dev filings (held out), T = the sealed test filings (scored once).
+Splits: A = the five filings the witness was developed on, B = the other five dev filings (held out), T = the sealed test filings (scored once),
+C = five more dev filings (one with a PDF producer not seen before), read after the witness was frozen.
     python -m solution2.witness_eval --splits A
 """
 import argparse
@@ -38,6 +39,9 @@ from solution2.witness import check_page, row_numbers  # noqa: E402
 T = ROOT / "solution2" / "data" / "tdnet"
 RUNS = T / "eval_runs"
 A_DOCS = {"140120261006546514", "140120261007547344", "140120261014550192", "140120261014550624", "140120261015551188"}
+C_DOCS = {"140120261015551203", "140120260926540626", "140120261013549194", "140120260928540923", "140120261002544993"}   # a fifth dev sample, read after the witness was frozen
+D_DOCS = {"140120261009548315", "140120261014550131", "140120261014550891", "140120261015551119"}   # the last four dev filings, read after the witness was frozen
+E_DOCS = {"140120261013549760", "140120261007547203", "140120261015551650", "140120261013550007", "140120261009548383", "140120260929542125", "140120260926540603", "140120260930543256", "140120261013549514", "140120261006546736"}   # ten filings downloaded after the witness was frozen
 B_DOCS = {"140120260820523764", "140120260925540214", "140120261008548224", "140120261014550474", "140120261014550808"}
 
 # (name, {split: run folder under eval_runs}); one folder per model/format answer set, first reads only
@@ -47,9 +51,9 @@ SOURCES = {
     "4B html": {"A": "dev_fmt_html_qwen4b_A", "B": "dev_fmt_html_qwen4b_B"},
     "2B html": {"A": "dev_fmt_html_qwen2b_A", "B": "dev_fmt_html_qwen2b_B"},
     "4B markdown": {"A": "dev_fmt_markdown_qwen4b_A_replay", "B": "dev_fmt_markdown_qwen4b_B_replay"},
-    "2B markdown": {"A": "dev_fmt_markdown_qwen2b_A_replay", "B": "dev_fmt_markdown_qwen2b_B_replay", "T": "test_sealed_2b_markdown"},
+    "2B markdown": {"A": "dev_fmt_markdown_qwen2b_A_replay", "B": "dev_fmt_markdown_qwen2b_B_replay", "T": "test_sealed_2b_markdown", "C": "dev_c_2b_markdown", "D": "dev_d_2b_markdown", "E": "test_e_2b_markdown"},
     "8B markdown": {"A": "dev_fmt_markdown_qwen8b_A_replay", "B": "dev_fmt_markdown_qwen8b_B_replay"},
-    "4B bands": {"A": "dev_fmt_bands_qwen4b_A_final", "B": "dev_fmt_bands_qwen4b_B_final", "T": "test_sealed_4b_bands"},
+    "4B bands": {"A": "dev_fmt_bands_qwen4b_A_final", "B": "dev_fmt_bands_qwen4b_B_final", "T": "test_sealed_4b_bands", "C": "dev_c_4b_bands", "D": "dev_d_4b_bands", "E": "test_e_4b_bands"},
     "2B bands": {"A": "dev_fmt_bands_qwen2b_A", "B": "dev_fmt_bands_qwen2b_B"},
     "4B bands+md": {"A": "dev_fmt_bandsmd_qwen4b_A", "B": "dev_fmt_bandsmd_qwen4b_B"},
     "2B bands+md": {"A": "dev_fmt_bandsmd_qwen2b_A", "B": "dev_fmt_bandsmd_qwen2b_B"},
@@ -61,6 +65,12 @@ def manifest() -> List[dict]:
 
 
 def split_of(entry: dict) -> str:
+    if entry["docID"] in C_DOCS:
+        return "C"
+    if entry["docID"] in D_DOCS:
+        return "D"
+    if entry["docID"] in E_DOCS:
+        return "E"
     return "T" if entry["split"] == "test" else ("A" if entry["docID"] in A_DOCS else "B")
 
 
@@ -322,11 +332,26 @@ def independence() -> str:
     return "\n".join(lines)
 
 
+def abstention_demo() -> str:
+    """Where the witness declines, on PDFs that are not ordinary single-table statements (no model, no gold)."""
+    from solution2.witness import text_layer_status
+    lines = ["  abstention on other PDFs (text layer status / two-sided layout):"]
+    for label, path, pages in (("Yamato annual report, T-account pages", "dataset/raw_pdfs/yamato_fs66.pdf", (0, 10)),
+                               ("web page printed to PDF (Bandai Namco)", "dataset/raw_pdfs/bandainamco_2024.pdf", (0, 1, 2)),
+                               ("web page printed to PDF (Suzuki)", "dataset/raw_pdfs/suzuki_2023.pdf", (0, 1, 2))):
+        for pg in pages:
+            ok, why = text_layer_status(ROOT / path, pg)
+            two = PdfPage(ROOT / path, pg).is_two_column() if ok else None
+            verdict = "usable" if ok and not two else ("abstains: two-sided layout" if ok else f"abstains: {why}")
+            lines.append(f"    {label} p{pg + 1}: {verdict}")
+    return "\n".join(lines)
+
+
 def main(argv=None) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--splits", nargs="+", default=["A"], choices=["A", "B", "T"])
+    ap.add_argument("--splits", nargs="+", default=["A"], choices=["A", "B", "T", "C", "D", "E"])
     ap.add_argument("--verbose", action="store_true", help="list false alarms and misses")
     ap.add_argument("--no-inject", action="store_true")
     args = ap.parse_args(argv)
@@ -342,6 +367,7 @@ def main(argv=None) -> int:
     if not args.no_inject:
         print(injected_test(args.splits))
     print(independence())
+    print(abstention_demo())
     return 0
 
 

@@ -20,7 +20,7 @@ PDF page
 
 ## Where things stand
 
-Measured on 57 balance-sheet pages from 31 real TDnet filings (the numbers are in [solution2/RESULTS.md](solution2/RESULTS.md)).
+Measured on 92 balance-sheet pages from 50 real TDnet filings (plus 8 pages of the 5 original benchmark documents) (the numbers are in [solution2/RESULTS.md](solution2/RESULTS.md)).
 The most important result is the **sealed test**: 21 filings (38 pages) that no model had read while the system was built,
 run once with configurations frozen beforehand.
 
@@ -42,7 +42,7 @@ What does not work yet, honestly:
 * **Scans.** The band cutter holds up on noisy and skewed renders of digital pages, but nothing has been run on a real scan.
 * **Label slips** that arithmetic cannot see (a misread kanji, receivable vs payable, a value shifted onto a neighbouring row).
   The shifted-row case was seen once and was trusted by the verifier. A PDF text-layer cross-check (`solution2/witness.py`) catches all of the ones
-  we have saved on native digital PDFs (268 of 268 wrong rows, under 0.2% false alarms) but is an evaluation tool, not yet in the pipeline, and has not been
+  we have saved on native digital PDFs (315 of 315 wrong rows, 0.05% false alarms) but is an evaluation tool, not yet in the pipeline, and has not been
   tried on other PDF producers or scans. A financial-term lexicon and a balance-sheet side check are designed but not built.
 * IFRS and the IFRS-specific layouts are a small part of the sample (7 sealed-test pages).
 * The main CLI (`python -m solution2.pipeline`) still uses the JSON first read; bands, Markdown and HTML are selected in the evaluation command.
