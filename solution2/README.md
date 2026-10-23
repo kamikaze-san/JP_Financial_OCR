@@ -34,6 +34,8 @@ python -m solution2.repair stage1.json --pdf page.pdf      # verify, then repair
 python -m solution2.harness.run --verifier v2 --gate       # the acceptance gate (mutation suite)
 python -m solution2.tdnet eval --format bands ...          # the same chain with another first read: json | html | markdown | bands | bands_md
 python -m solution2.witness_eval --splits A B T C D E      # PDF text-layer check on the saved answers (no model)
+python -m solution2.benchmark_docs --configs json bands --degrade scan skew   # the original benchmark documents, clean and degraded
+python -m solution2.tdnet plan | download | prepare       # more data: list first, download only what you approve (see tdnet/README.md)
 python -m pytest solution2 -q
 ```
 

@@ -37,8 +37,11 @@ A check against the PDF's own text layer, on digital PDFs, flagged 315 of 315 wr
 
 * **Two-sided (T-account) pages**: the models read them, but the converter, the band cutter and the retry loop work on one list of rows.
 * **Real scans**: only digital PDFs and synthetic scan-like renders were tested.
-* **Label slips that arithmetic cannot see** (a misread kanji, receivable vs payable, a value moved to a neighbouring row): the text-layer check covers digital PDFs only;
-  a financial-term lexicon and a balance-sheet side check are designed but not built.
+* **Label slips and moved values** (a misread kanji, receivable vs payable, a value moved to a neighbouring row), which arithmetic cannot see:
+  - *Digital PDFs: detection is largely solved.* The PDF text-layer check (`solution2/witness.py`) flagged every such error we have (315 of 315 wrong rows, 0.05% false alarms), including look-alike swaps like 売/買 and 受/払 in injected tests.
+  - *Not yet acting on it.* It is an evaluation tool: the pipeline does not call it, so a trusted page can still carry such an error. Using a conflict to trigger a re-read, and snapping a label to the printed text, are built (`snap_labels`) but not wired in or measured end to end.
+  - *Scans and OCR text layers: open.* There is no text layer to compare with, so the check abstains; the alternatives (a financial-term lexicon, a balance-sheet side check, comparing two reads) are designed, not built.
+  - *Untested beyond our sample:* other PDF generators (ours are mostly PDFlib and iText 7), and the check's own gold is the same text layer, so it measures matching, not the layer's correctness.
 * **Variety of data**: 50 TDnet filings from two main PDF generators, mostly J-GAAP. No other document types or producers yet.
 * The main CLI (`python -m solution2.pipeline`) still uses the JSON first read; bands, Markdown and HTML are chosen in the evaluation command.
 
@@ -79,18 +82,7 @@ python -m solution2.tdnet eval --data-dir solution2/data_sample/tdnet --split de
 # the test split is sealed: read the protocol in solution2/RESULTS.md (section 1k) before running --split test
 ```
 
-Score the PDF text-layer check on saved answers (no model): `python -m solution2.witness_eval --splits A B T C D E`.
-The original benchmark documents, clean and degraded: `python -m solution2.benchmark_docs --model qwen3-vl:4b-instruct --configs json bands --degrade scan skew`.
-
-Getting more data (nothing is downloaded until you approve the exact list; no API key needed for TDnet):
-
-```bash
-python -m solution2.tdnet plan --n 10 --seed 31 --min-ifrs 3 --exclude-code <codes already used>   # lists company, docID, URL, size; writes plan.json
-python -m solution2.tdnet download --plan <plan.json> --approve <token printed by plan>
-python -m solution2.tdnet prepare --docs <docIDs>                                                  # text-layer gold for the balance-sheet pages
-```
-
-(An EDINET downloader with XBRL ground truth exists in `solution2/edinet/` but has never been run: it needs an API key.)
+More commands (the PDF text-layer check, the benchmark documents, downloading more filings with a list-and-approve step) are in `solution2/README.md` and `solution2/tdnet/README.md`.
 
 ## Principles
 
